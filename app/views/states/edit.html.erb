@@ -1,8 +1,9 @@
-<% @page_title = "Create a New State" %>
+<% @page_title = "Edit State" %>
 
 <div class="full">
 	<div class="wrap">
 		<h1><%= @page_title %></h1>
 		<%= render 'form' %>
+		<%= link_to("Back to States", states_path, :class => 'back-link') %>
 	</div>
 </div>

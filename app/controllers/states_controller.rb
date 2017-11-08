@@ -1,11 +1,11 @@
 class StatesController < ApplicationController
+	before_action :set_state, only: [:edit, :update, :show, :destroy]
 
 	def index
 		@states = State.all
 	end
 
 	def show
-		@state = State.find(params[:id])
 	end
 
 	def new
@@ -22,7 +22,29 @@ class StatesController < ApplicationController
     end
 	end
 
+	def edit
+	end
+
+	def update
+		if @state.update(state_params)
+		  flash[:success] = "State was updated successfully"
+      redirect_to state_path(@state)
+		else
+		  render 'edit'
+		end
+	end
+
+	def destroy
+		State.find(params[:id]).destroy
+  	flash[:success] = "State was successfully deleted!"
+    redirect_to states_path
+	end
+
 	private
+		def set_state
+			@state = State.find(params[:id])
+		end
+
 		def state_params
       params.require(:state).permit(:name, :abv)
     end
