@@ -1,11 +1,14 @@
 class StatesController < ApplicationController
-	before_action :set_state, only: [:edit, :update, :show, :destroy]
+	before_action :set_state, only: [:edit, :update, :show]
 
 	def index
 		@states = State.all
 	end
 
 	def show
+		# @town = Town.new
+		# @towns = Town.all
+		@state_towns = @state.towns.all
 	end
 
 	def new

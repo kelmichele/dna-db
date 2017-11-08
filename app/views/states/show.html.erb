@@ -11,15 +11,17 @@
 
 	<div class="current-cities">
 		<div class="wrap">
-		    <div class="wrap">
-		    </div>
+  		<% if @state_towns != 0 %>
+  	    <div class="wrap">
+					<% @state_towns.each do |town| %>
+					  <h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4>
+					<% end %>
+  	    </div>
+  		<% end %>
 		</div>
 	</div>
 
 	<div class="wrap">
-
 		<%= link_to("Back to States", states_path, :class => 'back-link') %>
 	</div>
 </div>
-
-<div class="clearfix"></div>

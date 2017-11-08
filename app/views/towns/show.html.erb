@@ -1,0 +1,21 @@
+<% @page_title = @town.townname.capitalize %>
+
+<div class="full">
+	<div class="wrap">
+	  <h1>Get DNA Tested Today in <span><%= @town.townname.capitalize %>, <%= @state.abv %></span></h1>
+	  <hr class="title-line">
+		<div class="clearfix"></div>
+		<%= render 'shared/dna-text' %>
+	</div>
+
+	<div class="current-cities">
+		<div class="wrap">
+			<p>This is where each location's address will be listed...</p>
+		</div>
+	</div>
+
+	<div class=" wrap">
+		<%= link_to("Back to #{@state.name}", state_path(@state), :class => 'back-link') %>
+	</div>
+
+</div>
