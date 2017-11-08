@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Source+Sans+Pro:300,400,400i,600,700');
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+@import "mixins";
+@import "variables";
+
+@import "uikit";
+@import "uikit-variables";
+@import "uikit-components";
+
+.uk-accordion-title {margin-bottom:0;}
+.uk-accordion>:nth-child(n+2) {margin-top: 0;}
+
+.tmargin0 { margin-top: 0; }
+.bmargin0 { margin-bottom: 0; }
+.pleft0 { padding-left: 0px; }
+.pright0 { padding-right: 0px; }
+.bpadding0 { padding-bottom: 0; }
+.ptop0 { padding-top: 0px; }
+
+p, h5, h4, h3, h2, h1, a, li {font-family: $open; line-height: 1.4em; color: $dark;
+  &.wide {letter-spacing: 1.5px;}
+  &.upper {text-transform: uppercase;}
+  &.white {color: white;}
+  &.black {color: black;}
+  &.dark {color: $dark;}
+  &.blue {color: $blue;}
+}
+h3, h2 {margin-top:0px;}
+p{font-size: 16px;}
+body{font-family: $open; background-color: $f9;}
+ul{list-style-type: none; padding-left:0;}
+a:hover {text-decoration: none;}
+
+.center-block {@include center-block();}
+
+.scroll-up {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 100px;
+  display: none;
+  text-indent: -9999px;
+  @include sec-bgimage('scroll-top.png');
+  z-index: 100;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  visibility:hidden;
+
+  @include bp(tb) { right: 30px;visibility:visible; }
+  @include bp(sm) { right: 15px; }
+}
+
+.full {@include sec-default(); padding: $sec-pad;}
+.wrap {width: 90%; @include center-block();}
+.wrap-less {width: 85%; @include center-block();}
+
+.breadcrumb {text-transform: capitalize; margin-top:0; color: $gray; background-color: transparent;}
+
+.site-footer { @include sec-default(); background-color: white; padding: 20px;
+  .inner-ft {width:85%; @include center-block();}
+  .ft-final {@include sec-default();}
+  .ft-block {@include grid3(); padding: 10px 15px;
+    &.menu {margin-left:2%; }
+    &.cancel{float: right;}
+  }
+}
+
+
+.states, .cities{
+  hr.title-line {width:15%; border-top: 3px solid $blue; margin-bottom:30px;}
+  .cancel-link {font-weight: bold; text-align: center; margin-left: 20px; }
+  .btn-add, .back-link {float: right; font-size: 14px; color: white; background-color: $dark; padding: 5px 15px 6px; text-align: center; border-radius: 4px;
+    &:hover {opacity: .7; }
+  }
+  h1 {font-size: 2.2em;
+    span{font-weight: bold;}
+  }
+
+  .shared-text {width: 55%; font-size: 15px; font-weight: bold;
+    a, span {color: $blue;}
+  }
+
+  .current-cities {@include sec-default(); padding: $sec-pad;}
+}
+.all-states {@include sec-default(); padding: $sec-pad;
+  .state-name {font-weight: bold; }
+  td.actions{float: right; margin-left: 20px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+

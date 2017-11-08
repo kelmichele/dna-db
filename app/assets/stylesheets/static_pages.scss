@@ -1,0 +1,43 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+@import "variables";
+
+.home {
+	.breadcrumb {display: none;}
+	.hero-home { text-align:center;
+		@include sec-default(); background-color: white; padding-top: 45px; height:550px;
+		@include sec-bgimage('baby.jpg'); background-position: bottom center;
+	}
+
+	.welcome-sec {@include sec-default(); padding: $sec-pad;
+	  background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+	  background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+
+	  h3 {font-weight: 600; color: white; text-transform: uppercase; font-size: 1.4em;}
+	  p {color: $f9;
+	  	span {font-style: italic;}
+	  }
+	}
+}
+
+.options {
+	.innerpage-top { @include sec-default(); padding: $sec-pad; background-color: white;
+		.header {width: 60%; @include center-block(); text-align: center;}
+		.left-box{ @include sec-grid(left, 40%); margin-left: 5%; margin-top:7%;}
+		.right-box{ @include sec-grid(right, 50%); }
+		img{width:65%;}
+		h1 {font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase;}
+		p {margin: 10px 0; span{font-style: italic; font-size: .9em; }}
+	}
+
+	.test-options {
+		@include sec-default(); background-color: $f8; padding:$sec-pad;
+		.uk-accordion li {border-bottom: 1px solid rgba($gray, .4);}
+		.uk-accordion-title{background:none; padding:15px;}
+		.uk-accordion-content{width:85%; margin-top: 10px;
+			p{line-height: 1.5em;}
+		}
+	}
+}
