@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 	get 'options', to: 'static_pages#options'
 	get '/our-process', to: 'static_pages#our_process', as: 'our_process'
 	get 'testing', to: 'static_pages#testing'
+
+	resources :states
+
 end

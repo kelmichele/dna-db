@@ -1,0 +1,76 @@
+<% @page_title = "Paternity Testing Locations" %>
+<% @page_description = "New Description" %>
+
+<div class="all-states">
+	<div class="wrap">
+		<h1><%= @page_title %></h1>
+		<%= link_to("Add New State", new_state_path, :class => 'action new btn-add') %>
+
+
+		<table class="listing">
+			<% @states.each do |state| %>
+		  <tr>
+		    <td><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td>
+		    <td class="actions">
+		      <small><%= link_to("Edit", edit_state_path(state)) %></small>
+		    </td>
+		  </tr>
+		  <% end %>
+		</table>
+	</div>
+</div>
+
+
+
+<!--
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+Washington DC
+West Virginia
+Wisconsin
+Wyoming -->

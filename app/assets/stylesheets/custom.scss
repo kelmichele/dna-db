@@ -70,6 +70,10 @@ a:hover {text-decoration: none;}
   }
 }
 
+.msg-bx {@include sec-default();
+  .alert {width: 85%; @include center-block(); margin-top: 20px;}
+}
+
 // FOR DEVISE
 .registrations, .sessions, .passwords, .confirmations {
   .new, .edit {

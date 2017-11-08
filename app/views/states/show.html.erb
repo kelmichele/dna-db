@@ -1,0 +1,25 @@
+<% @page_title = @state.name.capitalize %>
+
+<div class="full">
+	<div class="wrap">
+	  <h1>Get DNA Tested Today in <span><%= @state.name %></span></h1>
+	  <hr class="title-line">
+		<div class="clearfix"></div>
+
+		<%= render 'shared/dna-text' %>
+	</div>
+
+	<div class="current-cities">
+		<div class="wrap">
+		    <div class="wrap">
+		    </div>
+		</div>
+	</div>
+
+	<div class="wrap">
+
+		<%= link_to("Back to States", states_path, :class => 'back-link') %>
+	</div>
+</div>
+
+<div class="clearfix"></div>
