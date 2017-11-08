@@ -70,6 +70,13 @@ a:hover {text-decoration: none;}
   }
 }
 
+// FOR DEVISE
+.registrations, .sessions, .passwords, .confirmations {
+  .new, .edit {
+    .full{padding-top:20px;}
+  }
+}
+
 
 .states, .cities{
   hr.title-line {width:15%; border-top: 3px solid $blue; margin-bottom:30px;}
