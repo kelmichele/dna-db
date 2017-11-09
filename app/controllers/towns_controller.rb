@@ -1,6 +1,6 @@
 class TownsController < ApplicationController
 	# before_action :set_state, only: [:new, :update]
-	before_action :set_town, only: [:edit, :update, :show]
+	before_action :set_town, only: [:edit, :update, :show, :destroy]
 
 
 	def index
@@ -18,17 +18,16 @@ class TownsController < ApplicationController
 
 	def create
 		@town = Town.new(town_params)
-
 		if @town.save
 		  flash[:success] = "Town was successfully created"
 		  redirect_to town_path(@town)
 		else
 		  render 'new'
-
 		end
 	end
 
 	def edit
+		@state = @town.state
 	end
 
 	def update

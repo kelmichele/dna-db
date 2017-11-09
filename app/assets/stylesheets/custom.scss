@@ -87,6 +87,7 @@ a:hover {text-decoration: none;}
   hr.title-line {width:15%; border-top: 3px solid $blue; margin-bottom:30px;}
   .cancel-link {font-weight: bold; text-align: center; margin-left: 20px; }
   .btn-add, .back-link {float: right; font-size: 14px; color: white; background-color: $dark; padding: 5px 15px 6px; text-align: center; border-radius: 4px;
+    &.inline {margin-left: 10px; }
     &:hover {opacity: .7; }
   }
   h1 {font-size: 2.2em;
@@ -96,12 +97,10 @@ a:hover {text-decoration: none;}
   .shared-text {width: 55%; font-size: 15px; font-weight: bold;
     a, span {color: $blue;}
   }
-
-  .current-cities {@include sec-default(); padding: $sec-pad;}
 }
-.all-states {@include sec-default(); padding: $sec-pad;
+.all-states, .all-towns  {@include sec-default(); padding: $sec-pad;
   .state-name {font-weight: bold; }
-  td.actions{float: right; margin-left: 20px;}
+  td.actions{float: right; margin-left: 20px; margin-top: 3px;}
 }
 
 

@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
 	resources :states
 	resources :towns
-	resources :locations
-	# , except: [:index]
+
 end

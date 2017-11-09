@@ -5,6 +5,7 @@
 	  <h1>Get DNA Tested Today in <span><%= @town.townname.capitalize %>, <%= @state.abv %></span></h1>
 	  <hr class="title-line">
 		<div class="clearfix"></div>
+		<%= link_to "Delete This City", town_path(@town), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-add btn-danger" %>
 		<%= render 'shared/dna-text' %>
 	</div>
 

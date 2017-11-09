@@ -6,7 +6,7 @@ class StatesController < ApplicationController
 	end
 
 	def show
-		@town = Town.new
+		# @town = Town.new
 		@state_towns = @state.towns.all
 	end
 
