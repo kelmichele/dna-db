@@ -73,6 +73,7 @@ a:hover {text-decoration: none;}
 .msg-bx {@include sec-default();
   .alert {width: 85%; @include center-block(); margin-top: 20px;}
 }
+.panel-danger.err{width: 85%; @include center-block();}
 
 // FOR DEVISE
 .registrations, .sessions, .passwords, .confirmations {

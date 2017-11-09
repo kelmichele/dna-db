@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	get 'testing', to: 'static_pages#testing'
 
 	resources :states
-	resources :towns, except: [:index]
-
+	resources :towns
+	resources :locations
+	# , except: [:index]
 end

@@ -5,18 +5,17 @@
 	  <h1>Get DNA Tested Today in <span><%= @state.name %></span></h1>
 	  <hr class="title-line">
 		<div class="clearfix"></div>
-
+		<%= link_to("Add New City", new_town_path, :class => 'action new btn-add') %>
+		<!-- <%= link_to("Add New City", new_town_path(:state_id => @state.id), :class => 'action new btn-add') %>  -->
 		<%= render 'shared/dna-text' %>
 	</div>
 
 	<div class="current-cities">
 		<div class="wrap">
   		<% if @state_towns != 0 %>
-  	    <div class="wrap">
-					<% @state_towns.each do |town| %>
-					  <h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4>
-					<% end %>
-  	    </div>
+				<% @state_towns.each do |town| %>
+				  <h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4>
+				<% end %>
   		<% end %>
 		</div>
 	</div>
@@ -25,3 +24,5 @@
 		<%= link_to("Back to States", states_path, :class => 'back-link') %>
 	</div>
 </div>
+
+ <!-- <% if @state_towns = 0 %><p>Unfortunately, we have no testing locations in <%= @state.name.capitalize %>, but you can still follow the link below, and order an At Home DNA Test Kit Today!</p><% end %> -->
