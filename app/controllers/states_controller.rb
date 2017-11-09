@@ -1,5 +1,5 @@
 class StatesController < ApplicationController
-	before_action :set_state, only: [:edit, :update, :show]
+	before_action :set_state, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@states = State.all
