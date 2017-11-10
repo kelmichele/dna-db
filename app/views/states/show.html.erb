@@ -23,8 +23,7 @@
 				  </tr>
 		  		<% end %>
 	  		<% end %>
-	  	</table>
-
+			</table>
 		</div>
 	</div>
 
@@ -34,3 +33,10 @@
 </div>
 
  <!-- <% if @state_towns = 0 %><p>Unfortunately, we have no testing locations in <%= @state.name.capitalize %>, but you can still follow the link below, and order an At Home DNA Test Kit Today!</p><% end %> -->
+<!--
+towns = []
+10.times do |i|
+  towns << Town.new(:townname => "book #{i}")
+end
+Book.import books    # or use import!
+ -->

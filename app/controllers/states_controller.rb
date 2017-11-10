@@ -1,6 +1,7 @@
 class StatesController < ApplicationController
 	before_action :set_state, only: [:show, :edit, :update, :destroy]
 
+
 	def index
 		@states = State.all
 	end
@@ -55,3 +56,25 @@ end
 
 # @town.state = State.first
 # For address inputs: <%= simple_format(@recipe.description)%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

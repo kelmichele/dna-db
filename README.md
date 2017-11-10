@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+CSV IMPORTS
+require 'csv'
+filename = File.join Rails.root, "dna_town.csv"
+CSV.foreach(filename, headers: true) do |row|
+  town = Town.create!(townname: row["townname"], state_id: row["state_id"])
+end
