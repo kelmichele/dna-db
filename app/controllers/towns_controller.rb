@@ -2,7 +2,6 @@ class TownsController < ApplicationController
 	# before_action :set_state, only: [:new, :update]
 	before_action :set_town, only: [:edit, :update, :show, :destroy]
 
-
 	def index
 		@towns = Town.all
 	end
