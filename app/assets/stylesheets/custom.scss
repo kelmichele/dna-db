@@ -90,6 +90,7 @@ a:hover {text-decoration: none;}
     &.inline {margin-left: 10px; }
     &:hover {opacity: .7; }
   }
+  .btn-danger {display: inline-block; float: right; padding: 5px 15px; margin-left:10px;}
   h1 {font-size: 2.2em;
     span{font-weight: bold;}
   }
@@ -100,6 +101,7 @@ a:hover {text-decoration: none;}
 }
 .all-states, .all-towns  {@include sec-default(); padding: $sec-pad;
   .state-name {font-weight: bold; }
+  .state-name a {text-transform: capitalize;}
   td.actions{float: right; margin-left: 20px; margin-top: 3px;}
 }
 

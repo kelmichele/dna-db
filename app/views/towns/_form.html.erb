@@ -18,10 +18,7 @@
 
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@town.new_record? ? "Add City" : "Update City",
-                        class: "btn btn-primary") %>
-
-        <%= link_to "Cancel", states_path, class: 'cancel-link' %>
+        <%= f.submit(@town.new_record? ? "Add City" : "Update City", class: "btn btn-primary") %>
       </div>
     </div>
   <% end %>
