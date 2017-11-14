@@ -26,7 +26,7 @@ Things you may want to cover:
 
 CSV IMPORTS
 require 'csv'
-filename = File.join Rails.root, "prod_towns.csv"
+filename = File.join Rails.root, "new_towns.csv"
 CSV.foreach(filename, headers: true) do |row|
   town = Town.create!(townname: row["townname"], state_id: row["state_id"])
 end

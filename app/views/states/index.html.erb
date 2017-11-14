@@ -12,7 +12,10 @@
 		<table class="listing">
 			<% @states.each do |state| %>
 		  <tr>
+		    <td><p><%= state.id %>. </p></td>
+		    <td>&nbsp;</td>
 		    <td><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td>
+		    <td><p><%= state.abv %>  <small>(<%= state.towns.count %>)</small></p></td>
 		    <td class="actions">
 		      <small><%= link_to("Edit", edit_state_path(state)) %></small>
 		    </td>

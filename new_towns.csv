@@ -1,0 +1,545 @@
+townname,state_id
+Fayetteville ,4
+Fort Smith ,4
+Jonesboro ,4
+Little Rock ,4
+North Little Rock ,4
+Pine Bluff ,4
+Rogers ,4
+Aurora ,6
+Colorado Springs ,6
+Denver ,6
+Fort Collins ,6
+Grand Junction ,6
+Greeley ,6
+Highlands Ranch ,6
+Lakewood ,6
+Littleton ,6
+Longmont ,6
+Pueblo ,6
+Ansonia ,7
+Branford ,7
+Bridgeport ,7
+Bristol ,7
+Cheshire ,7
+Danbury ,7
+Darien ,7
+Enfield ,7
+Fairfield ,7
+Farmington ,7
+Glastonbury ,7
+Greenwich ,7
+Hamden ,7
+Hartford ,7
+Manchester ,7
+Meriden ,7
+Middletown ,7
+Milford ,7
+New Britain ,7
+New Haven ,7
+New London ,7
+New Milford ,7
+Norwalk ,7
+Norwich ,7
+Old Saybrook ,7
+Ridgefield ,7
+Simsbury ,7
+Stamford ,7
+Stratford ,7
+Torrington ,7
+Trumbull ,7
+Wallingford ,7
+Waterbury ,7
+West Hartford ,7
+West Haven ,7
+Windsor ,7
+Windsor Locks ,7
+Dover ,8
+Georgetown ,8
+Hockessin ,8
+Lewes ,8
+Middletown ,8
+Milford ,8
+Millsboro ,8
+New Castle ,8
+Newark ,8
+Ocean View ,8
+Seaford ,8
+Smyrna ,8
+Wilmington ,8
+Albany ,10
+Athens ,10
+Atlanta ,10
+Augusta ,10
+Brunswick ,10
+Canton ,10
+Carrollton ,10
+Columbus ,10
+Conyers ,10
+Covington ,10
+Cumming ,10
+Gainesville ,10
+Griffin ,10
+Lawrenceville ,10
+Macon ,10
+Marietta ,10
+Riverdale ,10
+Rome ,10
+Roswell ,10
+Savannah ,10
+Smyrna ,10
+Snellville ,10
+Stockbridge ,10
+Suwanee ,10
+Tucker ,10
+Valdosta ,10
+Warner Robins ,10
+Woodstock ,10
+Boise ,12
+Coeur D Alene ,12
+Idaho Falls ,12
+Meridian ,12
+Pocatello ,12
+Alton ,13
+Arlington Heights ,13
+Aurora ,13
+Barrington ,13
+Batavia ,13
+Belleville ,13
+Bloomington ,13
+Calumet City ,13
+Champaign ,13
+Chicago ,13
+Collinsville ,13
+Crystal Lake ,13
+Decatur ,13
+Edwardsville ,13
+Elgin ,13
+Elmhurst ,13
+Evanston ,13
+Glen Carbon ,13
+Glenview ,13
+Granite City ,13
+Gurnee ,13
+Hinsdale ,13
+Hoffman Estates ,13
+Joliet ,13
+Lake Forest ,13
+Lake Zurich ,13
+Lombard ,13
+McHenry ,13
+Moline ,13
+Naperville ,13
+O Fallon ,13
+Oak Lawn ,13
+Oak Park ,13
+Orland Park ,13
+Palatine ,13
+Park Ridge ,13
+Peoria ,13
+Plainfield ,13
+Rockford ,13
+Skokie ,13
+Springfield ,13
+St. Charles ,13
+Tinley Park ,13
+Vernon Hills ,13
+Yorkville ,13
+Carmel ,14
+Crawfordsville ,14
+Evansville ,14
+Fishers ,14
+Fort Wayne ,14
+Greenfield ,14
+Greenwoo ,14
+Indianapolis ,14
+La Porte ,14
+Lafayette ,14
+Marion ,14
+Merrillville ,14
+Mishawak ,14
+Muncie ,14
+New Albany ,14
+Portage ,14
+Richmond ,14
+Terre Haute ,14
+Valparaiso ,14
+Cedar Falls ,15
+Coralville ,15
+Davenport ,15
+Des Moines ,15
+Iowa City ,15
+Muscatine ,15
+Sioux City ,15
+Urbandale ,15
+Kansas City ,16
+Leawood ,16
+Manhattan ,16
+Olathe ,16
+Overland Park ,16
+Salina ,16
+Topeka ,16
+Wichita ,16
+Ashland ,17
+Elizabethtown ,17
+Frankfort ,17
+Lexington ,17
+Louisville ,17
+Owensboro ,17
+Paducah ,17
+Richmond ,17
+Baton Rouge ,18
+Covington ,18
+Denham Springs ,18
+Gretna ,18
+Hammond ,18
+Houma ,18
+Kenner ,18
+Lafayette ,18
+Lake Charles ,18
+Mandeville ,18
+Marrero ,18
+Metairie ,18
+New Iberia ,18
+New Orleans ,18
+Shreveport ,18
+Slidell ,18
+West Monroe ,18
+Augusta ,19
+Bangor ,19
+Lewiston ,19
+Portland ,19
+Aberdeen ,20
+Annapolis ,20
+Baltimore ,20
+Bel Air ,20
+Berlin ,20
+Berwyn Heights ,20
+Bethesda ,20
+Bowie ,20
+Cambridge ,20
+Catonsville ,20
+Chestertown ,20
+Chevy Chase ,20
+Clinton ,20
+Cockeysville ,20
+Columbia ,20
+Crofton ,20
+Cumberland ,20
+Dundalk ,20
+Easton ,20
+Eldersburg ,20
+Elkridge ,20
+Ellicott City ,20
+Frederick ,20
+Gaithersburg ,20
+Glen Burnie ,20
+Greenbelt ,20
+Hagerstown ,20
+La Plata ,20
+Laurel ,20
+Linthicum Heights ,20
+Ocean City ,20
+Owings Mills ,20
+Pikesville ,20
+Pocomoke City ,20
+Prince Frederick ,20
+Rockville ,20
+Salisbury ,20
+Silver Spring ,20
+Towson ,20
+Waldorf ,20
+Westminster ,20
+Wheaton ,20
+Andover ,21
+Beverly ,21
+Billerica ,21
+Boston ,21
+Braintree ,21
+Brockton ,21
+Brookline ,21
+Cambridge ,21
+Danvers ,21
+Fall River ,21
+Fitchburg ,21
+Foxboro ,21
+Framingham ,21
+Hanover ,21
+Haverhill ,21
+Hyannis ,21
+Hyde Park ,21
+Leominster ,21
+Lowell ,21
+Melrose ,21
+Methuen ,21
+North Andover ,21
+Norwood ,21
+Osterville ,21
+Quincy ,21
+Springfield ,21
+Stoughton ,21
+Walpole ,21
+Wareham ,21
+Webster ,21
+Worcester ,21
+Wrentham ,21
+Auburn Hills ,22
+Bay City ,22
+Cadillac ,22
+Clarkston ,22
+Davison ,22
+Dewitt ,22
+Eastpointe ,22
+Fenton ,22
+Flint ,22
+Grand Blanc ,22
+Grand Rapids ,22
+Jackson ,22
+Kalamazoo ,22
+Lake Orion ,22
+Lansing ,22
+Lapeer ,22
+Livonia ,22
+Mason ,22
+Midland ,22
+Monroe ,22
+Mt Pleasant ,22
+Muskegon ,22
+Novi ,22
+Petoskey ,22
+Port Huron ,22
+Rochester ,22
+Saginaw ,22
+Saint Joseph ,22
+Southfield ,22
+Traverse City ,22
+Troy ,22
+Washington ,22
+Williamston ,22
+Edina ,23
+Minneapolis ,23
+Saint Cloud ,23
+Saint Paul ,23
+Columbus ,24
+Gulfport ,24
+Jackson ,24
+Laurel ,24
+Meridian ,24
+Pascagoula ,24
+Southaven ,24
+Arnold ,25
+Ballwin ,25
+Belton ,25
+Blue Springs ,25
+Branson ,25
+Bridgeton ,25
+Cape Girardeau ,25
+Chesterfield ,25
+Columbia ,25
+Des Peres ,25
+Eureka ,25
+Florissant ,25
+Gladstone ,25
+Hazelwood ,25
+Independence ,25
+Jefferson City ,25
+Joplin ,25
+Kansas City ,25
+Kirkwood ,25
+Lees Summit ,25
+Richmond Heights ,25
+Saint Charles ,25
+Saint Joseph ,25
+Saint Louis ,25
+Saint Peters ,25
+Springfield ,25
+Wentzville ,25
+Billings ,26
+Butte ,26
+Helena ,26
+Lincolane, 27
+Lincoln, 27
+Omaha, 27
+Carson City ,28
+Henderson ,28
+Las Vegas ,28
+North Las Vegas ,28
+Reno ,28
+Bedford ,29
+Concord ,29
+Derry ,29
+Dover ,29
+Exeter ,29
+Manchester ,29
+Nashua ,29
+Portsmouth ,29
+Rochester ,29
+Salem ,29
+Albuquerque ,30
+Las Cruces ,30
+Los Alamos ,30
+Santa Fe ,30
+Apex ,33
+Asheboro ,33
+Asheville ,33
+Burlington ,33
+Cary ,33
+Chapel Hill ,33
+Charlotte ,33
+Concord ,33
+Durham ,33
+Elkin ,33
+Fayetteville ,33
+Gastonia ,33
+Goldsboro ,33
+Greensboro ,33
+Greenville ,33
+Henderson ,33
+Hickory ,33
+High Point ,33
+Huntersville ,33
+Jacksonville ,33
+Kernersville ,33
+Kinston ,33
+Matthews ,33
+Mooresville ,33
+Morehead City ,33
+Mount Airy ,33
+Raleigh ,33
+Salisbury ,33
+Shelby ,33
+Smithfield ,33
+Statesville ,33
+Wake Forest ,33
+Wilmington ,33
+Wilson ,33
+Winston Salem ,33
+Broken Arrow ,36
+Edmond ,36
+Enid ,36
+Lawton ,36
+Midwest City ,36
+Muskogee ,36
+Norman ,36
+Oklahoma City ,36
+Owasso ,36
+Pryor ,36
+Stillwater ,36
+Tulsa ,36
+Yukon ,36
+Grants Pass ,37
+Klamath Falls ,37
+Portland ,37
+Roseburg ,37
+Salem ,37
+West Linn ,37
+Aiken ,40
+Bluffton ,40
+Charleston ,40
+Columbia ,40
+Conway ,40
+Florence ,40
+Greenville ,40
+Greenwood ,40
+Hilton Head Island ,40
+Irmo ,40
+Mount Pleasant ,40
+Murrells Inlet ,40
+North Charleston ,40
+Orangeburg ,40
+Port Royal ,40
+Rock Hill ,40
+Spartanburg ,40
+Summerville ,40
+Sumter ,40
+West Columbia ,40
+Rapid City, 41
+Bartlett ,42
+Bristol ,42
+Chattanooga ,42
+Clarksville ,42
+Elizabethton ,42
+Franklin ,42
+Germantown ,42
+Johnson City ,42
+Knoxville ,42
+Lebanon ,42
+Lenoir City ,42
+Memphis ,42
+Nashville ,42
+Tullahoma ,42
+Bountiful ,44
+Draper ,44
+Holladay ,44
+Murray ,44
+Ogden ,44
+Pleasant Grove ,44
+Saint George ,44
+Salt Lake City ,44
+Tooele ,44
+West Valley City ,44
+Alexandria ,46
+Arlington ,46
+Charlottesville ,46
+Chesapeake ,46
+Colonial Heights ,46
+Danville ,46
+Fairfax ,46
+Fredericksburg ,46
+Gainesville ,46
+Hampton ,46
+Harrisonburg ,46
+Herndon ,46
+Hopewell ,46
+Leesburg ,46
+Lynchburg ,46
+Manassas ,46
+Mechanicsville ,46
+Newport News ,46
+Norfolk ,46
+Petersburg ,46
+Portsmouth ,46
+Richmond ,46
+Springfield ,46
+Sterling ,46
+Tappahannock ,46
+Virginia Beach ,46
+Warrenton ,46
+Winchester ,46
+Woodbridge ,46
+Auburn ,47
+Bellevue ,47
+Bremerton ,47
+Issaquah ,47
+Kirkland ,47
+Mount Vernon ,47
+Oak Harbor ,47
+Olympia ,47
+Port Orchard ,47
+Puyallup ,47
+Renton ,47
+Seattle ,47
+Silverdale ,47
+Spokane ,47
+Tacoma ,47
+Vancouver ,47
+Beckley ,49
+Bridgeport ,49
+Charleston ,49
+Cross Lanes ,49
+Fairmont ,49
+Huntington ,49
+Morgantown ,49
+South Charleston ,49
+Brookfield ,50
+Franklin ,50
+Green Bay ,50
+Greenfield ,50
+Kenosha ,50
+Mequon ,50
+Milwaukee ,50
+New Berlin ,50
+Racine ,50
+Wauwatosa ,50
+West Allis ,50
+Casper ,51
