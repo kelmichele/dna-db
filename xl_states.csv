@@ -1,0 +1,499 @@
+townname,state_id
+Alameda ,5
+Alhambra ,5
+Anaheim ,5
+Anderson ,5
+Antioch ,5
+Apple Valley ,5
+Arcadia ,5
+Auburn ,5
+Bakersfield ,5
+Barstow ,5
+Beaumont ,5
+Benicia ,5
+Berkeley ,5
+Beverly Hills ,5
+Brawley ,5
+Burbank ,5
+Burlingame ,5
+Camarillo ,5
+Cameron Park ,5
+Campbell ,5
+Capitola ,5
+Carmel ,5
+Carmichael ,5
+Castro Valley ,5
+Chico ,5
+Chino ,5
+Chula Vista ,5
+Clovis ,5
+Concord ,5
+Corona ,5
+Costa Mesa ,5
+Covina ,5
+Culver City ,5
+Daly City ,5
+Dana Point ,5
+Danville ,5
+Davis ,5
+Delano ,5
+Diamond Bar ,5
+Downey ,5
+El Cajon ,5
+El Centro ,5
+El Cerrito ,5
+Elk Grove ,5
+Encinitas ,5
+Escondido ,5
+Eureka ,5
+Fairfield ,5
+Fallbrook ,5
+Folsom ,5
+Fremont ,5
+Fresno ,5
+Fullerton ,5
+Garden Grove ,5
+Gilroy ,5
+Glendale ,5
+Grass Valley ,5
+Greenbrae ,5
+Hacienda Heights ,5
+Hanford ,5
+Hawthorne ,5
+Hayward ,5
+Healdsburg ,5
+Hemet ,5
+Hercules ,5
+Huntington Beach ,5
+Indio ,5
+Inglewood ,5
+Kingsburg ,5
+La Jolla ,5
+La Mesa ,5
+La Palma ,5
+La Quinta ,5
+Lafayette ,5
+Laguna Hills ,5
+Lancaster ,5
+Lincoln ,5
+Livermore ,5
+Loma Linda ,5
+Long Beach ,5
+Los Alamitos ,5
+Los Angeles ,5
+Los Banos ,5
+Los Gatos ,5
+Lynwood ,5
+Madera ,5
+Manteca ,5
+Menlo Park ,5
+Merced ,5
+Mill Valley ,5
+Mission Hills ,5
+Mission Viejo ,5
+Modesto ,5
+Montebello ,5
+Monterey ,5
+Montrose ,5
+Moreno Valley ,5
+Morgan Hill ,5
+Mountain View ,5
+Murrieta ,5
+Napa ,5
+National City ,5
+Newbury Park ,5
+Newhall ,5
+Newport Beach ,5
+North Hollywood ,5
+Northridge ,5
+Oakdale ,5
+Oakland ,5
+Oceanside ,5
+Ojai ,5
+Orange ,5
+Orinda ,5
+Orland ,5
+Oxnard ,5
+Palm Desert ,5
+Palm Springs ,5
+Palmdale ,5
+Palo Alto ,5
+Paradise ,5
+Paramount ,5
+Pasadena ,5
+Perris ,5
+Petaluma ,5
+Phelan ,5
+Pinole ,5
+Pittsburg ,5
+Placerville ,5
+Planada ,5
+Pleasant Hill ,5
+Pleasanton ,5
+Pomona ,5
+Poway ,5
+Rancho Cordova ,5
+Rancho Mirage ,5
+Redding ,5
+Redlands ,5
+Redondo Beach ,5
+Redwood City ,5
+Riverside ,5
+Roseville ,5
+Sacramento ,5
+Salinas ,5
+San Bernardino ,5
+San Clemente ,5
+San Diego ,5
+San Dimas ,5
+San Francisco ,5
+San Gabriel ,5
+San Jose ,5
+San Leandro ,5
+San Luis Obispo ,5
+San Marcos ,5
+San Mateo ,5
+San Pablo ,5
+San Pedro ,5
+Santa Ana ,5
+Santa Barbara ,5
+Santa Cruz ,5
+Santa Maria ,5
+Santa Monica ,5
+Santa Rosa ,5
+Sebastopol ,5
+Shasta Lake ,5
+Sherman Oaks ,5
+Simi Valley ,5
+Sun City ,5
+Sunnyvale ,5
+Tarzana ,5
+Temecula ,5
+Torrance ,5
+Tracy ,5
+Turlock ,5
+Upland ,5
+Van Nuys ,5
+Ventura ,5
+Victorville ,5
+Visalia ,5
+Vista ,5
+Walnut Creek ,5
+West Hills ,5
+Westminster ,5
+Whittier ,5
+Altamonte Springs ,9
+Apopka ,9
+Atlantis ,9
+Aventura ,9
+Belleair Bluffs ,9
+Boca Raton ,9
+Bonita Springs ,9
+Boynton Beach ,9
+Bradenton ,9
+Brandon ,9
+Brooksville ,9
+Cape Coral ,9
+Charlotte Harbor ,9
+Clearwater ,9
+Clermont ,9
+Coral Gables ,9
+Coral Springs ,9
+Crestview ,9
+Crystal River ,9
+Cutler Bay ,9
+Daytona Beach ,9
+Deerfield Beach ,9
+Deland ,9
+Delray Beach ,9
+Doral ,9
+Edgewater ,9
+Englewood ,9
+Estero ,9
+Eustis ,9
+Fernandina Beach ,9
+Fort Lauderdale ,9
+Fort Myers ,9
+Fort Pierce ,9
+Fort Walton Beach ,9
+Gainesville ,9
+Hialeah ,9
+Hollywood ,9
+Homestead ,9
+Hudson ,9
+Inverness ,9
+Jacksonville ,9
+Jacksonville Beach ,9
+Jay ,9
+Jupiter ,9
+Kissimmee ,9
+Lady Lake ,9
+Lake City ,9
+Lake Mary ,9
+Lake Placid ,9
+Lake Wales ,9
+Lake Worth ,9
+Lakeland ,9
+Largo ,9
+Leesburg ,9
+Lehigh Acres ,9
+Live Oak ,9
+Longwood ,9
+Maitland ,9
+Marco Island ,9
+Marianna ,9
+Melbourne ,9
+Merritt Island ,9
+Miami ,9
+Miami Beach ,9
+Milton ,9
+Naples ,9
+New Port Richey ,9
+Niceville ,9
+North Fort Myers ,9
+North Miami Beach ,9
+North Port ,9
+Ocala ,9
+Ocoee ,9
+Okeechobee ,9
+Orange City ,9
+Orange Park ,9
+Orlando ,9
+Ormond Beach ,9
+Oviedo ,9
+Palatka ,9
+Palm Beach Gardens ,9
+Palm Coast ,9
+Palm Harbor ,9
+Palm Springs ,9
+Panama City ,9
+Panama City Beach ,9
+Pembroke Pines ,9
+Pensacola ,9
+Plant City ,9
+Plantation ,9
+Pompano Beach ,9
+Port Charlotte ,9
+Port Orange ,9
+Port St Lucie ,9
+Port St Joe ,9
+Royal Palm Beach ,9
+Ruskin ,9
+Sanford ,9
+Sarasota ,9
+Sebring ,9
+Seminole ,9
+South Daytona ,9
+South Miami ,9
+South Pasadena ,9
+Spring Hill ,9
+St. Augustine ,9
+St. Petersburg ,9
+St. Cloud ,9
+Starke ,9
+Stuart ,9
+Summerfield ,9
+Sun City Center ,9
+Tallahassee ,9
+Tamarac ,9
+Tampa ,9
+Tarpon Springs ,9
+Tavares ,9
+Titusville ,9
+The Villages ,9
+Valrico ,9
+Venice ,9
+Vero Beach ,9
+Wauchula ,9
+Wesley Chapel ,9
+West Palm Beach ,9
+Weston ,9
+Winter Haven ,9
+Winter Park ,9
+Zephyrhills ,9
+Akron ,35
+Alliance ,35
+Amherst ,35
+Ashland ,35
+Beavercreek ,35
+Bellbrook ,35
+Canton ,35
+Centerville ,35
+Cincinnati ,35
+Circleville ,35
+Cleveland ,35
+Cleveland Heights ,35
+Columbus ,35
+Conshocton ,35
+Cuyahoga Falls ,35
+Dayton ,35
+Delaware ,35
+Dublin ,35
+East Liverpool ,35
+Elyria ,35
+Englewood ,35
+Fairfield ,35
+Fairlawn ,35
+Gahanna ,35
+Grove City ,35
+Hamilton ,35
+Kettering ,35
+Lancaster ,35
+London ,35
+Mansfield ,35
+Mason ,35
+Maumee ,35
+Medina ,35
+Mentor ,35
+Miamisburg ,35
+Middletown ,35
+Milford ,35
+Mount Vernon ,35
+Newark ,35
+Parma ,35
+Piqua ,35
+Sandusky ,35
+Springfield ,35
+Stow ,35
+Toledo ,35
+Troy ,35
+Uniontown ,35
+Urbana ,35
+Vandalia ,35
+Warren ,35
+Westerville ,35
+Willoughby ,35
+Xenia ,35
+Youngstown ,35
+Zanesville ,35
+Aliquippa ,38
+Allentown ,38
+Altoona ,38
+Ambridge ,38
+Bala Cynwyd ,38
+Barto ,38
+Bartonsville ,38
+Beaver ,38
+Berwyn ,38
+Bethlehem ,38
+Butler ,38
+Canonsburg ,38
+Carlisle ,38
+Carnegie ,38
+Chambersburg ,38
+Clarks Summit ,38
+Collegeville ,38
+Conshohocken ,38
+Downingtown ,38
+Doylestown ,38
+Dunmore-Throop ,38
+Easton ,38
+Emmaus ,38
+Erie ,38
+Exton ,38
+Gibsonia ,38
+Greensburg ,38
+Hamlin ,38
+Harleysville ,38
+Harrisburg ,38
+Hazleton ,38
+Kennett Square ,38
+King Of Prussia ,38
+Lancaster ,38
+Langhorne ,38
+Lansdale ,38
+Mc Kees Rocks ,38
+Meadville ,38
+Monroeville ,38
+Moon Township ,38
+Mount Pocono ,38
+Natrona Heights ,38
+Nazareth ,38
+New Castle ,38
+Newtown ,38
+North Charleroi ,38
+Paoli ,38
+Philadelphia ,38
+Pittsburgh ,38
+Pottstown ,38
+Quakertown ,38
+Reading ,38
+Richboro ,38
+Scranton ,38
+Seven Fields ,38
+Souderton ,38
+Springfield ,38
+Uniontown ,38
+Washington ,38
+West Chester ,38
+West Grove ,38
+West Mifflin ,38
+Wexford ,38
+Wilkes Barre ,38
+Wilkinsburg ,38
+Yardley ,38
+York ,38
+Abilene ,43
+Allen ,43
+Amarillo ,43
+Arlington ,43
+Austin ,43
+Azle ,43
+Bastrop ,43
+Bay City ,43
+Baytown ,43
+Beaumont ,43
+Bedford ,43
+Borger ,43
+Brownsville ,43
+Carrollton ,43
+Cleburne ,43
+Conroe ,43
+Corpus Christi ,43
+Dallas ,43
+Denton ,43
+Desoto ,43
+Edinburg ,43
+El Paso ,43
+Euless ,43
+Fort Worth ,43
+Frisco ,43
+Garland ,43
+Grapevine ,43
+Houston ,43
+Humble ,43
+Irving ,43
+Katy ,43
+Keller ,43
+Killeen ,43
+Kingsville ,43
+Lake Jackson ,43
+Laredo ,43
+Leander ,43
+Lewisville ,43
+Live Oak ,43
+Longview ,43
+Lubbock ,43
+Lufkin ,43
+Mansfield ,43
+Mcallen ,43
+Mckinney ,43
+Midland ,43
+New Braunfels ,43
+North Richland Hills ,43
+Odessa ,43
+Orange ,43
+Paris ,43
+Plano ,43
+Port Arthur ,43
+Rockwall ,43
+San Antonio ,43
+Sherman ,43
+Spring ,43
+Sugar Land ,43
+Texarkana ,43
+Tomball ,43
+Tyler ,43
+Waco ,43
+Weatherford ,43
+Weslaco ,43

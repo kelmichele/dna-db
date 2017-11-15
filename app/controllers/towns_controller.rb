@@ -6,6 +6,11 @@ class TownsController < ApplicationController
 		@towns = Town.all
 	end
 
+	def import
+	  Town.import(params[:file])
+	  redirect_to root_url, notice: 'Towns imported.'
+	end
+
 	def show
 		@state = @town.state
 	end

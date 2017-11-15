@@ -21,7 +21,7 @@ gem 'uikit-rails'
 gem "breadcrumbs_on_rails"
 
 gem 'devise'
-
+gem "roo", "~> 2.7.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
