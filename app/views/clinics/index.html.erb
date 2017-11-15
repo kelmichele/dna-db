@@ -1,0 +1,31 @@
+<% @page_title = "Locations" %>
+
+<div class="full">
+	<div class="wrap">
+		<h2>Import Locations</h2>
+		<%= form_tag import_clinics_path, multipart: true do %>
+		  <%= file_field_tag :file %>
+		  <br>
+		  <%= submit_tag "Import" %>
+		<% end %>
+	</div>
+
+	<div class="all-clinics">
+		<div class="wrap">
+			<h1><%= @page_title %> </h1>
+			<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
+			<table class="listing">
+				<% @clinics.each do |clinic| %>
+			  <tr>
+			    <td>
+			    	<p>&nbsp;<%= clinic.address %></p>
+				    <p>&nbsp;<%= clinic.zipcode %></p>
+				  </td>
+			    <td class="actions"><small><%= link_to("Edit", edit_clinic_path(clinic)) %></small></td>
+			  </tr>
+			  <% end %>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- add_timestamps(:suppliers, null: true) -->

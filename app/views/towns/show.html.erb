@@ -6,12 +6,26 @@
 	  <hr class="title-line">
 		<div class="clearfix"></div>
 		<%= link_to "Delete This City", town_path(@town), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
+		<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
 		<%= render 'shared/dna-text' %>
 	</div>
 
 	<div class="current-cities">
 		<div class="wrap">
-			<p>This is where each location's address will be listed...</p>
+			<!-- <p>This is where each location's address will be listed...</p> -->
+	  		<% if @town_clinics.count != 0 %>
+					<table class="listing">
+						<% @town_clinics.each do |clinic| %>
+							<tr>
+					    	<p><%= clinic.address %><br>
+						    <%= @town.townname %>, <%= @state.abv %> <%= clinic.zipcode %></p>
+							</tr>
+							<tr>
+						    <td class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></td>
+						  </tr>
+			  		<% end %>
+					</table>
+				<% end %>
 		</div>
 	</div>
 
@@ -20,3 +34,11 @@
 	</div>
 
 </div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<% @page_title = "Testing Clinic" %>
+
+<div class="full">
+	<div class="wrap">
+	  <h1>Get DNA Tested Today </h1>
+	  <hr class="title-line">
+		<div class="clearfix"></div>
+		<%= link_to "Delete This Location", clinic_path(@clinic), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
+		<%= render 'shared/dna-text' %>
+	</div>
+
+	<div class="current-cities">
+		<div class="wrap">
+			<p>This is where each location's address will be listed...</p>
+		</div>
+	</div>
+</div>

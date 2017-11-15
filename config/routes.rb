@@ -15,4 +15,9 @@ Rails.application.routes.draw do
 		end
 	end
 
+	resources :clinics do
+		collection do
+			post :import
+		end
+	end
 end
