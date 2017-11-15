@@ -4,19 +4,19 @@
   <%= form_for(@clinic, :html => {class: "form-horizontal", role: "form" }) do |f| %>
     <div class="form-group">
       <div class="col-md-3">
-        <div class="control-label"><%= f.label :address %></div>
+        <%= f.label :address %>
         <br>
         <%= f.text_field :address, class: "form-control", placeholder: "Street Address", autofocus: true %>
       </div>
 
       <div class="col-md-2">
-        <div class="control-label"><%= f.label :zipcode %></div>
+        <%= f.label :zipcode %>
         <br>
         <%= f.text_field :zipcode, class: "form-control", placeholder: "Zipcode", autofocus: true %>
       </div>
 
       <div class="col-md-3">
-        <div class="control-label"><%= f.label "City" %></div>
+        <%= f.label "City" %>
         <br>
         <%= f.collection_select(:town_id, Town.all, :id, :townname) %>
       </div>

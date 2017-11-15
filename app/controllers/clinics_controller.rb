@@ -7,7 +7,7 @@ class ClinicsController < ApplicationController
 
 	def import
 	  Clinic.import(params[:file])
-	  redirect_to root_url, notice: 'Locations imported.'
+    redirect_to states_path, notice: 'Locations imported.'
 	end
 
 	def show
@@ -23,7 +23,7 @@ class ClinicsController < ApplicationController
     @clinic = Clinic.new(clinic_params)
     if @clinic.save
       flash[:success] = "Clinic was successfully created"
-      redirect_to clinic_path(@clinic)
+      redirect_to town_path(@clinic.town)
     else
       render 'new'
     end
@@ -44,7 +44,7 @@ class ClinicsController < ApplicationController
 	def destroy
 		Clinic.find(params[:id]).destroy
   	flash[:success] = "Clinic was successfully deleted!"
-    redirect_to clinics_path
+    redirect_to states_path
 	end
 
 	private
