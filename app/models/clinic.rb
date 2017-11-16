@@ -1,10 +1,10 @@
 class Clinic < ApplicationRecord
-	validates :address, presence: true
+	validates :address, presence: true, uniqueness: { scope: :town_id }
   validates :zipcode, presence: true
-  validates_uniqueness_of :address
+  # validates_uniqueness_of :address
 	belongs_to :town
-  has_one :state, through: :town
   validates :town_id, presence: true
+  has_one :state, through: :town
 
  	def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)

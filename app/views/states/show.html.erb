@@ -6,6 +6,7 @@
 	  <hr class="title-line">
 		<div class="clearfix"></div>
 		<%= link_to("Add New City", new_town_path, :class => 'action new btn-add inline') %>
+		<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
 		<%= render 'shared/dna-text' %>
 	</div>
 
@@ -34,12 +35,3 @@
 		<%= link_to("Back to States", states_path, :class => 'back-link') %>
 	</div>
 </div>
-
-
-<!--
-towns = []
-10.times do |i|
-  towns << Town.new(:townname => "book #{i}")
-end
-Book.import books    # or use import!
- -->

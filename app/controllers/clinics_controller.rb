@@ -1,5 +1,5 @@
 class ClinicsController < ApplicationController
-	before_action :set_clinic, only: [:show, :edit, :update, :destroy]
+	before_action :set_clinic, only: [ :edit, :update, :show, :destroy]
 
 	def index
 		@clinics = Clinic.all
@@ -30,12 +30,13 @@ class ClinicsController < ApplicationController
 	end
 
 	def edit
+		@town = @clinic.town
 	end
 
 	def update
 		if @clinic.update(clinic_params)
 		  flash[:success] = "Clinic was updated successfully"
-      redirect_to clinic_path(@clinic)
+      redirect_to town_path(@clinic.town)
 		else
 		  render 'edit'
 		end
@@ -56,7 +57,3 @@ class ClinicsController < ApplicationController
       params.require(:clinic).permit(:address, :zipcode, :town_id)
     end
 end
-
-
-# @town.clinic = Clinic.first
-# For address inputs: <%= simple_format(@recipe.description)%>

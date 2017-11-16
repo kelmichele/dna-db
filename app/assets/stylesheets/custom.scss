@@ -107,14 +107,16 @@ a:hover {text-decoration: none;}
 
 .towns .wrap.clinics{@include sec-default(); padding:50px 0; text-align: center;}
 .clinic-bx {display: inline-block; width:30%;
-  h4 {font-weight: bold; line-height: 1.5em; font-size: 18px;}
+  h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize;}
+}
+.townlisting-bx {
+  // display: inline-block; width:20%;
+  h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize;}
 }
 
 @include bp(md) {
   .clinic-bx {width: 75%; @include center-block();}
 }
-
-
 
 
 

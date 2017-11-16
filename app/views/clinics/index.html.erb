@@ -1,4 +1,4 @@
-<% @page_title = "Locations" %>
+<% @page_title = "All Locations" %>
 
 <div class="full">
 	<div class="wrap">
@@ -11,21 +11,28 @@
 	</div>
 
 	<div class="all-clinics">
-		<div class="wrap">
+		<div class="wrap clinics">
 			<h1><%= @page_title %> </h1>
 			<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
-			<table class="listing">
+			<table class="clinics">
 				<% @clinics.each do |clinic| %>
-			  <tr>
+			  <!-- <tr>
 			    <td>
 			    	<p>&nbsp;<%= clinic.address %></p>
 				    <p>&nbsp;<%= clinic.zipcode %></p>
 				  </td>
 			    <td class="actions"><small><%= link_to("Edit", edit_clinic_path(clinic)) %></small></td>
-			  </tr>
+			  </tr> -->
+
+			  		<div class="clinic-bx">
+			      	<h4><%= clinic.address %><br>
+		      		<%= link_to clinic.town.townname, town_path(clinic.town) %>, <%= link_to clinic.state.abv, state_path(clinic.state) %> <%= clinic.zipcode %><br>
+
+			  			<div class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></div>
+			  			<br><br>
+			  		</div>
 			  <% end %>
 			</table>
 		</div>
 	</div>
 </div>
-<!-- add_timestamps(:suppliers, null: true) -->

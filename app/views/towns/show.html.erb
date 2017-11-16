@@ -11,20 +11,20 @@
 	</div>
 	<div class="clearfix"></div>
 
-		<div class="wrap clinics">
-  		<% if @town_clinics.count != 0 %>
-				<table class="clinics">
-					<% @town_clinics.each do |clinic| %>
-						<div class="clinic-bx">
-				    	<h4><%= clinic.address %><br>
-					    <%= @town.townname %>, <%= @state.abv %> <%= clinic.zipcode %></h4>
-							<div class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></div>
-						</div>
-		  		<% end %>
-				</table>
-				<% else %>
-					<p>This is where each location's address will be listed...</p>
-			<% end %>
+	<div class="wrap clinics">
+		<% if @town_clinics.count != 0 %>
+			<table class="clinics">
+				<% @town_clinics.each do |clinic| %>
+					<div class="clinic-bx">
+			    	<h4><%= clinic.address %><br>
+				    <%= @town.townname %>, <%= @state.abv %> <%= clinic.zipcode %></h4>
+						<div class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></div>
+					</div>
+	  		<% end %>
+			</table>
+			<% else %>
+				<p>This is where each location's address will be listed...</p>
+		<% end %>
 	</div>
 
 	<div class=" wrap">

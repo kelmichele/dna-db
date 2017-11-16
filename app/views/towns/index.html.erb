@@ -1,6 +1,5 @@
 <% @page_title = "Cities" %>
 
-
 <div class="full">
 	<div class="wrap">
 		<h2>Import Locations</h2>
@@ -12,21 +11,22 @@
 	</div>
 </div>
 
-
 <div class="full">
 	<div class="wrap">
 		<h1><%= @page_title %> </h1>
-		<table class="listing">
+		<table class="townlisting">
 			<% @towns.each do |town| %>
-		  <tr>
-		    <td><p>&nbsp;<%= town.townname %></p></td>
-		    <td><p>&nbsp;<%= town.state_id %></p></td>
+		  <tr class="townlisting-bx">
+		    <td><p><%= link_to town.townname, town_path(town) %></p></td>
+		    <!-- <td><p>&nbsp;<%= town.state_id %></p></td> -->
+		    <td><p><%= link_to town.state.abv, state_path(town.state) %></p></td>
+		    <td class="col-md-2"><p>ID: <%= town.id %></p></td>
+		    <td class="col-md-2"><p>Locations: <%= town.clinics.count %></p></td>
 		  </tr>
 		  <% end %>
 		</table>
 	</div>
 </div>
-
 
 
 <!--
