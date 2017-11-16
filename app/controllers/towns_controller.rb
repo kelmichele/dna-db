@@ -1,5 +1,5 @@
 class TownsController < ApplicationController
-	before_action :set_town, only: [:edit, :update, :show, :destroy]
+	before_action :set_town, only: [:edit, :update, :destroy]
 
 	def index
 		@towns = Town.all
@@ -11,7 +11,7 @@ class TownsController < ApplicationController
 	end
 
 	def show
-		# @clinic = Clinic.new
+		@town = Town.friendly.find(params[:id])
 		@state = @town.state
 		@town_clinics = @town.clinics.all
 	end

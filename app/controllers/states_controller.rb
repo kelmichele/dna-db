@@ -1,14 +1,15 @@
 class StatesController < ApplicationController
-	before_action :set_state, only: [:show, :edit, :update, :destroy]
-
+	before_action :set_state, only: [ :edit, :update, :destroy]
 
 	def index
 		@states = State.all
 	end
 
 	def show
-		# @town = Town.new
+		# @state = State.friendly.find(params[:id])
+		@state = State.friendly.find(params[:id])
 		@state_towns = @state.towns.all
+
 	end
 
 	def new
@@ -53,23 +54,8 @@ class StatesController < ApplicationController
     end
 end
 
-
 # @town.state = State.first
 # For address inputs: <%= simple_format(@recipe.description)%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

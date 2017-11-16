@@ -1,5 +1,8 @@
 class Town < ApplicationRecord
-	validates :townname, presence: true, uniqueness: { scope: :state_id }
+  extend FriendlyId
+  friendly_id :townname
+
+	validates :townname, presence: true, uniqueness: { scope: :state_id, case_sensitive: false }
 	belongs_to :state
 	validates :state_id, presence: true
   has_many :clinics
