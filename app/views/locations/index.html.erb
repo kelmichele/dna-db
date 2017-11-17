@@ -1,0 +1,60 @@
+<% @page_title = "Locations" %>
+
+<div class="full">
+	<div class="wrap">
+		<h2>Import Locations</h2>
+		<%= form_tag import_locations_path, multipart: true do %>
+		  <%= file_field_tag :file %>
+		  <br>
+		  <%= submit_tag "Import" %>
+		<% end %>
+	</div>
+</div>
+
+<div class="full">
+	<div class="wrap">
+		<h1><%= @page_title %> </h1>
+		<hr><br>
+		<table class="col-md-5">
+			<% @locations.each do |location| %>
+			  <tr class="townlisting-bx">
+			    <td class="col-md-3"><p><%= location.street %></p></td>
+			    <td class="col-md-2"><p><%= location.city %></p></td>
+			    <td class="col-md-2"><p><%= location.state %></p></td>
+			    <td class="col-md-2"><p><%= location.abrv %></p></td>
+			    <td class="col-md-2"><p><%= location.zip %></p></td>
+			  </tr>
+		  <% end %>
+		</table>
+
+		<div class="col-md-1"></div>
+
+		<table class="col-md-2">
+			<% @locations.each do |location| %>
+			  <tr>
+			    <td><p><%= location.city %></p></td>
+			  </tr>
+		  <% end %>
+		</table>
+
+	</div>
+</div>
+
+
+<!--
+ROO (save until reversed)
+##routes.rb
+resources :towns do
+  collection do
+    post :import
+  end
+end
+
+##towns_controller
+def import
+  Product.import(params[:file])
+
+  redirect_to root_url, notice: 'Products imported.'
+end
+
+-->
