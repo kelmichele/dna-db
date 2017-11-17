@@ -23,6 +23,9 @@ Things you may want to cover:
 
 * ...
 
+CSV.foreach("db/locationadd.csv", headers: true) do |row|
+	Location.create! row.to_hash.except(%w{type latitude longitude})
+end
 
 CSV IMPORTS
 require 'csv'

@@ -23,6 +23,8 @@ gem "breadcrumbs_on_rails"
 gem 'devise'
 gem "roo", "~> 2.7.0"
 gem 'friendly_id', '~> 5.1.0'
+
+gem 'geocoder'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

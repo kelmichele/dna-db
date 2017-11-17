@@ -15,28 +15,13 @@
 	<div class="wrap">
 		<h1><%= @page_title %> </h1>
 		<hr><br>
-		<table class="col-md-5">
+		<table class="loclist">
 			<% @locations.each do |location| %>
 			  <tr class="townlisting-bx">
-			    <td class="col-md-3"><p><%= location.street %></p></td>
-			    <td class="col-md-2"><p><%= location.city %></p></td>
-			    <td class="col-md-2"><p><%= location.state %></p></td>
-			    <td class="col-md-2"><p><%= location.abrv %></p></td>
-			    <td class="col-md-2"><p><%= location.zip %></p></td>
+					<h4><%= simple_format(location.full_address)%></h4>
 			  </tr>
 		  <% end %>
 		</table>
-
-		<div class="col-md-1"></div>
-
-		<table class="col-md-2">
-			<% @locations.each do |location| %>
-			  <tr>
-			    <td><p><%= location.city %></p></td>
-			  </tr>
-		  <% end %>
-		</table>
-
 	</div>
 </div>
 
@@ -56,5 +41,4 @@ def import
 
   redirect_to root_url, notice: 'Products imported.'
 end
-
 -->

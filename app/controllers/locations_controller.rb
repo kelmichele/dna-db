@@ -50,12 +50,17 @@ class LocationsController < ApplicationController
     redirect_to locations_path
 	end
 
+	def all_states
+		@states = @location.states.all
+
+	end
+
 	private
 		def set_location
 			@location = Location.find(params[:id])
 		end
 
 		def location_params
-      params.require(:location).permit(:street, :city, :zip, :state, :abrv)
+      params.require(:location).permit(:street, :city, :state, :zip )
     end
 end

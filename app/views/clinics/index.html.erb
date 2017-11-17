@@ -17,9 +17,9 @@
 			<table class="clinics">
 				<% @clinics.each do |clinic| %>
 		  		<div class="clinic-bx">
-		      	<h4><%= clinic.address %><br>
-	      		<%= link_to clinic.town.townname, town_path(clinic.town) %>, <%= link_to clinic.state.abv, state_path(clinic.state) %> <%= clinic.zipcode %><br>
+		      	<!-- <h4><%= clinic.address %><br> <%= link_to clinic.town.townname, town_path(clinic.town) %>, <%= link_to clinic.state.abv, state_path(clinic.state) %> <%= clinic.zipcode %><br> -->
 
+						<h4><%= simple_format(clinic.full_address)%></h4>
 		  			<div class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></div>
 		  			<br><br>
 		  		</div>
