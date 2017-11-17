@@ -16,7 +16,7 @@ document.addEventListener("turbolinks:load", function() {
          lng: location.longitude,
          title: location.address,
          infoWindow: {
-           content: `<p><a href='/locations/${location.id}'>${location.address}</a></p>`
+           content: '<p><a href='/locations/${location.id}'>${location.address}</a></p>'
          }
        });
      }
@@ -39,7 +39,7 @@ document.addEventListener("turbolinks:load", function() {
 	    var bounds = map.getBounds();
 	    var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
 
-	    Turbolinks.visit(`/locations?l=${location}`);
+	    Turbolinks.visit('/locations?l=${location}');
 	  });
  });
 
