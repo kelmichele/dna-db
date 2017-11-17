@@ -1,11 +1,13 @@
 class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
   validates :street, presence: true, uniqueness: { scope: :city, case_sensitive: false }
 	validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
 
+  default_scope -> { order(state: :asc)}
   default_scope -> { order(city: :asc)}
   default_scope -> { order(zip: :asc)}
 
@@ -33,3 +35,9 @@ class Location < ApplicationRecord
   end
 
 end
+
+
+# AIzaSy
+# DceGPnKXPQ5KU
+# l9F7OcLrhjY3LPoJCx
+# dA

@@ -17,6 +17,7 @@
 /yarn-error.log
 
 /config/database.yml
+/config/secrets.yml
 /config/secret_token.rb
 
 .byebug_history

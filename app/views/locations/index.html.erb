@@ -2,12 +2,21 @@
 
 <div class="full">
 	<div class="wrap">
-		<h2>Import Locations</h2>
-		<%= form_tag import_locations_path, multipart: true do %>
-		  <%= file_field_tag :file %>
-		  <br>
-		  <%= submit_tag "Import" %>
-		<% end %>
+		<div class="col-md-5">
+			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+	      <%= f.submit "Search", class: "btn btn-outline-secondary" %>
+	    <% end %>
+		</div>
+
+		<div class="col-md-5 col-md-offset-1">
+			<h4>Import Locations</h4>
+			<%= form_tag import_locations_path, multipart: true do %>
+			  <%= file_field_tag :file %>
+			  <br>
+			  <%= submit_tag "Import" %>
+			<% end %>
+		</div>
 	</div>
 </div>
 
@@ -15,13 +24,20 @@
 	<div class="wrap">
 		<h1><%= @page_title %> </h1>
 		<hr><br>
-		<table class="loclist">
-			<% @locations.each do |location| %>
-			  <tr class="townlisting-bx">
-					<h4><%= simple_format(location.full_address)%></h4>
-			  </tr>
-		  <% end %>
-		</table>
+		<div class="col-md-5">
+			<table class="loclist">
+				<% @locations.each do |location| %>
+				  <tr class="townlisting-bx">
+						<h4><%= simple_format(location.full_address)%></h4>
+				  </tr>
+			  <% end %>
+			</table>
+		</div>
+
+		<!-- <div class="col-md-6"> -->
+			<%= tag.div class: 'col-md-6', id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
+			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
+		<!-- </div> -->
 	</div>
 </div>
 
