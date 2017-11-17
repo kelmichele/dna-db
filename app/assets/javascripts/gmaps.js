@@ -174,11 +174,11 @@ var GMaps = (function(global) {
    * Creates a new GMaps instance, including a Google Maps map.
    * @class GMaps
    * @constructs
-   * @param {object} options - `options` accepts all the [MapOptions](https://developers.google.com/maps/documentation/javascript/reference#MapOptions) and [events](https://developers.google.com/maps/documentation/javascript/reference#Map) listed in the Google Maps API. Also accepts:
-   * * `lat` (number): Latitude of the map's center
-   * * `lng` (number): Longitude of the map's center
-   * * `el` (string or HTMLElement): container where the map will be rendered
-   * * `markerClusterer` (function): A function to create a marker cluster. You can use MarkerClusterer or MarkerClustererPlus.
+   * @param {object} options - 'options' accepts all the [MapOptions](https://developers.google.com/maps/documentation/javascript/reference#MapOptions) and [events](https://developers.google.com/maps/documentation/javascript/reference#Map) listed in the Google Maps API. Also accepts:
+   * * 'lat' (number): Latitude of the map's center
+   * * 'lng' (number): Longitude of the map's center
+   * * 'el' (string or HTMLElement): container where the map will be rendered
+   * * 'markerClusterer' (function): A function to create a marker cluster. You can use MarkerClusterer or MarkerClustererPlus.
    */
   var GMaps = function(options) {
 
@@ -438,12 +438,12 @@ var GMaps = (function(global) {
     /**
      * Add a context menu for a map or a marker.
      *
-     * @param {object} options - The `options` object should contain:
-     * * `control` (string): Kind of control the context menu will be attached. Can be "map" or "marker".
-     * * `options` (array): A collection of context menu items:
-     *   * `title` (string): Item's title shown in the context menu.
-     *   * `name` (string): Item's identifier.
-     *   * `action` (function): Function triggered after selecting the context menu item.
+     * @param {object} options - The 'options' object should contain:
+     * * 'control' (string): Kind of control the context menu will be attached. Can be "map" or "marker".
+     * * 'options' (array): A collection of context menu items:
+     *   * 'title' (string): Item's title shown in the context menu.
+     *   * 'name' (string): Item's identifier.
+     *   * 'action' (function): Function triggered after selecting the context menu item.
      */
     this.setContextMenu = function(options) {
       window.context_menu[self.el.id][options.control] = {};
@@ -539,7 +539,7 @@ var GMaps = (function(global) {
     });
 
     /**
-     * Trigger a `resize` event, useful if you need to repaint the current map (for changes in the viewport or display / hide actions).
+     * Trigger a 'resize' event, useful if you need to repaint the current map (for changes in the viewport or display / hide actions).
      */
     this.refresh = function() {
       google.maps.event.trigger(this.map, 'resize');
@@ -563,9 +563,9 @@ var GMaps = (function(global) {
     };
 
     /**
-     * Adjust the map zoom to include all the coordinates in the `latLngs` array.
+     * Adjust the map zoom to include all the coordinates in the 'latLngs' array.
      *
-     * @param {array} latLngs - Collection of `google.maps.LatLng` objects.
+     * @param {array} latLngs - Collection of 'google.maps.LatLng' objects.
      */
     this.fitLatLngBounds = function(latLngs) {
       var total = latLngs.length,
@@ -580,7 +580,7 @@ var GMaps = (function(global) {
     };
 
     /**
-     * Center the map using the `lat` and `lng` coordinates.
+     * Center the map using the 'lat' and 'lng' coordinates.
      *
      * @param {number} lat - Latitude of the coordinate.
      * @param {number} lng - Longitude of the coordinate.
@@ -704,14 +704,14 @@ GMaps.prototype.createControl = function(options) {
 /**
  * Add a custom control to the map UI.
  *
- * @param {object} options - The `options` object should contain:
- * * `style` (object): The keys and values of this object should be valid CSS properties and values.
- * * `id` (string): The HTML id for the custom control.
- * * `classes` (string): A string containing all the HTML classes for the custom control.
- * * `content` (string or HTML element): The content of the custom control.
- * * `position` (string): Any valid [`google.maps.ControlPosition`](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning) value, in lower or upper case.
- * * `events` (object): The keys of this object should be valid DOM events. The values should be functions.
- * * `disableDefaultStyles` (boolean): If false, removes the default styles for the controls like font (family and size), and box shadow.
+ * @param {object} options - The 'options' object should contain:
+ * * 'style' (object): The keys and values of this object should be valid CSS properties and values.
+ * * 'id' (string): The HTML id for the custom control.
+ * * 'classes' (string): A string containing all the HTML classes for the custom control.
+ * * 'content' (string or HTML element): The content of the custom control.
+ * * 'position' (string): Any valid ['google.maps.ControlPosition'](https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning) value, in lower or upper case.
+ * * 'events' (object): The keys of this object should be valid DOM events. The values should be functions.
+ * * 'disableDefaultStyles' (boolean): If false, removes the default styles for the controls like font (family and size), and box shadow.
  * @returns {HTMLElement}
  */
 GMaps.prototype.addControl = function(options) {
@@ -724,9 +724,9 @@ GMaps.prototype.addControl = function(options) {
 };
 
 /**
- * Remove a control from the map. `control` should be a control returned by `addControl()`.
+ * Remove a control from the map. 'control' should be a control returned by 'addControl()'.
  *
- * @param {HTMLElement} control - One of the controls returned by `addControl()`.
+ * @param {HTMLElement} control - One of the controls returned by 'addControl()'.
  * @returns {HTMLElement} the removed control.
  */
 GMaps.prototype.removeControl = function(control) {
