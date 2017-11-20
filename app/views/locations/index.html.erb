@@ -2,6 +2,9 @@
 
 <div class="full">
 	<div class="wrap">
+		<h1><%= @page_title %> </h1>
+		<hr><br>
+
 		<div class="col-md-5">
 			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
@@ -10,10 +13,10 @@
 		</div>
 
 		<div class="col-md-5 col-md-offset-1">
-			<h4>Import Locations</h4>
+			<h4 class="bmargin5">Import Locations</h4>
 			<%= form_tag import_locations_path, multipart: true do %>
-			  <%= file_field_tag :file %>
-			  <br>
+			  <%= file_field_tag :file, class: 'bmargin5' %>
+			  <div class="clearfix"></div>
 			  <%= submit_tag "Import" %>
 			<% end %>
 		</div>
@@ -22,8 +25,7 @@
 
 <div class="full">
 	<div class="wrap">
-		<h1><%= @page_title %> </h1>
-		<hr><br>
+
 		<div class="col-md-5">
 			<table class="loclist">
 				<% @locations.each do |location| %>
@@ -34,10 +36,11 @@
 			</table>
 		</div>
 
-		<!-- <div class="col-md-6"> -->
-			<%= tag.div class: 'col-md-6', id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
+		<%= tag.div class: 'col-md-6' do %>
+			<%= tag.div id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
+			<div class="clearfix"></div><br>
 			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
-		<!-- </div> -->
+		<% end %>
 	</div>
 </div>
 

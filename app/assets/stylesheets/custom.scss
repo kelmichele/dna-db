@@ -13,7 +13,7 @@
 .uk-accordion-title {margin-bottom:0;}
 .uk-accordion>:nth-child(n+2) {margin-top: 0;}
 
-#map {height:400px;}
+#map {height:350px;}
 // new GMaps({
 //   div: '#map',
 //   lat: -12.043333,
@@ -22,6 +22,7 @@
 
 .tmargin0 { margin-top: 0; }
 .bmargin0 { margin-bottom: 0; }
+.bmargin5 { margin-bottom: 5px; }
 .pleft0 { padding-left: 0px; }
 .pright0 { padding-right: 0px; }
 .bpadding0 { padding-bottom: 0; }
@@ -61,6 +62,7 @@ a:hover {text-decoration: none;}
   @include bp(tb) { right: 30px;visibility:visible; }
   @include bp(sm) { right: 15px; }
 }
+.ft-block.menu li {margin-bottom: 10px;}
 
 .full {@include sec-default(); padding: $sec-pad;}
 .wrap {width: 90%; @include center-block();}
