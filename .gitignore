@@ -19,5 +19,6 @@
 /config/database.yml
 /config/secrets.yml
 /config/secret_token.rb
+/config/initializers/geocoder.rb
 
 .byebug_history
