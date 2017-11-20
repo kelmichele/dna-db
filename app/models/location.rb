@@ -11,6 +11,7 @@ class Location < ApplicationRecord
   default_scope -> { order(city: :asc)}
   default_scope -> { order(zip: :asc)}
 
+
   def address
     [street, city, state, zip].compact.join(" , ")
   end
@@ -22,6 +23,11 @@ class Location < ApplicationRecord
   def address_changed?
     street_changed? || city_changed? || state_changed? || zip_changed?
   end
+
+  # searchkick locations: [:position]
+  # def search_data
+  #   attributes.merge position: { lat: latitude, lon: longitude }
+  # end
 
  	def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)

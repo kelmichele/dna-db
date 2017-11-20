@@ -37,7 +37,7 @@
 		</div>
 
 		<%= tag.div class: 'col-md-6' do %>
-			<%= tag.div id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
+			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
 			<div class="clearfix"></div><br>
 			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
 		<% end %>

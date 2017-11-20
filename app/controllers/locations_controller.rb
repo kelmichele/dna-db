@@ -2,8 +2,6 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:edit, :show, :update, :destroy]
 
 	def index
-		@locations = Location.all
-
 		@locations = if params[:l]
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
 	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
