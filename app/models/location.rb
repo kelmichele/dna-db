@@ -35,9 +35,3 @@ class Location < ApplicationRecord
   end
 
 end
-
-
-# AIzaSy
-# DceGPnKXPQ5KU
-# l9F7OcLrhjY3LPoJCx
-# dA
