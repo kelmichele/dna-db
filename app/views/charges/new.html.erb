@@ -1,25 +1,34 @@
 <% @page_title = "Checkout" %>
 
-<div class="full">
-  <div class="wrap">
+<%= tag.div class: 'full text-center' do%>
+  <%= tag.div class: 'wrap' do%>
+    <%= tag.h1 'At-Home DNA Paternity Testing' %>
+    <%= tag.div class: 'col-md-10 col-md-offset-1' do %>
+      <p>The At-Home Paternity DNA Test Kit provides accurate testing for paternity in the comfort and privacy of your home. The testing kit determines the probability that a male is the biological father of a child with 99.9% accuracy. Everything needed for Paternity Test Results is included in the ﻿Get DNA Tested Today Home Test Kit. One low price includes: testing kit, shipping, and results. Learn the true biological relationship with complete accuracy.</p>
 
-    <%= form_tag charges_path do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
-          </div>
-        <% end %>
-        <label class="amount">
-          <span>Amount: $5.00</span>
-        </label>
-      </article>
+      <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+          <label class="amount">
+            <p>Cost: $179.00 for 1 Child and 1 Potential Father</p>
+            <p>$100 for each additional Participant</p>
+          </label>
+        </article>
 
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="At Home DNA Test"
+            data-amount="17900"
+            data-zip-code="true"
+            data-alt-name="If this service is for someone other than yourself, please provide your name"
+            data-billing-address="true"
+            data-shipping-address="true"
+            data-locale="auto"></script>
+      <% end %>
     <% end %>
-  </div>
-</div>
+  <% end %>
+<% end %>

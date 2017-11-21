@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 	get 'options', to: 'static_pages#options'
 	get '/our-process', to: 'static_pages#our_process', as: 'our_process'
 	get 'testing', to: 'static_pages#testing'
+	get 'thanks', to: 'static_pages#thanks'
 
-	resources :charges
+	resources :charges, only: [:new, :create]
 	resources :states
 	resources :towns do
 		collection do
