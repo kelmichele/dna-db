@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require_tree ../../../vendor/assets/javascripts
 //= require rails-ujs
 //= require jquery
 //= require turbolinks
+//= require_tree ../../../vendor/assets/javascripts
 //= require_tree .
