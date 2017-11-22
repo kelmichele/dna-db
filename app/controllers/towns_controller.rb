@@ -1,5 +1,6 @@
 class TownsController < ApplicationController
 	before_action :set_town, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
 	def index
@@ -59,4 +60,11 @@ class TownsController < ApplicationController
 		def town_params
       params.require(:town).permit(:townname, :state_id)
     end
+
+    def require_admin
+	    if !current_user.admin?
+		    flash[:danger] = "Only admin users can perform that action"
+		    redirect_back fallback_location: root_path
+		  end
+	  end
 end

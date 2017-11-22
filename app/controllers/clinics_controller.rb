@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
 	before_action :set_clinic, only: [ :edit, :update, :show, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
 	def index
@@ -57,4 +58,11 @@ class ClinicsController < ApplicationController
 		def clinic_params
       params.require(:clinic).permit(:address, :zipcode, :town_id)
     end
+
+    def require_admin
+	    if !current_user.admin?
+		    flash[:danger] = "Only admin users can perform that action"
+		    redirect_back fallback_location: root_path
+		  end
+	  end
 end
