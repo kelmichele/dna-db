@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
 	before_action :set_clinic, only: [ :edit, :update, :show, :destroy]
+  before_action :require_admin, except: [:index, :show]
 
 	def index
 		@clinics = Clinic.all

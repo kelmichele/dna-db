@@ -16,8 +16,8 @@
 	}
 
 	.full {background-color: $blue; padding: 15px 0 5px;}
-	.mainu{@include sec-grid(left, 70%);}
-	.add-menu{@include sec-grid(right, 15%);}
+	.mainu{@include sec-grid(left, 75%);}
+	.add-menu{@include sec-grid(right, 15%); padding-top:4px;}
 	.nav-link, .add-link{font-size: 16px; color: white; text-transform: uppercase; letter-spacing: 1px}
 	.nav-li {display: inline-block; float: left; margin: 0px 15px;
 		&:first-child {margin-left:0;}

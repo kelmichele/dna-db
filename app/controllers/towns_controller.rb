@@ -1,5 +1,6 @@
 class TownsController < ApplicationController
 	before_action :set_town, only: [:edit, :update, :destroy]
+  before_action :require_admin, except: [:index, :show]
 
 	def index
 		@towns = Town.all

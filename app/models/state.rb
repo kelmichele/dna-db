@@ -7,6 +7,7 @@ class State < ApplicationRecord
 	has_many :towns, dependent: :destroy
 	has_many :clinics, through: :towns
 
+
   default_scope -> { order(name: :asc)}
 # State.find_each(&:save)
 end

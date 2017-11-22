@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
-	before_action :set_location, only: [:edit, :show, :update, :destroy]
+	before_action :set_location, only: [:edit, :show, :update, :destroy, :show_state]
+  before_action :require_admin, except: [:index, :show]
 
 	def index
 		@locations = if params[:l]
@@ -21,9 +22,6 @@ class LocationsController < ApplicationController
 	end
 
 	def show
-		# @location = Location.friendly.find(params[:id])
-		# @state = @location.state
-		# @location_clinics = @location.clinics.all
 	end
 
 	def new
@@ -58,11 +56,6 @@ class LocationsController < ApplicationController
 		Location.find(params[:id]).destroy
   	flash[:success] = "Location was successfully deleted!"
     redirect_to locations_path
-	end
-
-	def all_states
-		@states = @location.states.all
-
 	end
 
 	private
