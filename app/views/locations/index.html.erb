@@ -1,8 +1,8 @@
 <% @page_title = "Locations Full" %>
 
-<div class="full">
-	<div class="wrap">
-		<h1><%= @page_title %> </h1>
+<%= tag.div class: 'full' do %>
+	<%= tag.div class: 'wrap' do %>
+		<%= tag.h1 @page_title %>
 		<hr><br>
 
 		<%= tag.div class: 'col-md-5' do %>
@@ -13,34 +13,39 @@
 		<% end %>
 
 		<%= tag.div class: 'col-md-5 col-md-offset-1' do %>
-			<h4 class="bmargin5">Import Locations</h4>
-			<%= form_tag import_locations_path, multipart: true do %>
-			  <%= file_field_tag :file, class: 'bmargin5' %>
-			  <div class="clearfix"></div>
-			  <%= submit_tag "Import" %>
+			<% if user_signed_in? && current_user.admin? %>
+				<%= link_to("Add New Location", new_location_path, :class => 'action new btn-add inline') %>
+
+				<%= tag.h4 "Import Locations", class: 'tmargin0 bmargin5' %>
+				<%= form_tag import_locations_path, multipart: true do %>
+				  <%= file_field_tag :file, class: 'bmargin5' %>
+				  <%= tag.div class: 'clearfix' %>
+				  <%= submit_tag "Import" %>
+				<% end %>
 			<% end %>
 		<% end %>
-	</div>
-</div>
+	<% end %>
+<% end %>
 
 
-<div class="full">
-	<div class="wrap">
+<%= tag.div class: 'full' do %>
+	<%= tag.div class: 'wrap' do %>
 
 		<%= tag.div class: 'col-md-5' do %>
-			<table class="loclist">
+			<%= tag.table class:'loclist' do %>
 				<% @locations.each do |location| %>
-				  <tr class="townlisting-bx">
-						<h4><%= simple_format(location.full_address)%></h4>
-				  </tr>
+				  <%= tag.tr class:'townlisting-bx' do %>
+						<%= tag.h4 simple_format(location.full_address) %>
+				  <% end %>
 			  <% end %>
-			</table>
+			<% end %>
 		<% end %>
 
 		<%= tag.div class: 'col-md-6' do %>
 			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
-			<div class="clearfix"></div><br>
+		  <%= tag.div class: 'clearfix' %><br>
 			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
 		<% end %>
-	</div>
-</div>
+
+	<% end %>
+<% end %>

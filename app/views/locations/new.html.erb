@@ -1,8 +1,8 @@
 <% @page_title = "Create a New Location" %>
 
-<div class="full">
-	<div class="wrap">
-		<h1><%= @page_title %></h1>
+<%= tag.div class: 'full' do %>
+	<%= tag.div class: 'wrap' do %>
+		<%= tag.h1 @page_title %>
 		<%= render 'form' %>
-	</div>
-</div>
+	<% end %>
+<% end %>

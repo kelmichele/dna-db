@@ -67,7 +67,7 @@ class LocationsController < ApplicationController
 		def require_admin
 	    if !current_user.admin?
 		    flash[:danger] = "Only admin users can perform that action"
-		    redirect_back fallback_location: root_path
+		    redirect_to locations_path
 		  end
 	  end
 

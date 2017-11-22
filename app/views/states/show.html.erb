@@ -5,8 +5,8 @@
 	  <h1>Get DNA Tested Today in <span><%= @state.name %></span></h1>
 	  <hr class="title-line">
 		<div class="clearfix"></div>
-		<%= link_to("Add New City", new_town_path, :class => 'action new btn-add inline') %>
-		<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
+
+		<%= render 'shared/add_btns' %>
 		<%= render 'shared/dna-text' %>
 	</div>
 
