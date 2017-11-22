@@ -43,21 +43,3 @@
 		<% end %>
 	</div>
 </div>
-
-
-<!--
-ROO (save until reversed)
-##routes.rb
-resources :towns do
-  collection do
-    post :import
-  end
-end
-
-##towns_controller
-def import
-  Product.import(params[:file])
-
-  redirect_to root_url, notice: 'Products imported.'
-end
--->
