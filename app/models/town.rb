@@ -7,6 +7,8 @@ class Town < ApplicationRecord
 	validates :state_id, presence: true
   has_many :clinics
 
+  # has_many :locations, dependent: :destroy
+
   default_scope -> { order(townname: :asc)}
 
  	def self.import(file)

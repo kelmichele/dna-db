@@ -1,5 +1,5 @@
 class TownsController < ApplicationController
-	before_action :set_town, only: [:edit, :update, :destroy]
+	before_action :set_town, only: [:edit, :update, :destroy, :show]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
@@ -13,7 +13,7 @@ class TownsController < ApplicationController
 	end
 
 	def show
-		@town = Town.friendly.find(params[:id])
+		# @town = Town.friendly.find(params[:id])
 		@state = @town.state
 		@town_clinics = @town.clinics.all
 	end
@@ -54,7 +54,7 @@ class TownsController < ApplicationController
 
 	private
 		def set_town
-			@town = Town.find(params[:id])
+			@town = Town.friendly.find(params[:id])
 		end
 
 		def town_params

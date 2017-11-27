@@ -11,6 +11,7 @@ class Location < ApplicationRecord
   default_scope -> { order(city: :asc)}
   default_scope -> { order(zip: :asc)}
 
+  # belongs_to :town
 
   def address
     [street, city, state, zip].compact.join(" , ")

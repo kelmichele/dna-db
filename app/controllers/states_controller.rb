@@ -1,5 +1,5 @@
 class StatesController < ApplicationController
-	before_action :set_state, only: [ :edit, :update, :destroy]
+	before_action :set_state, only: [ :edit, :update, :destroy, :show]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
@@ -9,7 +9,6 @@ class StatesController < ApplicationController
 
 	def show
 		# @state = State.friendly.find(params[:id])
-		@state = State.friendly.find(params[:id])
 		@state_towns = @state.towns.all
 
 	end
@@ -48,7 +47,8 @@ class StatesController < ApplicationController
 
 	private
 		def set_state
-			@state = State.find(params[:id])
+			@state = State.friendly.find(params[:id])
+			# @state = State.find(params[:id])
 		end
 
 		def state_params
