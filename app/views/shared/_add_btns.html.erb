@@ -1,4 +1,4 @@
 <% if user_signed_in? && current_user.admin? %>
-	<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
+	<%= link_to("Add New Location", new_location_path, :class => 'action new btn-add inline') %>
 	<%= link_to("Add New City", new_town_path, :class => 'action new btn-add inline') %>
 <% end %>

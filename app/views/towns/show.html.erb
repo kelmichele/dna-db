@@ -5,25 +5,55 @@
 	  <h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
 	  <hr class="title-line">
 		<div class="clearfix"></div>
-		<%= link_to "Delete This City", town_path(@town), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
-		<%= link_to("Add New Location", new_clinic_path, :class => 'action new btn-add inline') %>
 		<%= render 'shared/dna-text' %>
-	</div>
-	<div class="clearfix"></div>
+		<br><hr><br>
 
-	<div class="wrap clinics">
-		<% if @town_clinics.count != 0 %>
-			<table class="clinics">
-				<% @town_clinics.each do |clinic| %>
-					<div class="clinic-bx">
-			    	<h4><%= clinic.address %><br>
-				    <%= @town.townname %>, <%= @state.abv %> <%= clinic.zipcode %></h4>
-						<div class="actions"><small><%= link_to("Edit Location", edit_clinic_path(clinic)) %></small></div>
-					</div>
-	  		<% end %>
-			</table>
-			<% else %>
+		<%= tag.div class: 'col-md-5 ' do %>
+			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+	      <%= f.submit "Search", class: "btn btn-outline-secondary" %>
+	    <% end %>
+		<% end %>
+
+		<%= tag.div class: 'col-md-6' do %>
+			<% if user_signed_in? && current_user.admin? %>
+				<%= link_to "Delete This City", town_path(@town), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
+				<%= link_to("Add New Location", new_location_path, :class => 'action new btn-add inline') %>
+
+				<%= tag.h4 "Import Locations", class: 'tmargin0 bmargin5' %>
+				<%= form_tag import_locations_path, multipart: true do %>
+				  <%= file_field_tag :file, class: 'bmargin5' %>
+				  <%= tag.div class: 'clearfix' %>
+				  <%= submit_tag "Import" %>
+				<% end %>
+			<% end %>
+		<% end %>
+
+	<div class="clearfix"></div>
+		<br><hr><br>
+
+	</div>
+
+	<div class="wrap location-map">
+		<%= tag.div class: 'col-md-7' do %>
+			<% if @town_locations.count != 0 %>
+				<table class="locations">
+					<% @town_locations.each do |location| %>
+						<div class="townlisting-bx">
+							<h4><%= simple_format(location.full_address)%></h4>
+							<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+						</div>
+		  		<% end %>
+				</table>
+				<% else %>
 				<p>This is where each location's address will be listed...</p>
+			<% end %>
+		<% end %>
+
+		<%= tag.div class: 'col-md-5' do %>
+			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
+		  <%= tag.div class: 'clearfix' %><br>
+			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
 		<% end %>
 	</div>
 
