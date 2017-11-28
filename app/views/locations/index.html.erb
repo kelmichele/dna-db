@@ -29,19 +29,20 @@
 
 <%= tag.div class: 'full' do %>
 	<%= tag.div class: 'wrap location-map' do %>
-		<%= tag.div class: 'col-md-5' do %>
+		<%= tag.div class: 'col-md-7' do %>
 			<%= tag.table class:'loclist' do %>
 
 				<% @locations.each do |location| %>
 				  <%= tag.tr class:'townlisting-bx' do %>
 							<%= simple_format(location.full_address)%>
 			  			<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+
 				  <% end %>
 			  <% end %>
 			<% end %>
 		<% end %>
 
-		<%= tag.div class: 'col-md-6' do %>
+		<%= tag.div class: 'col-md-5' do %>
 			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
 		  <%= tag.div class: 'clearfix' %><br>
 			<%= link_to "Redo search in this area", "#", id: "redo-search" %>

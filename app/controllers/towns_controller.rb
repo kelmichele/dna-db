@@ -16,6 +16,7 @@ class TownsController < ApplicationController
 		# @town = Town.friendly.find(params[:id])
 		@state = @town.state
 		@town_clinics = @town.clinics.all
+		@town_locations = @town.locations.all
 	end
 
 	def new

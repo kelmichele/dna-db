@@ -17,8 +17,7 @@
 				<table class="listing">
 					<% @state_towns.each do |town| %>
 						<tr>
-						  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
-						  <!-- (<%= town.id %>)  -->
+						  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %> - (<%= town.id %>)&nbsp;</h4></td>
 					    <td><p><small>(<%= town.clinics.count %>)</small></p></td>
 							<!-- <td class="actions">
 					      <small><%= link_to("Edit", edit_town_path(town)) %></small>

@@ -3,27 +3,29 @@ class Location < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   validates :street, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
   validates :zip, presence: true
-  validates_uniqueness_of :full_address
+  # validates_uniqueness_of :full_address
 
+  belongs_to :town
+  validates :town_id, presence: true
+  has_one :state, through: :town
 
-  # default_scope -> { order(state: :asc)}
-  # default_scope -> { order(city: :asc)}
-  # default_scope -> { order(zip: :asc)}
+  default_scope -> { order(street: :asc)}
 
   def address
-    [street, city, state, zip].compact.join(" , ")
+    [street, city_state, zip].compact.join(" , ")
+  end
+
+  def city_state
+    "#{town.townname}, #{state.abv}"
   end
 
   def full_address
-    "#{street}" + "\n" + "#{city}, #{state} #{zip}"
-    # + "\n" + "(#{latitude}, #{longitude})"
+    "#{street}" + "\n" + "#{town.townname}, #{state.abv} #{zip}" + "\n" + "(#{latitude}, #{longitude})"
   end
 
   def address_changed?
-    street_changed? || city_changed? || state_changed? || zip_changed?
+    street_changed? || town_id_changed? || zip_changed?
   end
 
  	def self.import(file)
