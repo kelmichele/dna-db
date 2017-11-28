@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
 	    Location.near(params[:near])
 	  else
 	    Location.all
-	  end
+		end
 	end
 
 	def import
@@ -71,6 +71,6 @@ class LocationsController < ApplicationController
 	  end
 
 		def location_params
-      params.require(:location).permit(:street, :city, :state, :zip )
+      params.require(:location).permit(:street, :city, :state, :zip, :latitude, :longitude )
     end
 end

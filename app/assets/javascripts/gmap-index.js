@@ -16,7 +16,6 @@ document.addEventListener("turbolinks:load", function() {
         lng: location.longitude,
         title: location.address,
         infoWindow: {
-          // content: `<p><a href='/locations/${location.id}'>${location.address}</a></p>`
           content: '<p><a href="/locations/' + location.id + '" >' + location.address + '</a></p>'
         }
       });
@@ -40,9 +39,6 @@ document.addEventListener("turbolinks:load", function() {
     var bounds = map.getBounds();
     var position = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
 
-    // Turbolinks.visit(`/locations?l=${position}`);
     Turbolinks.visit('/locations?l=' + position);
   });
 });
-
-// '<li><a id="' + control + '_' + i + '" href="#">' + option.title + '</a></li>';

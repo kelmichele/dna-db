@@ -27,17 +27,15 @@
 	<% end %>
 <% end %>
 
-
 <%= tag.div class: 'full' do %>
-	<%= tag.div class: 'wrap' do %>
-
+	<%= tag.div class: 'wrap location-map' do %>
 		<%= tag.div class: 'col-md-5' do %>
 			<%= tag.table class:'loclist' do %>
+
 				<% @locations.each do |location| %>
 				  <%= tag.tr class:'townlisting-bx' do %>
-							<h4><%= simple_format(location.full_address)%></h4>
+							<%= simple_format(location.full_address)%>
 			  			<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
-			  			<br><br>
 				  <% end %>
 			  <% end %>
 			<% end %>

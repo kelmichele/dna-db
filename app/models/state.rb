@@ -8,5 +8,5 @@ class State < ApplicationRecord
 	has_many :clinics, through: :towns
 
   default_scope -> { order(name: :asc)}
-# State.find_each(&:save)
+	# State.find_each(&:save)
 end

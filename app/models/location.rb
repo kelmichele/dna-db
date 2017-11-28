@@ -2,10 +2,11 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  validates :street, presence: true, uniqueness: { scope: :city }
+  validates :street, presence: true
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
+  validates_uniqueness_of :full_address
 
 
   # default_scope -> { order(state: :asc)}
@@ -17,17 +18,13 @@ class Location < ApplicationRecord
   end
 
   def full_address
-    "#{street}" + "\n" + "#{city}, #{state} #{zip}" + "\n" + "(#{latitude}, #{longitude})"
+    "#{street}" + "\n" + "#{city}, #{state} #{zip}"
+    # + "\n" + "(#{latitude}, #{longitude})"
   end
 
   def address_changed?
     street_changed? || city_changed? || state_changed? || zip_changed?
   end
-
-  # searchkick locations: [:position]
-  # def search_data
-  #   attributes.merge position: { lat: latitude, lon: longitude }
-  # end
 
  	def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)

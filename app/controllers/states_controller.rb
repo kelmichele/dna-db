@@ -10,7 +10,6 @@ class StatesController < ApplicationController
 	def show
 		# @state = State.friendly.find(params[:id])
 		@state_towns = @state.towns.all
-
 	end
 
 	def new
@@ -62,10 +61,6 @@ class StatesController < ApplicationController
 		  end
 	  end
 end
-
-# @town.state = State.first
-# For address inputs: <%= simple_format(@recipe.description)%>
-
 
 
 
