@@ -6,7 +6,6 @@ class Clinic < ApplicationRecord
   validates :town_id, presence: true
   has_one :state, through: :town
 
-
   def full_address
     "#{address}" + "\n" + "#{town.townname}, #{state.abv} #{zipcode}"
   end

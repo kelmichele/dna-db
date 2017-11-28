@@ -35,7 +35,9 @@
 			<%= tag.table class:'loclist' do %>
 				<% @locations.each do |location| %>
 				  <%= tag.tr class:'townlisting-bx' do %>
-						<%= tag.h4 simple_format(location.full_address) %>
+							<h4><%= simple_format(location.full_address)%></h4>
+			  			<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+			  			<br><br>
 				  <% end %>
 			  <% end %>
 			<% end %>

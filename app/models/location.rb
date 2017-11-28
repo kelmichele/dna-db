@@ -2,16 +2,15 @@ class Location < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  validates :street, presence: true, uniqueness: { scope: :city, case_sensitive: false }
-	validates :city, presence: true
+  validates :street, presence: true, uniqueness: { scope: :city }
+  validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true
 
-  default_scope -> { order(state: :asc)}
-  default_scope -> { order(city: :asc)}
-  default_scope -> { order(zip: :asc)}
 
-  # belongs_to :town
+  # default_scope -> { order(state: :asc)}
+  # default_scope -> { order(city: :asc)}
+  # default_scope -> { order(zip: :asc)}
 
   def address
     [street, city, state, zip].compact.join(" , ")

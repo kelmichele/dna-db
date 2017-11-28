@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-	before_action :set_location, only: [:edit, :show, :update, :destroy, :show_state]
+	before_action :set_location, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
 
@@ -27,27 +27,26 @@ class LocationsController < ApplicationController
 
 	def new
     @location = Location.new
-    # @states = State.all
+    @towns = Town.all
 	end
 
 	def create
 		@location = Location.new(location_params)
 		if @location.save
 		  flash[:success] = "Location was successfully created"
-		  redirect_to location_path(@location)
+	    redirect_to locations_path
 		else
 		  render 'new'
 		end
 	end
 
 	def edit
-		# @state = @location.state
 	end
 
 	def update
 		if @location.update(location_params)
 		  flash[:success] = "Location was updated successfully"
-      redirect_to location_path(@location)
+	    redirect_to locations_path
 		else
 		  render 'edit'
 		end

@@ -2,7 +2,7 @@
 
 <div class="full">
 	<div class="wrap">
-	  <h1>Get DNA Tested Today in <span><%= @location.city %>, <%= @location.abrv %></span></h1>
+	  <h1>Get DNA Tested Today in <span><%= @location.city %>, <%= @location.state %></span></h1>
 	  <hr class="title-line">
 		<div class="clearfix"></div>
 		<%= link_to "Delete This Location", location_path(@location), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
@@ -13,13 +13,7 @@
 
 	<div class="wrap clinics">
 			<table class="clinics">
-				<% @locations.each do |location| %>
-					<div class="clinic-bx">
-			    	<h4><%= location.street %><br>
-				    <%= @location.city %>, <%= @location.abrv %> <%= location.zip %></h4>
-						<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
-					</div>
-	  		<% end %>
+
 			</table>
 	</div>
 
