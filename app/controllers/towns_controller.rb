@@ -33,7 +33,7 @@ class TownsController < ApplicationController
 	  elsif params[:near]
 	    Location.near(params[:near])
 	  else
-	    Location.all
+	    @town_locations.all
 		end
 	end
 

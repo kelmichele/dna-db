@@ -8,26 +8,14 @@
 		<%= render 'shared/dna-text' %>
 		<br><hr><br>
 
-		<%= tag.div class: 'col-md-5 ' do %>
-			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
-	      <%= f.submit "Search", class: "btn btn-outline-secondary search" %>
-	    <% end %>
+		<%= tag.div class: 'col-md-5' do %>
+			<%= render 'shared/search_btn' %>
 		<% end %>
 
 		<%= tag.div class: 'col-md-6' do %>
-			<% if user_signed_in? && current_user.admin? %>
-				<%= link_to "Delete This City", town_path(@town), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-danger" %>
-				<%= link_to("Add New Location", new_location_path, :class => 'action new btn-add inline') %>
-
-				<%= tag.h4 "Import Locations", class: 'tmargin0 bmargin5' %>
-				<%= form_tag import_locations_path, multipart: true do %>
-				  <%= file_field_tag :file, class: 'bmargin5' %>
-				  <%= tag.div class: 'clearfix' %>
-				  <%= submit_tag "Import" %>
-				<% end %>
-			<% end %>
+			<%= render 'shared/add_btns' %>
 		<% end %>
+
 		<div class="clearfix"></div>
 		<br><hr><br>
 	</div>
@@ -35,14 +23,6 @@
 	<div class="wrap location-map">
 		<%= tag.div class: 'col-md-4 col-md-offset-1' do %>
 			<% if @town_locations.count != 0 %>
-
-				<h4><small>(<%= @town.id %>)</small> Averages:</h4>
-				<p><small>Avg. Lat: <%= @town_lat %></small></p>
-				<p><small>Avg. Lng: <%= @town_lng %></small></p>
-				<p><small>Coords: <%= @town_cors %></small></p>
-
-				<hr><div class="clearfix"></div><br>
-
 				<table class="locations">
 					<% @town_locations.each do |location| %>
 						<div class="townlisting-bx">
@@ -57,18 +37,7 @@
 		<% end %>
 
 		<%= tag.div class: 'col-md-5' do %>
-			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
-		  <%= tag.div class: 'clearfix' %><br>
-
-			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
+			<%= render 'shared/map' %>
 		<% end %>
 	</div>
-
-	<div class=" wrap">
-		<%= link_to("Back to #{@state.name}", state_path(@state), :class => 'back-link') %>
-	</div>
-
 </div>
-<!-- function jsRoar(name) {
-  alert('I am ' + name + '. Hear me roar!');
-} -->

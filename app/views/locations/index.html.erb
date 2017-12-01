@@ -1,51 +1,29 @@
-<% @page_title = "Locations Full" %>
+<% @page_title = "Our Locations" %>
 
 <%= tag.div class: 'full' do %>
 	<%= tag.div class: 'wrap' do %>
 		<%= tag.h1 @page_title %>
-		<hr><br>
+		<hr class="title-line">
+		<div class="clearfix"></div>
+		<%= render 'shared/dna-text' %>
+		<br><hr><br>
 
 		<%= tag.div class: 'col-md-5' do %>
-			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
-	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
-	      <%= f.submit "Search", class: "btn btn-outline-secondary" %>
-	    <% end %>
+			<%= render 'shared/search_btn' %>
 		<% end %>
 
 		<%= tag.div class: 'col-md-5 col-md-offset-1' do %>
-			<% if user_signed_in? && current_user.admin? %>
-				<%= link_to("Add New Location", new_location_path, :class => 'action new btn-add inline') %>
-
-				<%= tag.h4 "Import Locations", class: 'tmargin0 bmargin5' %>
-				<%= form_tag import_locations_path, multipart: true do %>
-				  <%= file_field_tag :file, class: 'bmargin5' %>
-				  <%= tag.div class: 'clearfix' %>
-				  <%= submit_tag "Import" %>
-				<% end %>
-			<% end %>
+			<%= render 'shared/add_btns' %>
 		<% end %>
+
+		<div class="clearfix"></div>
+		<br><hr><br>
 	<% end %>
 <% end %>
 
 <%= tag.div class: 'full' do %>
 	<%= tag.div class: 'wrap location-map' do %>
-		<%= tag.div class: 'col-md-7' do %>
-
-
-
-			<!-- <ul uk-accordion="multiple: true">
-				<% for state in @all_states %>
-				<li>
-		      <div class="uk-accordion-title"><%= state.name %></div>
-		      <div class="uk-accordion-content">
-						<% for town in @state_towns %>
-							<p><%= town.townname %></p>
-						<% end %>
-		      </div>
-		    </li>
-				<% end %>
-			</ul>
- -->
+		<%= tag.div class: 'col-md-4 col-md-offset-1' do %>
 
 			<%= tag.table class:'loclist' do %>
 				<% @locations.each do |location| %>
