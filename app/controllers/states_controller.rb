@@ -13,9 +13,7 @@ class StatesController < ApplicationController
 	def show
 		@state_towns = @state.towns.all
 		@state_locations = @state.locations.all
-		# @starter = @state_towns.first
 		@starter = @state_locations.first
-		@coords = @starter.latitude, @starter.longitude
 
 		@locations = if params[:l]
 	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
@@ -29,8 +27,6 @@ class StatesController < ApplicationController
 	    @state_locations
 	    # .paginate(page: params[:page], per_page: 5)
 		end
-		# .paginate(page: params[:page], per_page: 5)
-
 	end
 
 	def new
