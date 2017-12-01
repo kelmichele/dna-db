@@ -14,11 +14,6 @@
 .uk-accordion>:nth-child(n+2) {margin-top: 0;}
 
 #map {height:350px;}
-// new GMaps({
-//   div: '#map',
-//   lat: -12.043333,
-//   lng: -77.028333
-// });
 
 .tmargin0 { margin-top: 0; }
 .bmargin0 { margin-bottom: 0; }
@@ -27,6 +22,7 @@
 .pright0 { padding-right: 0px; }
 .bpadding0 { padding-bottom: 0; }
 .ptop0 { padding-top: 0px; }
+.f-right {float: right;}
 
 p, h5, h4, h3, h2, h1, a, li {font-family: $open; line-height: 1.4em; color: $dark;
   &.wide {letter-spacing: 1.5px;}
@@ -114,6 +110,14 @@ a:hover {text-decoration: none;}
   td.actions{float: right; margin-left: 20px; margin-top: 3px;}
 }
 
+.states{
+  .state-list {width:25%; float: left; display: inline-block; }
+  .tfw {@include sec-default(); padding-bottom:12px;}
+  td.print {padding-left: 30px;}
+  h4.state-name {margin-bottom: 5px;}
+  p.info{font-size: 13px; margin: 0;}
+}
+
 .towns .wrap.clinics{@include sec-default(); padding:50px 0; text-align: center;}
 .clinic-bx {display: inline-block; width:30%;
   h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize;}
@@ -128,3 +132,17 @@ a:hover {text-decoration: none;}
   p{margin-bottom: 5px;}
   .actions { margin-bottom: 25px; a{font-weight: bold; color: blue;}}
 }
+
+.btn.btn-outline-secondary.search {background-color: $blue; color: white;}
+
+
+.locations.new, .locations.update{
+  .state-form, .location-import {display: inline-block; width: 40%;}
+  .state-form {margin-left: 10%;}
+  .location-import {float: right;}
+  .forminfo {margin-bottom: 20px;}
+}
+
+
+
+

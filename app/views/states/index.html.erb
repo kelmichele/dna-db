@@ -5,26 +5,41 @@
 	<div class="wrap">
 		<div class="col-md-12">
 			<h1><%= @page_title %></h1>
-		<%= render 'shared/add_btns' %>
-
+			<%= render 'shared/add_btns' %>
 		</div>
 
-		<table class="listing">
-			<% @states.each do |state| %>
-		  <tr>
-		    <td><p><%= state.id %>. </p></td>
-		    <td>&nbsp;</td>
-		    <td><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td>
-		    <td><p><%= state.abv %>  <small>(<%= state.towns.count %>)</small></p></td>
-		    <td class="actions">
-		      <small><%= link_to("Edit", edit_state_path(state)) %></small>
-		    </td>
-		  </tr>
-		  <% end %>
-		</table>
+			<table class="listing state-list">
+				<% for state in @cols_one %>
+					<tr class="tfw">
+					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					</tr>
+			  <% end %>
+			</table>
+
+			<table class="listing state-list">
+				<% for state in @cols_two %>
+					<tr class="tfw">
+					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					</tr>
+			  <% end %>
+			</table>
+
+			<table class="listing state-list">
+				<% for state in @cols_three %>
+					<tr class="tfw">
+					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					</tr>
+			  <% end %>
+			</table>
+
 	</div>
 </div>
 
 
 
 <!-- state26 = State.create(name: "Nebraska", abv: "NE") -->
+<!-- .each do |state|  -->
+<!-- for state in @cols_one  -->

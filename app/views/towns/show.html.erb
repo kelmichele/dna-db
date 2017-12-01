@@ -11,7 +11,7 @@
 		<%= tag.div class: 'col-md-5 ' do %>
 			<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
 	      <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
-	      <%= f.submit "Search", class: "btn btn-outline-secondary" %>
+	      <%= f.submit "Search", class: "btn btn-outline-secondary search" %>
 	    <% end %>
 		<% end %>
 
@@ -28,15 +28,21 @@
 				<% end %>
 			<% end %>
 		<% end %>
-
-	<div class="clearfix"></div>
+		<div class="clearfix"></div>
 		<br><hr><br>
-
 	</div>
 
 	<div class="wrap location-map">
-		<%= tag.div class: 'col-md-7' do %>
+		<%= tag.div class: 'col-md-4 col-md-offset-1' do %>
 			<% if @town_locations.count != 0 %>
+
+				<h4><small>(<%= @town.id %>)</small> Averages:</h4>
+				<p><small>Avg. Lat: <%= @town_lat %></small></p>
+				<p><small>Avg. Lng: <%= @town_lng %></small></p>
+				<p><small>Coords: <%= @town_cors %></small></p>
+
+				<hr><div class="clearfix"></div><br>
+
 				<table class="locations">
 					<% @town_locations.each do |location| %>
 						<div class="townlisting-bx">
@@ -53,6 +59,7 @@
 		<%= tag.div class: 'col-md-5' do %>
 			<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:l] } %>
 		  <%= tag.div class: 'clearfix' %><br>
+
 			<%= link_to "Redo search in this area", "#", id: "redo-search" %>
 		<% end %>
 	</div>
@@ -62,3 +69,6 @@
 	</div>
 
 </div>
+<!-- function jsRoar(name) {
+  alert('I am ' + name + '. Hear me roar!');
+} -->

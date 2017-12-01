@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 		end
 	end
 
-	resources :locations do
+	resources :locations, except: [:show] do
 		collection do
 			post :import
 		end

@@ -5,11 +5,32 @@ class StatesController < ApplicationController
 
 	def index
 		@states = State.all
+		@cols_one = @states.to_a[0..16]
+		@cols_two = @states.to_a[17..33]
+		@cols_three = @states.to_a[34..51]
 	end
 
 	def show
-		# @state = State.friendly.find(params[:id])
 		@state_towns = @state.towns.all
+		@state_locations = @state.locations.all
+		# @starter = @state_towns.first
+		@starter = @state_locations.first
+		@coords = @starter.latitude, @starter.longitude
+
+		@locations = if params[:l]
+	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
+	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
+	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
+	    box      = Geocoder::Calculations.bounding_box(center, distance)
+	    Location.within_bounding_box(box)
+	  elsif params[:near]
+	    Location.near(params[:near])
+	  else
+	    @state_locations
+	    # .paginate(page: params[:page], per_page: 5)
+		end
+		# .paginate(page: params[:page], per_page: 5)
+
 	end
 
 	def new

@@ -2,18 +2,18 @@
 <div class="state-form">
   <%= form_for(@location, :html => {class: "form-horizontal", role: "form" }) do |f| %>
     <div class="form-group">
-      <div class="col-md-3">
+      <div class="forminfo">
         <%= f.label :street %><br>
         <%= f.text_field :street, class: "form-control", placeholder: "Enter Address", autofocus: true %>
       </div>
 
-      <div class="col-md-2">
+      <div class="forminfo">
         <%= f.label "City" %>
         <br>
         <%= f.collection_select(:town_id, Town.all, :id, :townname) %>
       </div>
 
-      <div class="col-md-2">
+      <div class="forminfo">
         <%= f.label :zip %><br>
         <%= f.text_field :zip, class: "form-control", placeholder: "Zipcode", autofocus: true %>
       </div>

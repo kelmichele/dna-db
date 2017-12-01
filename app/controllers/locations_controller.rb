@@ -15,11 +15,15 @@ class LocationsController < ApplicationController
 	  else
 	    Location.all
 		end
+
+		@all_states = State.all
+		@towns = Town.all
+		@state_towns = Town.includes(params[:state_id])
 	end
 
 	def import
 	  Location.import(params[:file])
-	  redirect_to locations_path, notice: 'Locations imported.'
+	  redirect_to states_path, notice: 'Locations imported.'
 	end
 
 	def show
@@ -35,7 +39,7 @@ class LocationsController < ApplicationController
 		@location = Location.new(location_params)
 		if @location.save
 		  flash[:success] = "Location was successfully created"
-	    redirect_to locations_path
+	    redirect_to town_path(@location.town)
 		else
 		  render 'new'
 		end
@@ -47,7 +51,7 @@ class LocationsController < ApplicationController
 	def update
 		if @location.update(location_params)
 		  flash[:success] = "Location was updated successfully"
-	    redirect_to locations_path
+	    redirect_to town_path(@location.town)
 		else
 		  render 'edit'
 		end
@@ -56,7 +60,7 @@ class LocationsController < ApplicationController
 	def destroy
 		Location.find(params[:id]).destroy
   	flash[:success] = "Location was successfully deleted!"
-    redirect_to locations_path
+    redirect_to states_path
 	end
 
 	private
@@ -67,7 +71,7 @@ class LocationsController < ApplicationController
 		def require_admin
 	    if !current_user.admin?
 		    flash[:danger] = "Only admin users can perform that action"
-		    redirect_to locations_path
+		    redirect_to states_path
 		  end
 	  end
 

@@ -17,6 +17,24 @@ class TownsController < ApplicationController
 		@state = @town.state
 		@town_clinics = @town.clinics.all
 		@town_locations = @town.locations.all
+		town_locations = @town.locations.all
+
+		@starter = town_locations.first
+		@town_lat = town_locations.average(:latitude)
+		@town_lng = town_locations.average(:longitude)
+		@town_cors = @town_lat, @town_lng
+
+		@locations = if params[:l]
+	    sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
+	    center   = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
+	    distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
+	    box      = Geocoder::Calculations.bounding_box(center, distance)
+	    Location.within_bounding_box(box)
+	  elsif params[:near]
+	    Location.near(params[:near])
+	  else
+	    Location.all
+		end
 	end
 
 	def new

@@ -30,13 +30,28 @@
 <%= tag.div class: 'full' do %>
 	<%= tag.div class: 'wrap location-map' do %>
 		<%= tag.div class: 'col-md-7' do %>
-			<%= tag.table class:'loclist' do %>
 
+
+
+			<!-- <ul uk-accordion="multiple: true">
+				<% for state in @all_states %>
+				<li>
+		      <div class="uk-accordion-title"><%= state.name %></div>
+		      <div class="uk-accordion-content">
+						<% for town in @state_towns %>
+							<p><%= town.townname %></p>
+						<% end %>
+		      </div>
+		    </li>
+				<% end %>
+			</ul>
+ -->
+
+			<%= tag.table class:'loclist' do %>
 				<% @locations.each do |location| %>
 				  <%= tag.tr class:'townlisting-bx' do %>
-							<%= simple_format(location.full_address)%>
-			  			<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
-
+						<%= simple_format(location.full_address)%>
+		  			<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
 				  <% end %>
 			  <% end %>
 			<% end %>

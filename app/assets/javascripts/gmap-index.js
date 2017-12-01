@@ -1,8 +1,8 @@
 document.addEventListener("turbolinks:load", function() {
   var map = new GMaps({
     div: '#map',
-    lat: 30.2884208,
-    lng: -81.6029046
+    lat: 38.9896,
+    lng: 75.5050
   });
   window.map = map;
 
@@ -41,4 +41,5 @@ document.addEventListener("turbolinks:load", function() {
 
     Turbolinks.visit('/locations?l=' + position);
   });
+
 });

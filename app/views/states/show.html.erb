@@ -14,17 +14,42 @@
 		<div class="wrap">
 
   		<% if @state_towns.count != 0 %>
-				<table class="listing">
-					<% @state_towns.each do |town| %>
-						<tr>
-						  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %> - (<%= town.id %>)&nbsp;</h4></td>
-					    <td><p><small>(<%= town.locations.count %>)</small></p></td>
-							<!-- <td class="actions">
-					      <small><%= link_to("Edit", edit_town_path(town)) %></small>
-					    </td> -->
-					  </tr>
-		  		<% end %>
-				</table>
+
+	  		<div class="col-md-6">
+	  			<ul uk-accordion="multiple: true">
+
+	  				<% for town in @state_towns %>
+	  				<li>
+	  		      <div class="uk-accordion-title">
+	  		      	<%= town.townname %>
+	  		      	&nbsp;&nbsp; <small><b><%= town.id %></b>&nbsp;&nbsp;(<%= town.locations.count %>)&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to("Edit", edit_town_path(town)) %></small>
+	  		      </div>
+
+	  		      <div class="uk-accordion-content">
+								<% for location in town.locations %>
+									<p><%= location.full_address %></p>
+								<% end %>
+	  		      </div>
+	  		    </li>
+	  				<% end %>
+	  			</ul>
+
+					<!-- <table class="listing">
+						<% @state_towns.each do |town| %>
+							<tr>
+							  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %> - (<%= town.id %>)&nbsp;</h4></td>
+						    <td><p><small>(<%= town.locations.count %>)</small></p></td>
+						  </tr>
+			  		<% end %>
+					</table> -->
+				</div>
+
+	  		<div class="col-md-5 col-md-offset-1">
+  				<%= tag.div nil, id: 'map', data: { locations: @locations.to_json(methods: [:address]), l: params[:state] } %>
+  			  <%= tag.div class: 'clearfix' %><br>
+  				<%= link_to "Redo search in this area", "#", id: "redo-search" %>
+	  		</div>
+
   		<% else %>
 			 	<p>Unfortunately, we have no testing locations in <%= @state.name %>, but you can still follow the link below, and order an At Home DNA Test Kit Today!</p>
 			<% end %>
@@ -35,3 +60,4 @@
 		<%= link_to("Back to States", states_path, :class => 'back-link') %>
 	</div>
 </div>
+<!-- http://localhost:3000/locations?utf8=%E2%9C%93&near=Birmingham%2C+al&commit=Search -->
