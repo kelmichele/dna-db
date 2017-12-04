@@ -122,7 +122,9 @@ a:hover {text-decoration: none;}
 .clinic-bx {display: inline-block; width:30%;
   h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize;}
 }
-.townlisting-bx h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize;}
+.townlisting-bx {@include sec-default(); margin-bottom: 25px;
+  h4 {font-weight: bold; line-height: 1.5em; font-size: 18px; text-transform: capitalize; margin-bottom:5px;}
+}
 
 @include bp(md) {
   .clinic-bx {width: 75%; @include center-block();}
@@ -130,11 +132,10 @@ a:hover {text-decoration: none;}
 
 .location-map{
   p{margin-bottom: 5px;}
-  .actions { margin-bottom: 25px; a{font-weight: bold; color: blue;}}
+  .actions { a{font-weight: bold; color: blue;}}
 }
 
 .btn.btn-outline-secondary.search {background-color: $blue; color: white;}
-
 
 .locations.new, .locations.update{
   .state-form, .location-import {display: inline-block; width: 40%;}

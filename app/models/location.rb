@@ -21,7 +21,8 @@ class Location < ApplicationRecord
   end
 
   def full_address
-    "#{street}" + "\n" + "#{town.townname}, #{state.abv} #{zip}" + "\n" + "(#{latitude}, #{longitude})"
+    "#{street}" + "\n" + "#{town.townname}, #{state.abv} #{zip}" + "\n"
+    # + "(#{latitude}, #{longitude})"
   end
 
   def address_changed?

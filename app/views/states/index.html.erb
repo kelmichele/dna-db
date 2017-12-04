@@ -5,8 +5,20 @@
 	<div class="wrap">
 		<div class="col-md-12">
 			<h1><%= @page_title %></h1>
+			<hr class="title-line">
+			<div class="clearfix"></div>
+			<div class="shared-text">
+				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing at over 2500 locations nationwide. All of our testing locations are certified and accredited by the AABB and ISO 17025.</p>
+				<p><%= link_to "Click Here", testing_path %> to schedule your testing appointment today!<br>
+				If you have any questions, or want to speak to a certified collector, please call us at <span><%= phone %></span>.</p>
+			</div>
+		</div>
+
+		<div class="col-md-8 col-md-offset-2">
 			<%= render 'shared/add_btns' %>
 		</div>
+		<div class="clearfix"></div>
+		<br><hr><br>
 
 			<table class="listing state-list">
 				<% for state in @cols_one %>
