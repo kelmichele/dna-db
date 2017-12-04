@@ -5,9 +5,7 @@ class MessagesController < ApplicationController
   	@message = Message.new(message_params)
     @message.user = current_user
     if @message.save
-      ActionCable.server.broadcast 'chatroom_channel',
-            message: render_message(@message),
-                user: @message.user.email
+      ActionCable.server.broadcast 'chatroom_channel', message: render_message(@message), user: @message.user.email
     else
       render 'chatrooms/show'
     end
