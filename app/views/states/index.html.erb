@@ -24,7 +24,7 @@
 				<% for state in @cols_one %>
 					<tr class="tfw">
 					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
-					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					</tr>
 			  <% end %>
 			</table>
@@ -33,7 +33,7 @@
 				<% for state in @cols_two %>
 					<tr class="tfw">
 					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
-					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					</tr>
 			  <% end %>
 			</table>
@@ -42,7 +42,7 @@
 				<% for state in @cols_three %>
 					<tr class="tfw">
 					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
-					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>) &nbsp;&nbsp; <%= link_to("Edit", edit_state_path(state)) %></p></td>
+					  <td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					</tr>
 			  <% end %>
 			</table>
