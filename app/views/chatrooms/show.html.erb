@@ -18,9 +18,9 @@
 	  <div class="message-container">
 		  <div class="col-md-6 col-md-offset-1">
 	      <%= form_for(@message, remote: true, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-		      <%= f.text_area :content, class: "form-control", placeholder: "How can we help you today?" %>
-
-		      <%= f.submit "Send", class: 'btn btn-primary' %>
+		      <%= f.text_area :content, class: "form-control", data: { behavior: "room_speaker" }, placeholder: "How can we help you today?" %>
+		      <div class="clearfix"></div><br>
+		      <%= f.submit "Send", class: 'btn btn-primary', data: { send: "message" } %>
 		    <% end %>
 		  </div>
     </div>
