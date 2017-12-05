@@ -1,0 +1,23 @@
+<% @page_title = "Chat Window" %>
+
+<div class="full">
+	<div class="wrap">
+		<h1>Chatting with <b><%= @conversation.with(current_user).name.upcase %></b></h1>
+		<hr class="title-line">
+		<div class="clearfix"></div>
+
+		<div id="conversation-main">
+		  <div id="conversation-body">
+		    <%= render @conversation.personal_messages %>
+		  </div>
+
+		  <%= form_for @personal_message do |f| %>
+		    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+		    <%= f.text_area :body, placeholder: "How can we help you today?" %>
+
+				<br>
+		    <%= f.submit "Send", class: 'btn btn-primary' %>
+		  <% end %>
+		</div>
+	</div>
+</div>
