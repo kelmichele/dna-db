@@ -23,11 +23,6 @@ class PersonalMessagesController < ApplicationController
     params.require(:personal_message).permit(:body)
   end
 
-  # def find_conversation!
-  #   @conversation = Conversation.find_by(id: params[:conversation_id])
-  #   redirect_to(root_path) and return unless @conversation && @conversation.participates?(current_user)
-  # end
-
   def find_conversation!
     if params[:receiver_id]
       @receiver = User.find_by(id: params[:receiver_id])

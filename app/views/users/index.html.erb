@@ -5,6 +5,8 @@
 		<h1>Users</h1>
 		<hr class="title-line">
 		<div class="clearfix"></div>
+		<%= link_to "View My Conversations", conversations_path, class: 'btn btn-add' %>
+
 		<ul class="users-ul"><%= render @users %></ul>
 	</div>
 </div>
