@@ -8,6 +8,7 @@
 
 		<%= form_for @personal_message do |f| %>
 		  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+
 	    <%= f.label :body %><br>
 		  <%= f.text_area :body, placeholder: "How can we help you today?" %>
 			<br>
