@@ -4,6 +4,7 @@
 	<div class="wrap">
 		<div id="conversation-main">
 			<h1>Chatting with <b><%= @conversation.with(current_user).name.upcase %></b></h1>
+			<!-- <span><%= Rails.env.capitalize %></span> -->
 			<hr class="title-line">
 			<div class="clearfix"></div>
 
@@ -13,7 +14,6 @@
 
 		  <%= form_for @personal_message do |f| %>
 		    <%= hidden_field_tag 'conversation_id', @conversation.id %>
-		    <!-- <%= f.label :body %><br> -->
 		    <%= f.text_area :body, placeholder: "How can we help you today?" %>
 				<br>
 		    <%= f.submit "Send", class: 'btn btn-primary' %>

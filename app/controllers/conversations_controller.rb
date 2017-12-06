@@ -20,6 +20,7 @@ class ConversationsController < ApplicationController
 	end
 
 	def check_participating!
-	  redirect_to root_path unless @conversation && @conversation.participates?(current_user)
+	  redirect_to conversations_path unless @conversation && @conversation.participates?(current_user)
+	  # redirect_to root_path unless @conversation && @conversation.participates?(current_user)
 	end
 end
