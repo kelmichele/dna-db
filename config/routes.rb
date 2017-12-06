@@ -32,7 +32,6 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   get '/chat', to: 'chatrooms#show'
 
-	resources :messages, only: [:create]
 
 	resources :users, only: [:index]
 	resources :personal_messages, only: [:new, :create]
