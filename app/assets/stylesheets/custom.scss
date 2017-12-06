@@ -179,7 +179,9 @@ a:hover {text-decoration: none;}
   width: 300px;
   padding: 10px;
   border: 1px solid black;
-  background-color: #fff;
+  background-color: red;
+  z-index: 9999999;
+  // background-color: #fff;
   .close {cursor: pointer}
 }
 

@@ -5,8 +5,8 @@ class NotificationBroadcastJob < ApplicationJob
     message = render_message(personal_message)
 
     ActionCable.server.broadcast "notifications_#{personal_message.user.id}_channel",
-                                 message: message,
-                                 conversation_id: personal_message.conversation.id
+                                  message: message,
+                                  conversation_id: personal_message.conversation.id
 
     if personal_message.receiver.online?
       ActionCable.server.broadcast "notifications_#{personal_message.receiver.id}_channel",
