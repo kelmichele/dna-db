@@ -8,8 +8,8 @@
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
 //
 // function scrollToBottom(){
-//   if($('#messages').length > 0) {
-//     $('#messages').scrollTop($('#messages')[0].scrollHeight);
+//   if($('#questions').length > 0) {
+//     $('#questions').scrollTop($('#questions')[0].scrollHeight);
 //   }
 // }
 
@@ -17,11 +17,6 @@
 //   scrollToBottom();
 // });
 
-// function scrollToBottom(){
-//   if($('#messages').length > 0) {
-//     $('#messages').scrollTop($('#messages')[0].scrollHeight);
-//   }
-// }
 
 // function submitMessage(event){
 //   event.preventDefault();
