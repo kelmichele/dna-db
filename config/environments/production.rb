@@ -90,6 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.web_socket_server_url = "wss://dna-db.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://dna-db.herokuapp.com', 'http://dna-db.herokuapp.com']
-  config.action_cable.url = "wss://dna-db.herokuapp.com/cable"
+
 
 end
