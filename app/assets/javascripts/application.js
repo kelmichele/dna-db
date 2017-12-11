@@ -6,45 +6,11 @@
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// function scrollToBottom(){
-//   if($('#questions').length > 0) {
-//     $('#questions').scrollTop($('#questions')[0].scrollHeight);
-//   }
-// }
-
-// $(document).ready(function() {
-//   scrollToBottom();
-// });
-
-
-// function submitMessage(event){
-//   event.preventDefault();
-//   $('#new_message').submit();
-// }
-
-// $(document).on('keypress', '[data-behavior~=room_speaker]', function(event) {
-//   if (event.keyCode === 13) {
-//     submitMessage(event);
-//   }
-// });
-
-// $(document).on('click', '[data-send~=message]', function(event) {
-//   submitMessage(event);
-// });
-
-// $(document).on('turbolinks:load', function() {
-//   $("#new_message").on("ajax:complete", function(e, data, status) {
-//     $('#message_content').val('');
-//   })
-//   scrollToBottom();
-// });
-
 
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require jquery
+//= require rails-ujs
 //= require turbolinks
 //= require_tree .
