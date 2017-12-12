@@ -204,7 +204,7 @@ a:hover {text-decoration: none;}
   background-color: darken($blue, 25%);
   color:white;
   padding: 5px 10px;
-  i {font-size: 20px; margin-right: 5px; }
+  .chat-icon {width: 25px; height:auto; margin-right: 5px; }
   &:hover {color: rgba(white, .7);}
 }
 
