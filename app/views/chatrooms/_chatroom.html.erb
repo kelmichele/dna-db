@@ -2,6 +2,15 @@
   <div class="panel panel-default" data-chatroom-id="<%= chatroom.id %>">
     <div class="panel-heading">
       <%= link_to chatroom.opposed_user(user).email, '', class: 'toggle-window' %>
+
+      <% if chatroom.opposed_user(user).online? %>
+        <span class="on"></span>
+        <!-- Online - Chat with us -->
+      <% else %>
+        <span class="off"></span>
+        <!-- Offline - Leave us a message -->
+      <% end %>
+
       <%= link_to "x", close_chatroom_path(chatroom), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
     </div>
 
@@ -16,13 +25,14 @@
         <input name="chatroom_id" type="hidden" value="<%= chatroom.id %>">
         <input name="user_id" type="hidden" value="<%= user.id %>">
         <textarea name="body" class="form-control"></textarea>
-        <br>
         <input type="submit" class="btn btn-success" value="Send">
       </form>
 
     </div>
   </div>
 </li>
+
+
 
 <!-- form_for [chatroom, chatroom.notes.new], remote: true do |f|
 f.hidden_field :user_id, value: user.id

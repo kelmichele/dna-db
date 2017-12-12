@@ -180,7 +180,7 @@ a:hover {text-decoration: none;}
   padding: 10px;
   border: 1px solid black;
   background-color: red;
-  z-index: 9999999;
+  z-index: 999;
   // background-color: #fff;
   .close {cursor: pointer}
 }
@@ -193,12 +193,26 @@ a:hover {text-decoration: none;}
 }
 
 
+.live-chat {
+  width: 230px;
+  min-height: 30px;
+  position: fixed;
+  bottom: 0px;
+  right: 15px;
+  z-index: 100;
+  text-align: center;
+  background-color: darken($blue, 25%);
+  color:white;
+  padding: 5px 10px;
+  i {font-size: 20px; margin-right: 5px; }
+  &:hover {color: rgba(white, .7);}
+}
+
 .notes-list {
   max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 
 .note-sent {
   position: relative;
@@ -207,13 +221,21 @@ a:hover {text-decoration: none;}
   margin: 5px 20px;
   padding: 10px;
   float: right;
+  border-radius:4px;
 }
 
-
 .note-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
+  background-color: $f2;
+  border-color: $gray;
   margin: 5px 20px;
   padding: 10px;
   float: left;
+  border-radius:4px;
 }
+span.off, span.on {width: 6px; height: 6px; border-radius: 50%; display: inline-block; background-color: green; vertical-align: middle; margin-left: 2px;}
+span.off {background-color: red;}
+
+.new_note {margin-top:15px; }
+input.btn.btn-success {margin-top:12px;}
+
+// .panel-success .panel-heading { }

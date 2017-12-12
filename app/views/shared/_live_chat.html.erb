@@ -1,0 +1,10 @@
+<a href="#" class="live-chat">
+  <i class="fa fa-comments" aria-hidden="true"></i>
+  <% if chatroom.opposed_user(user).online? %>
+    <span class="ofc-online">Online - Chat with us</span>
+  <% else %>
+    <span class="ofc-offline">Offline - Leave us a message</span>
+  <% end %>
+</a>
+
+
