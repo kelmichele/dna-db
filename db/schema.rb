@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211224155) do
+ActiveRecord::Schema.define(version: 20171212171918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20171211224155) do
     t.index ["recipient_id", "sender_id"], name: "index_chatrooms_on_recipient_id_and_sender_id", unique: true
     t.index ["recipient_id"], name: "index_chatrooms_on_recipient_id"
     t.index ["sender_id"], name: "index_chatrooms_on_sender_id"
-  end
-
-  create_table "clinics", force: :cascade do |t|
-    t.string "address"
-    t.string "zipcode"
-    t.integer "town_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "conversations", force: :cascade do |t|

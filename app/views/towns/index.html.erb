@@ -21,7 +21,7 @@
 		    <!-- <td><p>&nbsp;<%= town.state_id %></p></td> -->
 		    <td><p><%= link_to town.state.abv, state_path(town.state) %></p></td>
 		    <td class="col-md-2"><p>ID: <%= town.id %></p></td>
-		    <td class="col-md-2"><p>Locations: <%= town.clinics.count %></p></td>
+		    <td class="col-md-2"><p>Locations: <%= town.locations.count %></p></td>
 		  </tr>
 		  <% end %>
 		</table>
