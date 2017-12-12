@@ -5,10 +5,8 @@
 
       <% if chatroom.opposed_user(user).online? %>
         <span class="on"></span>
-        <!-- Online - Chat with us -->
       <% else %>
         <span class="off"></span>
-        <!-- Offline - Leave us a message -->
       <% end %>
 
       <%= link_to "x", close_chatroom_path(chatroom), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>

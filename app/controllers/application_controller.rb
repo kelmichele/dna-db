@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
 	helper_method :boss_admin
 
-
 	private
 
   def boss_admin
