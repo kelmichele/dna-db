@@ -14,3 +14,19 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+	(function() {
+	  $(document).on('click', '.toggle-window', function(e) {
+	    e.preventDefault();
+	    var panel = $(this).parent().parent();
+	    var notes_list = panel.find('.notes-list');
+
+	    panel.find('.panel-body').toggle();
+	    panel.attr('class', 'panel panel-default');
+
+	    if (panel.find('.panel-body').is(':visible')) {
+	      var height = notes_list[0].scrollHeight;
+	      notes_list.scrollTop(height);
+	    }
+	  });
+	})();

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get '/our-process', to: 'static_pages#our_process', as: 'our_process'
 	get 'testing', to: 'static_pages#testing'
 	get 'thanks', to: 'static_pages#thanks'
+	get 'chats', to: 'static_pages#chats'
 
 	resources :charges, only: [:new, :create]
 	resources :states
@@ -29,11 +30,18 @@ Rails.application.routes.draw do
 		end
 	end
 
-	resources :direct_messages, only: [:new, :create]
-
 	resources :users, only: [:index]
 	resources :personal_messages, only: [:new, :create]
 	resources :conversations, only: [:index, :show]
+
+
+	resources :chatrooms, only: [:create] do
+    member do
+      post :close
+    end
+
+    resources :notes, only: [:create]
+  end
 
   mount ActionCable.server => '/cable'
 end

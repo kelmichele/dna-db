@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211191309) do
+ActiveRecord::Schema.define(version: 20171211224155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_chatrooms_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_chatrooms_on_recipient_id"
+    t.index ["sender_id"], name: "index_chatrooms_on_sender_id"
+  end
 
   create_table "clinics", force: :cascade do |t|
     t.string "address"
@@ -54,6 +64,16 @@ ActiveRecord::Schema.define(version: 20171211191309) do
     t.float "longitude"
     t.integer "town_id"
     t.index ["zip"], name: "index_locations_on_zip"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "chatroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_notes_on_chatroom_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "personal_messages", force: :cascade do |t|
@@ -103,6 +123,8 @@ ActiveRecord::Schema.define(version: 20171211191309) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notes", "chatrooms"
+  add_foreign_key "notes", "users"
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
 end
