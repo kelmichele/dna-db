@@ -43,5 +43,5 @@ Rails.application.routes.draw do
     resources :notes, only: [:create]
   end
 
-  # mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
 end
