@@ -3,7 +3,6 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.get(current_user.id, params[:user_id])
 
     add_to_chatrooms unless chatted?
-
     respond_to do |format|
       format.js
     end
@@ -13,7 +12,6 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
 
     session[:chatrooms].delete(@chatroom.id)
-
     respond_to do |format|
       format.js
     end

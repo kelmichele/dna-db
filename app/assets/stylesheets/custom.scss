@@ -249,9 +249,10 @@ a:hover {text-decoration: none;}
 
   a {color: white;}
   .chat-icon {width: 20px; height:auto; margin-right: 3px; margin-bottom: 3px;}
-  &:hover a {color: rgba(white, .7);}
 
-  .panel-heading {background-color: darken($blue, 25%);text-align: center;color:white;padding: 5px 6px; }
+  .panel-heading {background-color: darken($blue, 25%);text-align: center;color:white;padding: 5px 6px;
+    &:hover a {color: rgba(white, .7);}
+  }
   .btn.exp {font-weight: bold; margin-left: 25px;}
   .btn.pull-right {margin-right: 5px; font-weight: bold;}
 
