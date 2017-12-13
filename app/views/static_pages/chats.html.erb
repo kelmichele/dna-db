@@ -1,16 +1,12 @@
 <% @page_title = "Chatrooms" %>
 
 <div class="full">
-  <div class="wrap">
+  <div class="wrap" style="height:290px;">
     <div class="col-md-8">
-      <ul id="chatrooms-list">
-        <% @chatrooms.each do |chatroom| %>
-          <%= render 'chatrooms/chatroom', chatroom: chatroom, user: current_user %>
-        <% end %>
-      </ul>
+
     </div>
 
-    <div class="col-md-2 text-center">
+    <div class="col-md-2 text-center" style="display: none;">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">User list</h3>
@@ -30,5 +26,12 @@
     </div>
   </div>
 </div>
+<%= render 'chatrooms/chatbox' %>
 
 
+
+<!-- <ul id="chatrooms-list">
+  < @chatrooms.each do |chatroom| >
+    <= render 'chatrooms/chatroom', chatroom: chatroom, user: current_user >
+  < end >
+</ul> -->

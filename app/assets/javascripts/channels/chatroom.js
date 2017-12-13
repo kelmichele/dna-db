@@ -10,7 +10,8 @@ App.chatroom = App.cable.subscriptions.create("ChatroomChannel", {
         var notes_visible = (chatroom).find('.panel-body').is(':visible');
 
         if (!notes_visible) {
-          chatroom.removeClass('panel-default').addClass('panel-success');
+          chatroom.removeClass('panel-heading').addClass('panel-success');
+          // chatroom.removeClass('panel-default').addClass('panel-success');
         }
         chatroom.find('.notes-list').find('ul').append(data['note']);
       }

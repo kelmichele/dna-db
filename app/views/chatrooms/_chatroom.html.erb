@@ -1,15 +1,19 @@
-<li>
+<li class="pers-chat">
   <div class="panel panel-default" data-chatroom-id="<%= chatroom.id %>">
     <div class="panel-heading">
-      <%= link_to chatroom.opposed_user(user).email, '', class: 'toggle-window' %>
 
-      <% if chatroom.opposed_user(user).online? %>
-        <span class="on"></span>
-      <% else %>
-        <span class="off"></span>
+      <%= link_to chatroom.opposed_user(user).email, class: 'toggle-window' do %>
+        <%= image_tag('chat.png', class:'chat-icon') %>
+        <% if boss_admin.online? %>
+          <span class="ofc-online"><b>Online</b> - Chat with us</span>
+        <% else %>
+          <span class="ofc-offline"><b>Away</b> - Send us a message</span>
+        <% end %>
+
+        <div class="btn btn-xs exp">—</div>
       <% end %>
 
-      <%= link_to "x", close_chatroom_path(chatroom), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
+      <%= link_to "X", close_chatroom_path(chatroom), class: "btn btn-xs pull-right", remote: true, method: :post %>
     </div>
 
     <div class="panel-body" style="display: none;">
@@ -24,16 +28,9 @@
         <input name="user_id" type="hidden" value="<%= user.id %>">
         <textarea name="body" class="form-control"></textarea>
         <input type="submit" class="btn btn-success" value="Send">
+        <!-- <%= link_to 'Open in New Tab', chats_path, class: 'tab-link' %>  -->
       </form>
 
     </div>
   </div>
 </li>
-
-
-
-<!-- form_for [chatroom, chatroom.notes.new], remote: true do |f|
-f.hidden_field :user_id, value: user.id
-f.text_area :body, class: "form-control"
-f.submit "Send", class: "btn btn-success"
-end -->

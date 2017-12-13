@@ -146,53 +146,54 @@ a:hover {text-decoration: none;}
 
 
 /*************CONVERSATIONS****************************/
-.conv { margin-bottom:20px;
-  p {margin-bottom: 5px;}
-  .view-link {font-weight: bold; color: $blue;}
-}
-
-#conversation-main, .new_personal_message {
-  form {padding-left: 15px;}
-  textarea {width: 50%; height:150px; margin-bottom: 10px; padding:15px;}
-  small {font-size: 11px; color: red;}
-  p {margin-bottom: 5px;}
-}
-
-#conversation-body {
-  height: 21em;
-  overflow-y: auto;
-  margin-bottom: 2em;
-  padding: 30px;
-  border: 1px solid #eaeaea;
-  position: relative;
-  background-color: white;
-
-  .pmsg {margin-bottom: 30px;}
-}
-
-.users-ul li {margin-bottom:10px;}
-
-#notification {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid black;
-  background-color: red;
-  z-index: 999;
-  // background-color: #fff;
-  .close {cursor: pointer}
-}
-
-.online_status {
-  color: red;
-  &.online {
-    color: green;
+  .conv { margin-bottom:20px;
+    p {margin-bottom: 5px;}
+    .view-link {font-weight: bold; color: $blue;}
   }
-}
+
+  #conversation-main, .new_personal_message {
+    form {padding-left: 15px;}
+    textarea {width: 50%; height:150px; margin-bottom: 10px; padding:15px;}
+    small {font-size: 11px; color: red;}
+    p {margin-bottom: 5px;}
+  }
+
+  #conversation-body {
+    height: 21em;
+    overflow-y: auto;
+    margin-bottom: 2em;
+    padding: 30px;
+    border: 1px solid #eaeaea;
+    position: relative;
+    background-color: white;
+
+    .pmsg {margin-bottom: 30px;}
+  }
+
+  .users-ul li {margin-bottom:10px;}
+
+  #notification {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: red;
+    z-index: 999;
+    // background-color: #fff;
+    .close {cursor: pointer}
+  }
+
+  .online_status {
+    color: red;
+    &.online {
+      color: green;
+    }
+  }
 
 
+/*************CHATROOMS****************************/
 .live-chat {
   width: 230px;
   min-height: 30px;
@@ -203,13 +204,13 @@ a:hover {text-decoration: none;}
   text-align: center;
   background-color: darken($blue, 25%);
   color:white;
-  padding: 5px 10px;
+  padding: 5px 0;
   .chat-icon {width: 25px; height:auto; margin-right: 5px; }
   &:hover {color: rgba(white, .7);}
 }
 
 .notes-list {
-  max-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -228,14 +229,48 @@ a:hover {text-decoration: none;}
   background-color: $f2;
   border-color: $gray;
   margin: 5px 20px;
-  padding: 10px;
+  padding: 14px;
   float: left;
   border-radius:4px;
 }
+
+.note-msg small.stamp {color: red; font-size: 10px;}
+
+.pers-chat .panel-default {
+  width: 275px;
+  min-height: 30px;
+  position: fixed;
+  bottom: 0px;
+  right: 15px;
+  z-index: 100;
+  margin-bottom: 0;
+
+  .panel-body{padding: 5px;}
+
+  a {color: white;}
+  .chat-icon {width: 20px; height:auto; margin-right: 3px; margin-bottom: 3px;}
+  &:hover a {color: rgba(white, .7);}
+
+  .panel-heading {background-color: darken($blue, 25%);text-align: center;color:white;padding: 5px 6px; }
+  .btn.exp {font-weight: bold; margin-left: 25px;}
+  .btn.pull-right {margin-right: 5px; font-weight: bold;}
+
+  .tab-link {color: black; float: right; font-weight: bold; margin-top: 20px;
+    &:hover {opacity: .7;}
+  }
+
+  &.panel-success {
+    .panel-heading {background-color: #dff0d8; }
+    a {color: $dark; }
+  }
+
+}
+
+
 span.off, span.on {width: 6px; height: 6px; border-radius: 50%; display: inline-block; background-color: green; vertical-align: middle; margin-left: 2px;}
 span.off {background-color: red;}
 
 .new_note {margin-top:15px; }
-input.btn.btn-success {margin-top:12px;}
+input.btn.btn-success {margin-top:8px;}
 
 // .panel-success .panel-heading { }

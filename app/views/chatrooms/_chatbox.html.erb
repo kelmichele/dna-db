@@ -1,9 +1,5 @@
-<a href="#" class="live-chat">
-  <%= image_tag('chat.png', class:'chat-icon') %>
-
-	<% if boss_admin.online? %>
-	  <span class="ofc-online"><b>Online</b> - Chat with us</span>
-	<% else %>
-	  <span class="ofc-offline"><b>Away</b> - Send us a message</span>
-	<% end %>
-</a>
+<ul id="chatrooms-list">
+  <% @chatrooms.each do |chatroom| %>
+    <%= render 'chatrooms/chatroom', chatroom: chatroom, user: current_user %>
+  <% end %>
+</ul>
