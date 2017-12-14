@@ -1,10 +1,10 @@
 class StaticPagesController < ApplicationController
-	skip_before_action :authenticate_user!, except: [:chats]
+	# skip_before_action :authenticate_user!, except: [:chats]
 
 	def chats
 		session[:chatrooms] ||= []
 
-    @users = User.all.where.not(id: current_user)
+    @users = User.all.where.not(id: current_or_guest_user)
     @chatrooms = Chatroom.includes(:recipient, :notes)
                                  .find(session[:chatrooms])
 	end

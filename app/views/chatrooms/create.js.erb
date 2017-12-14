@@ -2,7 +2,7 @@ var chatrooms = $('#chatrooms-list');
 var chatroom = chatrooms.find("[data-chatroom-id='" + "<%= @chatroom.id %>" + "']");
 
 if (chatroom.length !== 1) {
-  chatrooms.append("<%= j(render 'chatrooms/chatroom', chatroom: @chatroom, user: current_user) %>");
+  chatrooms.append("<%= j(render 'chatrooms/chatroom', chatroom: @chatroom, user: current_or_guest_user) %>");
   chatroom = chatrooms.find("[data-chatroom-id='" + "<%= @chatroom.id %>" + "']");
 }
 
