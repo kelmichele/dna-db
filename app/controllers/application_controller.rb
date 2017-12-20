@@ -27,6 +27,12 @@ class ApplicationController < ActionController::Base
 	end
 
 	def opened_chatrooms_windows
+    if current_or_guest_user.admin?
+	    @users = User.all.where.not(id: current_or_guest_user)
+	  else
+	    @users = User.all.where(admin: true)
+    end
+
     session[:chatrooms] ||= []
     @chatrooms_windows = Chatroom.includes(:recipient, :notes)
                                            .find(session[:chatrooms])

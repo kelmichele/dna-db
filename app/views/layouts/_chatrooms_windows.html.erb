@@ -1,3 +1,12 @@
+<div class="live-chat <% unless user_signed_in? && current_user.admin? %>customer<% end %>">
+	<%= image_tag('chat.png', class:'chat-icon') %>
+	<% unless user_signed_in? && current_user.admin? %>
+		<%= link_to 'Online: Chat With Us', chatrooms_path(user_id: boss_admin), remote: true, method: :post %>
+	<% else %>
+		<b>Admin: Online</b>
+	<% end %>
+</div>
+
 <ul id="chatrooms-list">
 	<% chatrooms_windows.each do |chatroom| %>
 	  <%= render partial: "chatrooms/chatroom",
@@ -6,3 +15,4 @@
 	<% end %>
   <!-- < render 'chatrooms/chatroom', chatroom: chatroom, user: current_or_guest_user >  -->
 </ul>
+
