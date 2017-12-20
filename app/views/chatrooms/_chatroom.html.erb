@@ -13,7 +13,8 @@
         <div class="btn btn-xs exp">—</div>
       <% end %>
 
-      <%= link_to "X", close_chatroom_path(chatroom), class: "btn btn-xs pull-right", remote: true, method: :post %>
+        <%= link_to "X", close_chatroom_path(chatroom), class: "btn btn-xs pull-right", remote: true, method: :post %>
+        <!-- <%= link_to "X", close_chatroom_path(chatroom), method: :delete, data: { confirm: "Are you sure you want to delete?" }, class: "btn btn-xs pull-right" %>  -->
     </div>
 
     <div class="panel-body" style="display: none;">

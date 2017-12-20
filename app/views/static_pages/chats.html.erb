@@ -5,7 +5,7 @@
     <div class="col-md-8">
     </div>
 
-    <div class="col-md-2 text-center">
+    <div class="col-md-3 text-center">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">User list</h3>
@@ -14,8 +14,7 @@
         <div class="panel-body">
           <ul>
             <% @users.each do |user| %>
-            <!-- <% if user_signed_in? && user.admin? %><% end %> -->
-            <li><%= link_to user.email, chatrooms_path(user_id: user), remote: true, method: :post %></li>
+            <li><%= link_to user.name, chatrooms_path(user_id: user), remote: true, method: :post %></li>
             <br>
             <% end %>
           </ul>

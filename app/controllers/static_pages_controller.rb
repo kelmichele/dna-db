@@ -4,8 +4,13 @@ class StaticPagesController < ApplicationController
 	def chats
 		session[:chatrooms] ||= []
 
-    @users = User.all.where.not(id: current_or_guest_user)
     @chatrooms = Chatroom.includes(:recipient, :notes)
                                  .find(session[:chatrooms])
+
+    if current_or_guest_user.admin?
+	    @users = User.all.where.not(id: current_or_guest_user)
+	  else
+	    @users = User.all.where(admin: true)
+    end
 	end
 end
