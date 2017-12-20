@@ -9,4 +9,9 @@ module ApplicationHelper
 	  content_tag :span, user.name,
 	              class: "user-#{user.id} online_status #{'online' if user.online?}"
 	end
+
+
+	def chatrooms_windows
+	  params[:controller] != '' ? @chatrooms_windows : []
+	end
 end

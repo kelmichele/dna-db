@@ -275,3 +275,36 @@ span.off {background-color: red;}
 input.btn.btn-success {margin-top:8px;}
 
 // .panel-success .panel-heading { }
+
+
+
+.chatroom-window .panel-default {
+  width: 275px;
+  min-height: 30px;
+  position: fixed;
+  bottom: 0px;
+  right: 15px;
+  z-index: 100;
+  margin-bottom: 0;
+
+  .panel-body{padding: 5px;}
+
+  a {color: white;}
+  .chat-icon {width: 20px; height:auto; margin-right: 3px; margin-bottom: 3px;}
+
+  .panel-heading {background-color: darken($blue, 25%);text-align: center;color:white;padding: 5px 6px;
+    &:hover a {color: rgba(white, .7);}
+  }
+  .btn.exp {font-weight: bold; margin-left: 25px;}
+  .btn.pull-right {margin-right: 5px; font-weight: bold;}
+
+  .tab-link {color: black; float: right; font-weight: bold; margin-top: 20px;
+    &:hover {opacity: .7;}
+  }
+
+  &.panel-success {
+    .panel-heading {background-color: #dff0d8; }
+    a {color: $dark; }
+  }
+
+}

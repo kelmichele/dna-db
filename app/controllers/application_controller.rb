@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	helper_method :boss_admin
 	helper_method :current_or_guest_user
+  before_action :opened_chatrooms_windows
 
 
 	def current_or_guest_user
@@ -25,18 +26,19 @@ class ApplicationController < ActionController::Base
     guest_user if with_retry
 	end
 
+	def opened_chatrooms_windows
+    session[:chatrooms] ||= []
+    @chatrooms_windows = Chatroom.includes(:recipient, :notes)
+                                           .find(session[:chatrooms])
+  end
+
+
 	private
   def boss_admin
 	  @boss_admin ||= User.find_by(admin: true)
   end
 
   def logging_in
-    # For example:
-    # guest_comments = guest_user.comments.all
-    # guest_comments.each do |comment|
-      # comment.user_id = current_user.id
-      # comment.save!
-    # end
   end
 
   def create_guest_user

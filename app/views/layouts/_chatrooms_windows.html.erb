@@ -1,0 +1,8 @@
+<ul id="chatrooms-list">
+	<% chatrooms_windows.each do |chatroom| %>
+	  <%= render partial: "chatrooms/chatroom",
+	             locals: { chatroom: chatroom,
+	                       user: current_or_guest_user } %>
+	<% end %>
+  <!-- < render 'chatrooms/chatroom', chatroom: chatroom, user: current_or_guest_user >  -->
+</ul>
