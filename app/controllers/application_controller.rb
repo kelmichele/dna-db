@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-	helper_method :boss_admin
-	helper_method :current_or_guest_user
   before_action :opened_chatrooms_windows
+	helper_method :current_or_guest_user
+	helper_method :boss_admin
+	helper_method :closed_line
+	helper_method :open_line
 
 
 	def current_or_guest_user
@@ -38,7 +40,6 @@ class ApplicationController < ActionController::Base
                                            .find(session[:chatrooms])
   end
 
-
 	private
   def boss_admin
 	  @boss_admin ||= User.find_by(admin: true)
@@ -53,4 +54,12 @@ class ApplicationController < ActionController::Base
     session[:guest_user_id] = u.id
     u
   end
+
+  def closed_line
+   	closed_line = Chatroom.where('created_at >= ?', Time.now-3.days)
+ 	end
+
+  def open_line
+   	open_line = Chatroom.where('created_at <= ?', Time.now-3.days)
+	end
 end

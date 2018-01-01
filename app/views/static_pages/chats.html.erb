@@ -3,6 +3,12 @@
 <div class="full">
   <div class="wrap" style="height:290px;">
     <div class="col-md-8">
+      <h3>Chatrooms: <b><%= Chatroom.all.count %></b></h3>
+      <h3>Messages: <b><%= Note.all.count %></b></h3>
+      <h3>Users: <b><%= User.all.count %></b></h3>
+      <hr>
+      <p>Open: <%= open_line.count %></p>
+      <p>Closed: <%= closed_line.count %></p>
     </div>
 
     <div class="col-md-3 text-center">
