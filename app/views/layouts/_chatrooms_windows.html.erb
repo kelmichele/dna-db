@@ -1,8 +1,8 @@
 <% unless user_signed_in? && current_user.admin? %>
-	<div class="live-chat <% unless user_signed_in? && current_user.admin? %>customer<% end %>">
+	<div class="live-chat customer">
 		<%= image_tag('chat.png', class:'chat-icon') %>
-		<%= link_to 'Online: Chat With Us', chatrooms_path(user_id: boss_admin), remote: true, method: :post %>
-</div>
+		<%= link_to 'Online: Chat With Us (live)', chatrooms_path(user_id: boss_admin), remote: true, method: :post %>
+	</div>
 <% end %>
 
 <ul id="chatrooms-list">
@@ -11,6 +11,10 @@
 	             locals: { chatroom: chatroom,
 	                       user: current_or_guest_user } %>
 	<% end %>
-  <!-- < render 'chatrooms/chatroom', chatroom: chatroom, user: current_or_guest_user >  -->
 </ul>
 
+<!-- if boss_admin.online?
+  <span class="ofc-online"><b>Online</b> - Chat with us</span>
+ else
+  <span class="ofc-offline"><b>Away</b> - Send us a message</span>
+ end-->

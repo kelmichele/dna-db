@@ -1,15 +1,11 @@
 <li class="chatroom-window" id="<%= chatroom.id %>" >
-<!-- <li class="pers-chat"> -->
   <div class="panel panel-default" data-chatroom-id="<%= chatroom.id %>">
     <div class="panel-heading">
 
       <%= link_to chatroom.opposed_user(user).email, class: 'toggle-window' do %>
         <%= image_tag('chat.png', class:'chat-icon') %>
-        <% if boss_admin.online? %>
-          <span class="ofc-online"><b>Online</b> - Chat with us</span>
-        <% else %>
-          <span class="ofc-offline"><b>Away</b> - Send us a message</span>
-        <% end %>
+        <span class="contact-name-notif"><%= chatroom.opposed_user(user).name %></span>
+        <!-- <span class="ofc-online"><b>Online</b> - Chat with us</span> -->
 
         <div class="btn btn-xs exp">—</div>
       <% end %>

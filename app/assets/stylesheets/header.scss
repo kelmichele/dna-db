@@ -1,6 +1,77 @@
 @import "mixins";
 @import "variables";
 
+.admin-bar {
+	@include sec-default(); background-color: black;
+	text-align: center;
+	p, h4{color: white; font-weight: bold; margin-bottom: 0;}
+	a {color: $blue;}
+
+	.avail, .admenu {display: inline-block; padding-top:8px;
+	 	// padding: 10px 20px;
+	}
+	.avail {width: 45%; float: left; margin-top: 7px; }
+
+	i {background-color: white; color: black; font-size: 20px;
+		width: 45px; height: 35px; padding-top: 7px;
+		@include center-block(); position: relative;
+	}
+
+
+	#chatrooms-menu {
+	  font-size: 20px;
+	  height: 50px;
+	  line-height: 50px;
+
+	  ul {
+	    margin: 0;
+	    position: relative;
+	    top: 8px;
+	    right: 200px;
+	    border-radius: 0 0 5px 5px;
+	    height: 300px;
+	    overflow: scroll;
+	    overflow-x: hidden;
+	    padding-top: 15px;
+	    li { margin-bottom: 15px;
+	      a {
+	        width: 100%;
+	      	color: $blue !important;
+	      }
+	    }
+	  }
+	  // .unseen-conv {
+	  //   a {
+	  //     background: $f7;
+	  //     color: black !important;
+	  //   }
+	  // }
+	}
+
+	#unseen-chatrooms {
+	  visibility: hidden;
+	  padding: 1px;
+	  position: absolute;
+	  // font-size: 13px;
+	  // font-size: 1.3rem;
+	}
+
+	// #unseen-chatrooms {
+	//   right: 5px;
+	//   background: #E92F2F;
+	// }
+
+	// #chatrooms-list {
+	//   position: fixed;
+	//   bottom: 0;
+	//   right: 0;
+	//   padding: 0;
+	//   .col-sm-2 {
+	//     padding: 0;
+	//   }
+	// }
+}
+
 .site-header { @include sec-default();}
 .header-wrapper {@include sec-default();
 	// height:130px; position:relative; z-index:9999;
