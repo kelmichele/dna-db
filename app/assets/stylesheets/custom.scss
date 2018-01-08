@@ -308,8 +308,8 @@ input.btn.btn-success {margin-top:8px;}
       a {color: $dark; }
     }
 
-    &:nth-child(2n+2) {border: 2px solid purple;}
-    &:nth-child(3n+3) {border: 2px solid orange; right: 5%;}
+    &:nth-child(2n+2) {border: 2px solid purple;right: 40%;}
+    &:nth-child(3n+3) {border: 2px solid orange; right: 20%;}
 
   }
 }

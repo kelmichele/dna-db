@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	helper_method :boss_admin
 	helper_method :closed_line
 	helper_method :open_line
-
+  helper_method :fading_users, :active_users
 
 	def current_or_guest_user
 	  if current_user
@@ -29,11 +29,10 @@ class ApplicationController < ActionController::Base
 	end
 
 	def opened_chatrooms_windows
-    if current_or_guest_user.admin?
-	    @users = User.all.where.not(id: current_or_guest_user)
-	  else
-	    @users = User.all.where(admin: true)
-    end
+   	@users = current_or_guest_user.admin? ? User.all.where.not(id: current_or_guest_user) : User.all.where(admin: true)
+
+   	# @active_users = User.where('created_at >= ?', Date.current)
+   	# @fading_users = User.where('created_at <= ?', Date.current-5.days).reorder('created_at DESC')
 
     session[:chatrooms] ||= []
     @chatrooms_windows = Chatroom.includes(:recipient, :notes)
@@ -42,7 +41,8 @@ class ApplicationController < ActionController::Base
 
 	private
   def boss_admin
-	  @boss_admin ||= User.find_by(admin: true)
+	  # @boss_admin ||= User.find_by(admin: true)
+    @boss_admin = User.where(admin: true)
   end
 
   def logging_in
@@ -55,11 +55,21 @@ class ApplicationController < ActionController::Base
     u
   end
 
+  def fading_users
+    fading_users = User.where(['created_at <= ? and admin = ?', Date.current-5.days, false])
+    fading_users.reorder('created_at DESC')
+  end
+
+  def active_users
+    active_users = User.where(['created_at >= ? and admin = ?', Date.current, false])
+  end
+
   def closed_line
-   	closed_line = Chatroom.where('created_at >= ?', Time.now-3.days)
+   	closed_line = Chatroom.where('created_at >= ?', Date.current-3.days)
  	end
 
   def open_line
-   	open_line = Chatroom.where('created_at <= ?', Time.now-3.days)
+   	open_line = Chatroom.where('created_at <= ?', Date.current-3.days)
 	end
+
 end
