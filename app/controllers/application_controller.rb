@@ -31,18 +31,15 @@ class ApplicationController < ActionController::Base
 	def opened_chatrooms_windows
    	@users = current_or_guest_user.admin? ? User.all.where.not(id: current_or_guest_user) : User.all.where(admin: true)
 
-   	# @active_users = User.where('created_at >= ?', Date.current)
-   	# @fading_users = User.where('created_at <= ?', Date.current-5.days).reorder('created_at DESC')
-
     session[:chatrooms] ||= []
     @chatrooms_windows = Chatroom.includes(:recipient, :notes)
                                            .find(session[:chatrooms])
+
   end
 
 	private
   def boss_admin
-	  # @boss_admin ||= User.find_by(admin: true)
-    @boss_admin = User.where(admin: true)
+	  @boss_admin ||= User.find_by(admin: true)
   end
 
   def logging_in
@@ -65,11 +62,12 @@ class ApplicationController < ActionController::Base
   end
 
   def closed_line
-   	closed_line = Chatroom.where('created_at >= ?', Date.current-3.days)
+   	closed_line = Chatroom.where('created_at <= ?', Date.current-5.days)
+
+    # closed_line = Chatroom.where('created_at <= ?', Date.current-5.days)
  	end
 
   def open_line
-   	open_line = Chatroom.where('created_at <= ?', Date.current-3.days)
-	end
-
+   	open_line = Chatroom.where('created_at >= ?', Date.current).reorder('created_at DESC')
+  end
 end

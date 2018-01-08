@@ -10,8 +10,7 @@ module ApplicationHelper
 	              class: "user-#{user.id} online_status #{'online' if user.online?}"
 	end
 
-
 	def chatrooms_windows
-	  params[:controller] != '' ? @chatrooms_windows : []
+	  params[:controller] != 'conversations' ? @chatrooms_windows : []
 	end
 end

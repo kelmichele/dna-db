@@ -5,11 +5,11 @@
       <%= link_to chatroom.opposed_user(user).email, class: 'toggle-window' do %>
         <%= image_tag('chat.png', class:'chat-icon') %>
         <span class="contact-name-notif">
-          <% if current_or_guest_user.admin? %>
+
             <%= chatroom.opposed_user(user).name %>
-          <% else %>
-            Customer Support Chat
-          <% end %>
+
+
+
         </span>
         <!-- <span class="ofc-online"><b>Online</b> - Chat with us</span> -->
 
