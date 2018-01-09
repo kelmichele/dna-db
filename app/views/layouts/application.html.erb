@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js"></script>
   </head>
 
-  <body class=" <%= controller_name %> <%= action_name %>">
+  <body class=" <%= controller_name %> <%= action_name %> <% if user_signed_in? && current_user.admin? %>admin-view <% else %> general<% end %>">
     <%= render 'layouts/header' %>
       <!-- <ol class="breadcrumb"><%= render_breadcrumbs :tag => :li, :separator => '  '%></ol> -->
       <%= render 'layouts/messages' %>

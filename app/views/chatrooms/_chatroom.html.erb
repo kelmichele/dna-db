@@ -4,12 +4,9 @@
 
       <%= link_to chatroom.opposed_user(user).email, class: 'toggle-window' do %>
         <%= image_tag('chat.png', class:'chat-icon') %>
-        <span class="contact-name-notif">
-
-            <%= chatroom.opposed_user(user).name %>
-
-
-
+        <span class="name-notif">
+          <!-- Customer Support Chat -->
+          <%= chatroom.opposed_user(user).name %>
         </span>
         <!-- <span class="ofc-online"><b>Online</b> - Chat with us</span> -->
 

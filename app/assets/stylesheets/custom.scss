@@ -260,8 +260,6 @@ span.off {background-color: red;}
 .new_note {margin-top:15px; }
 input.btn.btn-success {margin-top:8px;}
 
-// .panel-success .panel-heading { }
-
 .live-chat {
   width: 300px;
   height: 30px;
@@ -278,7 +276,37 @@ input.btn.btn-success {margin-top:8px;}
   a {color: white; }
 }
 
-.chatroom-window {
+
+.chatroom-window .panel-default {
+  margin-bottom: 0;
+
+  .panel-body{padding: 5px;}
+
+  a {color: white;}
+  .chat-icon {width: 20px; height:auto; margin-right: 3px; margin-bottom: 3px;}
+
+  .panel-heading {background-color: darken($blue, 35%);text-align: center;color:white;padding: 5px 6px; border:none;
+    &:hover a {color: rgba(white, .7);}
+  }
+  .btn.exp {font-weight: bold; margin-left: 25px;}
+  .btn.pull-right {margin-right: 5px; font-weight: bold;}
+
+  .tab-link {color: black; float: right; font-weight: bold; margin-top: 20px;
+    &:hover {opacity: .7;}
+  }
+
+  &.panel-success {
+    .panel-heading {background-color: #dff0d8; }
+    a {color: $dark; }
+  }
+
+  &.open-success {
+    .panel-heading {background-color: #45CCFF; }
+    a {color: $dark; }
+  }
+}
+
+.general .chatroom-window {
   .panel-default {
     width: 300px;
     min-height: 30px;
@@ -286,30 +314,23 @@ input.btn.btn-success {margin-top:8px;}
     bottom: 0px;
     right: 15px;
     z-index: 100;
-    margin-bottom: 0;
-
-    .panel-body{padding: 5px;}
-
-    a {color: white;}
-    .chat-icon {width: 20px; height:auto; margin-right: 3px; margin-bottom: 3px;}
-
-    .panel-heading {background-color: darken($blue, 35%);text-align: center;color:white;padding: 5px 6px; border:none;
-      &:hover a {color: rgba(white, .7);}
-    }
-    .btn.exp {font-weight: bold; margin-left: 25px;}
-    .btn.pull-right {margin-right: 5px; font-weight: bold;}
-
-    .tab-link {color: black; float: right; font-weight: bold; margin-top: 20px;
-      &:hover {opacity: .7;}
-    }
-
-    &.panel-success {
-      .panel-heading {background-color: #dff0d8; }
-      a {color: $dark; }
-    }
-
-    &:nth-child(2n+2) {border: 2px solid purple;right: 40%;}
-    &:nth-child(3n+3) {border: 2px solid orange; right: 20%;}
-
   }
 }
+
+.admin-view #chatrooms-list {width: 100%; position: fixed; bottom: 0; z-index: 101; margin-bottom: 0;
+  .chatroom-window {
+    width: 300px;
+    min-height: 30px;
+    position: relative;
+    z-index: 102;
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+
