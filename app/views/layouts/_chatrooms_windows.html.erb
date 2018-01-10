@@ -1,10 +1,10 @@
 <% unless user_signed_in? && current_user.admin? %>
-	<div class="live-chat customer">
-		<%= image_tag('chat.png', class:'chat-icon') %>
-		<%= link_to chatrooms_path(user_id: boss_admin), remote: true, method: :post do %>
-			<%= admin_online_status boss_admin %>
-		<% end %>
-	</div>
+		<div class="live-chat customer">
+			<%= image_tag('chat.png', class:'chat-icon') %>
+			<%= link_to chatrooms_path(user_id: boss_admin), remote: true, method: :post do %>
+				<%= admin_online_status boss_admin %>
+			<% end %>
+		</div>
 <% end %>
 
 <ul id="chatrooms-list">
@@ -14,7 +14,6 @@
 	                       user: current_or_guest_user } %>
 	<% end %>
 </ul>
-		<!-- <p><%= admin_online_status boss_admin %> Available for Customer Support</p> -->
 
 <!-- if boss_admin.online?
   <span class="ofc-online"><b>Online</b> - Chat with us</span>
