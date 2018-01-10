@@ -63,8 +63,6 @@ class ApplicationController < ActionController::Base
 
   def closed_line
    	closed_line = Chatroom.where('created_at <= ?', Date.current-5.days)
-
-    # closed_line = Chatroom.where('created_at <= ?', Date.current-5.days)
  	end
 
   def open_line

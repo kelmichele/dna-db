@@ -1,6 +1,7 @@
 <div class="admin-bar">
 	<div class="avail">
-		<p>Available for Customer Support</p>
+		<p><%= admin_online_status boss_admin %> Available for Customer Support</p>
+
 	</div>
 
 	<div class='admenu' id ='chatrooms-menu'>
@@ -11,19 +12,14 @@
 	  </a>
 
 	  <ul class="dropdown dropdown-menu" role="menu">
-	  	<% active_users.each do |user| %>
-	      <li class="awaits"><%= link_to user.name, chatrooms_path(user_id: user), remote: true, method: :post %></li>
+      <% active_users.each do |user| %>
+        <li class="awaits ">
+        	<%= link_to chatrooms_path(user_id: user), remote: true, method: :post do %>
+	          Support Window: <%= user.id %>
+        	<% end %>
+      	</li>
       <% end %>
 	  </ul>
-	</div>
-	<!-- <ul id="chatrooms-list">
-	  <% open_line.each do |chatroom| %>
-	    id: <%= chatroom.id %><br>
-	    sender: <%= chatroom.sender.name %><br>
-	    created: <%= chatroom.created_at.to_date() %><br>
-	    <hr>
-	  <% end %>
-	</ul> -->
-	<!-- if user.chatrooms.count >= 1 -->
 
+	</div>
 </div>

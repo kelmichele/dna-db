@@ -6,7 +6,8 @@
         <%= image_tag('chat.png', class:'chat-icon') %>
         <span class="name-notif">
           <!-- Customer Support Chat -->
-          <%= chatroom.opposed_user(user).name %>
+          <!-- Support Ticket <%= chatroom.opposed_user(user).id %> -->
+          Support Window: <%= chatroom.sender_id %>
         </span>
         <!-- <span class="ofc-online"><b>Online</b> - Chat with us</span> -->
 
