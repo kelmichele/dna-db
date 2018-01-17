@@ -5,6 +5,9 @@
 <li class="nav-li"><%= link_to 'Our Process', our_process_path, class: 'nav-link' %></li>
 <li class="nav-li"><%= link_to 'Chat', chats_path, class: 'nav-link' %></li>
 
+<li class="nav-li"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
+<li class="nav-li"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li>
+
 <% if user_signed_in? %>
 	  <div id="current-user"></div>
     <% if current_user.admin? %>

@@ -2,7 +2,7 @@ class ChatroomsController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:create]
 
   def create
-    @chatroom = Chatroom.get(current_or_guest_user.id, params[:user_id])
+    @chatroom = Chatroom.get(current_user.id, params[:user_id])
 
     add_to_chatrooms unless chatted?
     respond_to do |format|

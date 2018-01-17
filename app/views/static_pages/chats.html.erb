@@ -16,7 +16,7 @@
 
 
       <hr><br>
-      <ul id="chatrooms-list">
+      <ul >
         <% open_line.each do |chatroom| %>
           <p>id: <%= chatroom.id %><br>
           notes: <%= chatroom.notes.count %><br>
@@ -71,6 +71,6 @@
   add percent signs, and this is the original chatbox code. all changes for testing will be made in that file. this is the reset
   <ul id="chatrooms-list">
   < @chatrooms.each do |chatroom| >
-    <= render 'chatrooms/chatroom', chatroom: chatroom, user: current_or_guest_user >
+    <= render 'chatrooms/chatroom', chatroom: chatroom, user: current_user >
   < end >
 </ul> -->
