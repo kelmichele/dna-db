@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def new
     @user = User.new
     # @guest_user = User.new
@@ -12,14 +11,6 @@ class UsersController < ApplicationController
     session[:guest_user_id] = nil
     guest_user if with_retry
   end
-
-    # @user = params[:user] ? User.new(params[:user]) : User.new_guest
-    # if @user.save
-    #   session[:user_id] = @user.id
-    #   redirect_to root_url
-    # else
-    #   render "new"
-    # end
 
   private
   def create_guest_user

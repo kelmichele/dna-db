@@ -28,7 +28,7 @@
       <form class="new_note">
         <input name="chatroom_id" type="hidden" value="<%= chatroom.id %>">
         <input name="user_id" type="hidden" value="<%= user.id %>">
-        <textarea name="body" class="form-control"></textarea>
+        <textarea name="body" class="form-control" autofocus= "true"></textarea>
         <input type="submit" class="btn btn-success" value="Send">
         <!-- <%= link_to 'Open in New Tab', chats_path, class: 'tab-link' %>  -->
       </form>
