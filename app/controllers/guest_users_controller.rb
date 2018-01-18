@@ -1,8 +1,7 @@
-class UsersController < ApplicationController
+class GuestUsersController < ApplicationController
 
   def new
     @user = User.new
-    # @guest_user = User.new
   end
 
   def create
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
 
   private
   def create_guest_user
-    u = User.new(:email => "usupport_#{Time.now.to_i}#{rand(100)}@customerchat.com", :guest => true)
+    u = User.new(:email => "support_#{Time.now.to_i}#{rand(100)}@customerchat.com", :guest => true)
     u.save!(:validate => false)
     session[:guest_user_id] = u.id
     u

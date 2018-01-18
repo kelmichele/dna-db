@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users
+  # devise_for :users, :controllers => {:registrations => "registrations"}
 
 
   devise_scope :user do
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 	end
 
 	# resources :users, only: [:index]
-	resources :users
+	resources :guest_users
 	resources :personal_messages, only: [:new, :create]
 	resources :conversations, only: [:index, :show]
 
