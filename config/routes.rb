@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 	get 'info', to: 'static_pages#info'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
 	end
 
 	# resources :users, only: [:index]
+	resources :users
 	resources :personal_messages, only: [:new, :create]
 	resources :conversations, only: [:index, :show]
 

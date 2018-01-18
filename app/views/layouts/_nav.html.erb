@@ -8,14 +8,20 @@
 <li class="nav-li"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
 <li class="nav-li"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li>
 
+<% unless user_signed_in? %>
+	<li class="nav-li"><%= link_to "Continue as Guest", users_path, method: :post, class: 'nav-link' %></li>
+<% end %>
+
 <% if user_signed_in? %>
-	  <div id="current-user"></div>
-    <% if current_user.admin? %>
-      <li class="nav-li"><%= link_to "#{current_user.name.capitalize}*", edit_user_registration_path, class: 'nav-link' %></li>
-    <% else %>
-  		<li class="nav-li"><%= link_to current_user.name.capitalize, edit_user_registration_path, class: 'nav-link' %></li>
-    <% end %>
-		<li class="nav-li"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-		<!-- <li class="nav-li"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li> -->
-		<!-- <li class="nav-li"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li> -->
+  <div id="current-user"></div>
+  <% if current_user.admin? %>
+    <li class="nav-li"><%= link_to "#{current_user.name}*", edit_user_registration_path, class: 'nav-link' %></li>
+  <% elsif current_user.is_guest? %>
+		Hola!
+    <%= current_user.name %>
+		<!-- <li class="nav-li">< link_to current_user.name.capitalize, edit_user_registration_path, class: 'nav-link' %></li> -->
+  <% end %>
+	<li class="nav-li"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+	<!-- <li class="nav-li"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li> -->
+	<!-- <li class="nav-li"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li> -->
 <% end %>
