@@ -40,13 +40,21 @@
         <div class="panel-body">
           <ul>
             <% active_users.each do |user| %>
-              <!-- if user.notes.count == 0  -->
+              <% if user.notes.count == 0 %>
                 <li><%= link_to user.name, chatrooms_path(user_id: user), remote: true, method: :post %>
                   <b><br><%= user.id %></b>
                   <br><%= user.created_at.to_date() %>
                   <br><%= user.chatrooms.count %> &nbsp; | &nbsp; <%= user.chatrooms.count %>
                 </li>
                 <br>
+              <% else %>
+                <li><%= link_to user.name, chatrooms_path(user_id: user), remote: true, method: :post %>
+                  <b><br><%= user.id %></b>
+                  <br><%= user.created_at.to_date() %>
+                  <br><%= user.chatrooms.count %> &nbsp; | &nbsp; <%= user.chatrooms.count %>
+                </li>
+                <br>
+              <% end %>
             <% end %>
 
             <hr>

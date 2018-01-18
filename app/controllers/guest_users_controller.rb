@@ -6,10 +6,7 @@ class GuestUsersController < ApplicationController
 
   def create
     @cached_guest_user ||= User.find(session[:guest_user_id] ||= create_guest_user.id)
-  rescue ActiveRecord::RecordNotFound
-    session[:guest_user_id] = nil
-    guest_user if with_retry
-
+    redirect_to root_url
   end
 
   private

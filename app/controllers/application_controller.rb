@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 	helper_method :closed_line
 	helper_method :open_line
   helper_method :fading_users, :active_users
-  helper_method :create_guest_user
+
 
   def create_chat
     @chatroom = Chatroom.create(current_user.id, params[:user_id])
@@ -17,17 +17,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
 	def opened_chatrooms_windows
-    # unless session[:chatrooms] = nil
-     	# @users = current_user.admin? ? User.all.where.not(id: current_user) : User.all.where(admin: true)
-      @users = user_signed_in? && current_user.admin? ? User.all.where.not(id: current_user) : User.where(admin: true)
+   	# @users = current_user.admin? ? User.all.where.not(id: current_user) : User.all.where(admin: true)
+    @users = user_signed_in? && current_user.admin? ? User.all.where.not(id: current_user) : User.where(admin: true)
 
-      session[:chatrooms] ||= []
-      @chatrooms_windows = Chatroom.includes(:recipient, :notes)
-                                             .find(session[:chatrooms])
-    # end
-
+    session[:chatrooms] ||= []
+    @chatrooms_windows = Chatroom.includes(:recipient, :notes)
+                                           .find(session[:chatrooms])
   end
 
 	private
@@ -38,20 +34,13 @@ class ApplicationController < ActionController::Base
   def logging_in
   end
 
-  def create_guest_user
-    u = User.new(:email => "guest_#{Time.now.to_i}#{rand(100)}@customerchat.com")
-    u.save!(:validate => false)
-    session[:guest_user_id] = u.id
-    u
-  end
-
   def fading_users
     fading_users = User.where(['created_at <= ? and admin = ?', Date.current-5.days, false])
     fading_users.reorder('created_at DESC')
   end
 
   def active_users
-    active_users = User.where(['created_at >= ? and admin = ?', Date.current, false])
+    active_users = User.where(['created_at >= ? and admin = ?', Date.current, false]).reorder('created_at DESC')
   end
 
   def closed_line
