@@ -9,6 +9,7 @@ class GuestUsersController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     session[:guest_user_id] = nil
     guest_user if with_retry
+
   end
 
   private
