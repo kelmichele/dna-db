@@ -18,7 +18,8 @@
       <!-- <ol class="breadcrumb"><%= render_breadcrumbs :tag => :li, :separator => '  '%></ol> -->
       <%= render 'layouts/messages' %>
 		  <%= yield %>
-    <%= render 'layouts/chatrooms_windows' %>
+
+    <%= render chat_or_account_path %>
 	  <%= render 'layouts/footer' %>
   </body>
 </html>

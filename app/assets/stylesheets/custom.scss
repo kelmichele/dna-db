@@ -36,7 +36,7 @@ h3, h2 {margin-top:0px;}
 p{font-size: 16px;}
 body{font-family: $open; background-color: $f9;}
 ul{list-style-type: none; padding-left:0;}
-a:hover {text-decoration: none;}
+a:hover {text-decoration: none; opacity: .7;}
 
 .center-block {@include center-block();}
 
@@ -260,21 +260,21 @@ span.off {background-color: red;}
 .new_note {margin-top:15px; }
 input.btn.btn-success {margin-top:8px;}
 
-.live-chat {
-  width: 300px;
-  height: 30px;
-  position: fixed;
-  bottom: 0px;
-  right: 15px;
-  z-index: 99;
-  text-align: center;
-  background-color: darken($blue, 50%);
-  color:white;
-  border-radius: 4px;
-  padding: 6px 0 10px;
-  .chat-icon {width: 25px; height:auto; margin-right: 5px; }
-  a {color: white; }
-}
+// .live-chat {
+//   width: 300px;
+//   height: 30px;
+//   position: fixed;
+//   bottom: 0px;
+//   right: 15px;
+//   z-index: 99;
+//   text-align: center;
+//   background-color: darken($blue, 50%);
+//   color:white;
+//   border-radius: 4px;
+//   padding: 6px 0 10px;
+//   .chat-icon {width: 25px; height:auto; margin-right: 5px; }
+//   a {color: white; }
+// }
 
 
 .chatroom-window .panel-default {
@@ -327,10 +327,32 @@ input.btn.btn-success {margin-top:8px;}
   }
 }
 
+.panel.lc {
+  .panel-body{display:none}
+}
 
+.livechat .panel-primary.lc, .live-chat.customer {
+  width: 300px;
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0px;
+  right: 5px;
+  z-index: 99;
+  text-align: center;
+  background-color: darken($blue, 50%);
+  border: 1px solid rgba(black, .2);
+  color:white;
+  border-radius: 4px;
+  padding: 6px 0 4px;
+  a {color: white;}
+  .chat-icon {width: 25px; height:auto; margin-right: 5px; }
+  .panel-heading{ background-color: transparent;color:white;padding: 1px 6px 7px; border:none; margin-bottom: 0; }
+  .panel-title {font-size: 15px;}
+  .panel-body{background-color: white;}
 
+  .lc-btns {display: inline-block; background-color: $blue; font-weight: bold; padding: 5px 15px; background-color: $purple;
+    &.login {background-color: $burg; margin-right: 5px;}
+  }
+}
 
-
-
-
-
+.live-chat.customer {border: 1px solid rgba($blue, .5); width:250px; right:15px; font-size: 15px; }

@@ -96,7 +96,10 @@
 	.nav-li {display: inline-block; float: left; margin: 0px 15px;
 		&:first-child {margin-left:0;}
 		&:hover .nav-link {opacity: .7;}
+
+		&.ft-only {display: none;}
 	}
+
 
 	.add-link{font-size: 15px;border: 1px solid rgba(white, .5); padding:10px; border-radius: 4px;
 		&:hover {opacity: .7;}
