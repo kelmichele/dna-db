@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Source+Sans+Pro:300,400,400i,600,700');
+@import url('https://fonts.googleapis.com/css?family=Cantarell:400,400i,700|Quicksand:400,600|Open+Sans:400,700|Source+Sans+Pro:400,700');
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -24,13 +24,15 @@
 .ptop0 { padding-top: 0px; }
 .f-right {float: right;}
 
-p, h5, h4, h3, h2, h1, a, li {font-family: $open; line-height: 1.4em; color: $dark;
+p, h5, h4, h3, h2, h1, a, li {font-family: $quick; line-height: 1.4em; color: $dark;
   &.wide {letter-spacing: 1.5px;}
   &.upper {text-transform: uppercase;}
   &.white {color: white;}
   &.black {color: black;}
   &.dark {color: $dark;}
   &.blue {color: $blue;}
+  &.cant {font-family: $cant;}
+
 }
 h3, h2 {margin-top:0px;}
 p{font-size: 16px;}

@@ -17,7 +17,10 @@
     <%= render 'layouts/header' %>
       <!-- <ol class="breadcrumb"><%= render_breadcrumbs :tag => :li, :separator => '  '%></ol> -->
       <%= render 'layouts/messages' %>
-		  <%= yield %>
+
+		  <div class="pg-body">
+        <%= yield %>
+      </div>
 
     <%= render chat_or_account_path %>
 	  <%= render 'layouts/footer' %>

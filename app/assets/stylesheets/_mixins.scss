@@ -8,6 +8,7 @@
 @mixin sec-default() {
   width: 100%;
   float: left;
+  display: block;
 }
 
 @mixin sec-grid($float, $size) {
@@ -35,6 +36,20 @@
   background-size: 100%;
 }
 
+@mixin ease() {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  transition: 0.1s;
+}
+
+@mixin link($size, $color) {
+  width: $size; padding: 10px 15px; text-align: center;
+  font-size: 16px; color: $color; border: 1px solid $color;
+  font-weight: bold; @include center-block();
+
+  &:hover {text-decoration: none; @include ease(); opacity: .7;}
+}
+
 @mixin tshadowl($glow) {
   text-shadow: 0px 1px 1px $glow;
 }
@@ -56,15 +71,15 @@
   z-index: -1;
 }
 
-@mixin ease() {
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
-  transition: 0.1s;
-}
-
 @mixin gradient($color1, $color2){
   background: -webkit-linear-gradient($color1, $color2);
   background: linear-gradient($color1, $color2);
+}
+
+@mixin text-gradient($dir, $from, $to) {
+  background: -webkit-linear-gradient($dir, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin bp($point) {

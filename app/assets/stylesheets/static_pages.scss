@@ -4,40 +4,265 @@
 @import "mixins";
 @import "variables";
 
-.home {
+// h2 { @include text-gradient(300deg, $plum, $blue); }
+// background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+// background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+
+.inner {width: 85%; @include center-block();}
+hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
+
+.home .pg-body{
 	.breadcrumb {display: none;}
 	.hero-home { text-align:center;
-		@include sec-default(); background-color: white; padding-top: 45px; height:550px;
-		@include sec-bgimage('baby.jpg'); background-position: bottom center;
+		@include sec-default(); background-color: white; padding-top: 45px; height:600px;
+		@include sec-bgimage('running.jpg');
+		background-position: bottom right;
+		h1 {margin: 0px; font-weight: bold; font-family: $cant; text-transform: uppercase;}
+		h3 {font-size: 21px; margin-bottom: 0;}
 	}
 
-	.welcome-sec {@include sec-default(); padding: $sec-pad;
-	  background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
-	  background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+	.dna {@include sec-default();
+		// padding: 90px 0 70px;
+		// background-color: $f7;
+		// background-color: #eaebec;
+		// @include sec-bgimage('preview11.png'); background-size: 33%;
+		.right {@include sec-grid(right, 40%); margin-right:5%; text-align: center; @include center-block(); margin-top: 20px}
+		h3{font-size: 20px; line-height: 1.5em;}
+		h2 { color: darken($blue, 10%); font-family: $source; font-weight: 600; font-size:30px; line-height: 1em;}
+		p{margin-bottom: 0;}
+		hr.hlf {margin-bottom: 30px;}
+		.link-a{@include link(45%, $blue); border-radius: 15px; border-width:0px; background-color: $f2; box-shadow: 5px 5px 8px rgba(black, .1);}
 
-	  h3 {font-weight: 600; color: white; text-transform: uppercase; font-size: 1.4em;}
-	  p {color: $f9;
-	  	span {font-style: italic;}
-	  }
+		.left {@include sec-grid(left, 45%);}
+		.right{float:right; margin-right: 10%; padding: 60px 0;}
 	}
+
+	.legal-lt {@include sec-default(); background-color: $f2;
+		.left {@include sec-grid(left, 40%); margin-left: 10%; padding:$sec-pad; }
+		.right {@include sec-grid(left, 40%); margin-left: 10%;}
+
+		.abs {position: absolute; width:35%; margin-top:-3.5%; right:0;}
+
+		p {font-size: 17px;}
+		h2 {font-weight: bold;}
+		.link-a{@include link(35%, $blue); border-radius: 15px;
+			box-shadow: 5px 5px 8px rgba(black, .3);
+			background: darken(white, 5%); border:none;
+			float: left; margin-left: 15%;
+		}
+	}
+
+	.call-block{
+		@include sec-default(); text-align: center;padding:$sec-pad;
+		background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+		background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+		h3{color: white; font-weight: bold; letter-spacing: 1px; font-size: 21px;}
+
+		.img-icon {width:120px; @include center-block();}
+	}
+
+	.profile { @include sec-default();background-color: $f2; display: none;
+		// @include sec-bgimage('preview11.png'); background-size: 35%; background-position: left center;
+		.left {@include sec-grid(left, 45%);}
+		.right {@include sec-grid(right, 40%);padding:$sec-pad; margin-right: 10%; margin-top: 5%;}
+		.link-a{@include link(35%, $blue); border-radius: 15px; border-width:0px; background-color: $f2; box-shadow: 5px 5px 8px rgba(black, .1); float:left; }
+		.img-small {width:30%; float: right;}
+	}
+
+	.homekit { @include sec-default(); padding:$sec-pad;
+		// @include sec-bgimage('test-kit-slide.png'); background-size: 20%; background-position: left center;
+		.left {@include sec-grid(left, 20%); margin-left: 15%; }
+		.right {@include sec-grid(none, 38%); margin-left: 3%; margin-top: 3.5%;}
+		.link-a{@include link(40%, $blue); border-radius: 15px; border-width:0px; background-color: $f2; box-shadow: 5px 5px 8px rgba(black, .1); float:left;}
+	}
+
+	.us { @include sec-default(); padding: $sec-pad; background-color: $f2;
+		// @include sec-bgimage('preview11.png'); background-size: 35%; background-position: left center;
+		.one, .two, .three {@include sec-grid(left, 30%); margin-left: 1%;}
+	}
+}
+
+.home-test {
+	.top {
+		@include sec-default(); padding:40px 0 0 ; background-color: white;
+		h1 {font-size: 27px;}
+		.left, .right {@include sec-grid(left, 45%);}
+		.right {width: 25%;}
+		.left{margin-left: 5%; margin-top:3%;}
+
+		.pricing {width: 95%; float: right;
+			h4 {font-weight: bold; margin-bottom: 5px; font-family: $cant;}
+			p{margin: 0 0 5px;
+				b{color: $blue;}
+				span {font-style: italic;}
+			}
+		}
+	}
+
+	.full-pg{@include sec-default(); padding: $sec-pad; background-color: $f2;
+		p{
+			b {color: $blue; font-family: $cant;}
+			span{font-family: $cant; font-weight: bold;}
+		}
+	}
+
+	.top, .full-pg {
+		.inside {width: 75%; float: left; margin-left: 5%; position: relative;}
+	}
+
+	.checkout {width: 22%; position: fixed; margin-top:5%; margin-bottom: 50%; right: 5%;
+		padding: 25px 15px;
+		background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+		background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+		border-radius:4%;
+		box-shadow: 5px 0px 20px rgba(black, .25);
+		p{color: white; margin: 0 0 10px; padding-left:5px;
+			span {font-style: italic;}
+			b { text-shadow: 0px 1px 1px rgba(black, .3)}
+		}
+		h4,h5 {color: white;font-weight: bold; font-family: $cant; text-align: center;}
+		h5 {text-align: left; font-size:16px; margin-bottom:5px; }
+		button {@include center-block();}
+	}
+
 }
 
 .options {
-	.innerpage-top { @include sec-default(); padding: $sec-pad; background-color: white;
+	.innerpage-top { @include sec-default(); background-color: white;
+	 padding: $sec-pad;
 		.header {width: 60%; @include center-block(); text-align: center;}
-		.left-box{ @include sec-grid(left, 40%); margin-left: 5%; margin-top:7%;}
-		.right-box{ @include sec-grid(right, 50%); }
-		img{width:65%;}
+		.left-box{ @include sec-grid(left, 50%); margin-left: 5%;}
+		.right-box{ @include sec-grid(right, 40%); }
+		// img{width:65%;}
 		h1 {font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase;}
 		p {margin: 10px 0; span{font-style: italic; font-size: .9em; }}
+
+		.left-box{ @include sec-grid(left, 45%);}
+		.right-box{ width:22%; float: none; margin-left: 10%; }
+	}
+
+	.uk-modal-full.uk-modal {
+		.uk-modal-dialog {
+			height:100%;
+			@include sec-bgimage('dna10.jpg');
+			// @include sec-bgimage('molecule-bg.png');background-size: 20%;
+
+			&.frm {padding: 0; background-color: $f7;
+				p{width:18%; float: left; padding: 20px 30px; line-height: 1.6em; font-weight: bold; margin-top: 15%;}
+				.inside {padding: 30px 45px; background-color: white; height:100%;
+					width:80%; float: right; margin-right: 2%;
+				}
+			}
+		}
+		.uk-close.uk-icon::after {display: none;}
+		.uk-modal-dialog > .uk-close:first-child {margin: 20px 50px 0 0 ;}
 	}
 
 	.test-options {
-		@include sec-default(); background-color: $f8; padding:$sec-pad;
+		h2 {margin-bottom: 40px;}
+		@include sec-default(); background-color: $f6; padding:$sec-pad;
+
 		.uk-accordion li {border-bottom: 1px solid rgba($gray, .4);}
 		.uk-accordion-title{background:none; padding:15px;}
-		.uk-accordion-content{width:85%; margin-top: 10px;
+		.uk-accordion-content{ margin-top: 10px;
 			p{line-height: 1.5em;}
+		}
+
+		.uk-accordion { width: 35%; display: inline-block;float: left; margin-top: 0;
+			li {border: 1px solid rgba($gray, .3); box-shadow: 5px 0 8px rgba(black, .2); background-color: white;
+				margin-bottom: 20px;
+				position: relative; z-index: 1;
+				p.price, .register {@include sec-grid(left, 40%);}
+				p.price{font-weight: bold;}
+				.register {float: right; width: 30%; font-size: 15px; font-weight: bold;
+					text-align: center; padding: 5px 10px; border-radius: 5px;
+					background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+					background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+				}
+			}
+
+			.uk-accordion-title {box-shadow: 0px 1px 2px rgba(black, .15);}
+			.uk-accordion-title::after {
+				background-color: $purple;
+				border-radius: 50%;
+			}
+
+			// background-color: $plum;
+			// 	&.two {background-color:$purple;}
+			// 	&.three {background-color:#47b7bd;}
+			// 	&.four {background-color:$burg;}
+			// 	&.five {background-color:#3f3e62;}
+			// 	&.six {background-color:#239f86;}
+			// 	&.svn {background-color:#f7be48}
+			// 	&.eight {background-color:$blue;}
+			// }
+		}
+
+		&.alt {background-color: $f9;
+			.uk-accordion {width:40%;
+				li {border: none;  box-shadow: none; background-color: transparent;
+					margin-bottom: 0px;position: relative; z-index: 0;
+					&.uk-open::before { @include before(); background-color: $f2; }
+				}
+			}
+			.uk-accordion-title {box-shadow: none; padding:10px;}
+			.uk-accordion-title::after {float: left; margin-right: 10px;}
+		}
+		.options {@include sec-grid(left, 30%);margin-left: 10%;
+			.opt-name {font-size: 18px; background-color: transparent; }
+			i {
+				float: left;
+				background-color: $purple;
+				line-height: 1.4em;
+				margin-top: 4px;
+				font-style: normal;
+				color: white;
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 50%;
+				margin-right: 7px;
+				text-align: center;
+				font-size: 15px;
+			}
+		}
+
+		.side {@include sec-grid(none, 45%); }
+	}
+
+	.opt-block{ text-align: center;
+		@include sec-default(); background-color: $f7; padding:70px 0;
+		.title {@include sec-grid(none, 35%); }
+		.dets {@include sec-grid(right, 50%); margin-right: 5%;}
+
+		&:nth-child(2n+2) {background-color: white;
+			.dets{float: left;}
+		}
+
+		&.long {
+			.dets {width: 64%;}
+			.title{width: 30%;}
+			span {font-style: italic;}
+		}
+
+		h3 {font-size: 25px; color: $blue; font-family: $cant; font-weight: bold; text-transform: uppercase;}
+		p.price{font-weight: bold;}
+		.register {
+			font-size: 15px; font-weight: bold; color: white;
+			text-align: center; padding: 5px 10px; border-radius: 5px;
+			background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
+			background: linear-gradient(-300deg, darken($blue, 15%), $blue);
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
