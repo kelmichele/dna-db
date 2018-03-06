@@ -102,23 +102,19 @@ a:hover {text-decoration: none; opacity: .7;}
     span{font-weight: bold;}
   }
 
-  .shared-text {width: 55%; font-size: 15px; font-weight: bold;
+  .shared-text {width: 60%; font-size: 15px; font-weight: bold;
     a, span {color: $blue;}
   }
+  .add-btns-blk {width:75%; @include center-block();}
 }
 .all-states, .all-towns, .all-clinics {@include sec-default(); padding: $sec-pad;
   .state-name {font-weight: bold; }
   .state-name a {text-transform: capitalize;}
   td.actions{float: right; margin-left: 20px; margin-top: 3px;}
+
+  .top {@include sec-default();}
 }
 
-.states{
-  .state-list {width:25%; float: left; display: inline-block; }
-  .tfw {@include sec-default(); padding-bottom:12px;}
-  td.print {padding-left: 30px;}
-  h4.state-name {margin-bottom: 5px;}
-  p.info{font-size: 13px; margin: 0;}
-}
 
 .towns .wrap.clinics{@include sec-default(); padding:50px 0; text-align: center;}
 .clinic-bx {display: inline-block; width:30%;

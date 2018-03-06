@@ -24,7 +24,6 @@ module ApplicationHelper
 	  params[:controller] != '' ? @chatrooms_windows : []
 	end
 
-
 	def chat_or_account_path
 	  if !user_signed_in?
 	    'layouts/pre-panel'

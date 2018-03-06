@@ -128,23 +128,51 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 }
 
 .options {
-	.innerpage-top { @include sec-default(); background-color: white;
-	 padding: $sec-pad;
+	.header-wrapper{
+		.top{background-color: white;}
+		.full{background-color: $f6;
+			li a, .add-link {color: $blue; border-color: $blue;}
+		}
+	}
+
+	.color-hd{@include sec-default();
+		padding: 0px 55px ;
+		background-color: white;text-align: center;
+		h1 {color: $dark; font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase; margin-bottom: 0;}
+		h2{margin-top:0;}
+		// h1, p {color: $dark; @include center-block(); text-align: center;}
+		// .div {width: 75%; @include center-block();}
+
+		.img-l {display: inline-block; width: 80px; margin-left: -3%;
+	    -webkit-transform: rotate(15deg);
+	    -moz-transform: rotate(15deg);
+	    -o-transform: rotate(15deg);
+	    -ms-transform: rotate(15deg);
+	    transform: rotate(15deg);
+		}
+		// .img-l {@include center-block(); width:320px;}
+		.text{display: inline-block;width:30%; margin-top:20px;}
+	}
+
+
+	.innerpage-top { @include sec-default(); background-color: white; padding-top:30px;
+		// padding: $sec-pad;
 		.header {width: 60%; @include center-block(); text-align: center;}
 		.left-box{ @include sec-grid(left, 50%); margin-left: 5%;}
 		.right-box{ @include sec-grid(right, 40%); }
-		// img{width:65%;}
 		h1 {font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase;}
 		p {margin: 10px 0; span{font-style: italic; font-size: .9em; }}
 
-		.left-box{ @include sec-grid(left, 45%);}
-		.right-box{ width:22%; float: none; margin-left: 10%; }
+		.left-box{ @include sec-grid(left, 40%);
+		 	padding: $sec-pad;
+		}
+		.right-box{ width:24%; float: none; margin-left: 5%; }
 	}
 
 	.uk-modal-full.uk-modal {
 		.uk-modal-dialog {
 			height:100%;
-			@include sec-bgimage('dna10.jpg');
+			@include sec-bgimage('new-bg.jpg');
 			// @include sec-bgimage('molecule-bg.png');background-size: 20%;
 
 			&.frm {padding: 0; background-color: $f7;
@@ -159,8 +187,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	}
 
 	.test-options {
-		h2 {margin-bottom: 40px;}
 		@include sec-default(); background-color: $f6; padding:$sec-pad;
+		h2 {font-weight:bold; }
+
+		.inner {width:80%;}
 
 		.uk-accordion li {border-bottom: 1px solid rgba($gray, .4);}
 		.uk-accordion-title{background:none; padding:15px;}
@@ -208,25 +238,36 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			.uk-accordion-title {box-shadow: none; padding:10px;}
 			.uk-accordion-title::after {float: left; margin-right: 10px;}
 		}
-		.options {@include sec-grid(left, 30%);margin-left: 10%;
-			.opt-name {font-size: 18px; background-color: transparent; }
-			i {
-				float: left;
-				background-color: $purple;
-				line-height: 1.4em;
-				margin-top: 4px;
-				font-style: normal;
-				color: white;
-				width: 1.5em;
-				height: 1.5em;
-				border-radius: 50%;
-				margin-right: 7px;
-				text-align: center;
-				font-size: 15px;
+
+		.options {
+			@include sec-grid(left, 80%);margin-left: 10%;
+
+			p {display: inline-block; width: 47%; margin-left: 2%; padding: 0px 0 5px 15px;
+				text-align: right; margin-bottom: 5px;
+
+				.opt-name {font-size: 18px; background-color: transparent; line-height: 2em; }
+				i {
+
+					float: right;
+					font-style: normal;
+					margin-right: 7px;
+					text-align: center;
+					font-size: 15px;
+					margin-left: 8px;
+					img{height:35px;}
+				}
+
+				&:nth-child(2n+2) {
+					text-align: left;
+					i{float:left; margin-left: 0;}
+					i.imgcon{margin: 0 5px 0 0;}
+				}
+
 			}
 		}
 
-		.side {@include sec-grid(none, 45%); }
+		.options{width: 57%; margin-left: 0}
+		p.out {display: inline-block; width: 35%; float: right; margin-right:3%; padding-top: 15px;}
 	}
 
 	.opt-block{ text-align: center;
@@ -248,9 +289,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		p.price{font-weight: bold;}
 		.register {
 			font-size: 15px; font-weight: bold; color: white;
-			text-align: center; padding: 5px 10px; border-radius: 5px;
-			background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
-			background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+			letter-spacing: .5px;
+			text-align: center; padding: 7px 15px; border-radius: 5px;
+			background: -webkit-linear-gradient(-30deg, darken($blue, 15%), $blue);
+			background: linear-gradient(-30deg, darken($blue, 15%), $blue);
 		}
 	}
 }
@@ -259,8 +301,22 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 
 
+.states {
+  .state-list {width:20%; float: left; display: inline-block; }
+  .tfw {@include sec-default(); padding-bottom:12px;}
+  td.print {padding-left: 30px;}
+  h4.state-name {margin-bottom: 5px;}
+  p.info{font-size: 13px; margin: 0;}
 
+	.tfw{
+		.state-icons {display: inline-block; float: left; width: 40px;}
+		h4 {display: inline-block;}
+	}
 
+	.all-states .full{
+		@include sec-bgimage('preview11.png'); background-size: 40%; background-position: right center;
+	}
+}
 
 
 

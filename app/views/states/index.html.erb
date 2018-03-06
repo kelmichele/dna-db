@@ -3,7 +3,7 @@
 
 <div class="all-states">
 	<div class="wrap">
-		<div class="col-md-12">
+		<div class="top">
 			<h1><%= @page_title %></h1>
 			<hr class="title-line">
 			<div class="clearfix"></div>
@@ -14,16 +14,43 @@
 			</div>
 		</div>
 
-		<div class="col-md-8 col-md-offset-2">
+		<div class="add-btns-blk">
 			<%= render 'shared/add_btns' %>
 		</div>
 		<div class="clearfix"></div>
 		<br><hr><br>
 
+		<div class="full">
 			<table class="listing state-list">
-				<% for state in @cols_one %>
+				<% for state in @cols_o %>
 					<tr class="tfw">
-					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td>
+							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
+					  	<h4 class="state-name">
+					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
+					  		<%= link_to state.name, state_path(state) %>
+					  	</h4>
+					  </td>
+
+						<% if user_signed_in? && current_user.admin? %>
+					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
+					  	<!-- <td> <%= link_to state.name, edit_state_path(state) %></td> -->
+					  <% end %>
+					</tr>
+			  <% end %>
+			</table>
+
+			<table class="listing state-list">
+				<% for state in @cols_t %>
+					<tr class="tfw">
+					  <td>
+							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
+					  	<h4 class="state-name">
+					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
+					  		<%= link_to state.name, state_path(state) %>
+					  	</h4>
+					  </td>
+
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					  <% end %>
@@ -32,9 +59,16 @@
 			</table>
 
 			<table class="listing state-list">
-				<% for state in @cols_two %>
+				<% for state in @cols_th %>
 					<tr class="tfw">
-					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td>
+							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
+					  	<h4 class="state-name">
+					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
+					  		<%= link_to state.name, state_path(state) %>
+					  	</h4>
+					  </td>
+
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					  <% end %>
@@ -43,15 +77,23 @@
 			</table>
 
 			<table class="listing state-list">
-				<% for state in @cols_three %>
+				<% for state in @cols_fo %>
 					<tr class="tfw">
-					  <td><h4 class="state-name"><span><%= state.id %>.</span> &nbsp; <%= link_to state.name, state_path(state) %></h4></td>
+					  <td>
+							<% unless state.name == "Washington DC" %><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %> <% end %>
+					  	<h4 class="state-name">
+					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
+					  		<%= link_to state.name, state_path(state) %>
+					  	</h4>
+					  </td>
+
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
 					  <% end %>
 					</tr>
 			  <% end %>
 			</table>
+		</div>
 
 	</div>
 </div>

@@ -8,6 +8,11 @@ class StatesController < ApplicationController
 		@cols_one = @states.to_a[0..16]
 		@cols_two = @states.to_a[17..33]
 		@cols_three = @states.to_a[34..51]
+
+		@cols_o = @states.to_a[0..12]
+		@cols_t = @states.to_a[13..25]
+		@cols_th = @states.to_a[26..38]
+		@cols_fo = @states.to_a[39..51]
 	end
 
 	def show
