@@ -14,7 +14,7 @@ module ApplicationHelper
 		if boss_admin.online?
 			admin_online_status = 'Online: Chat With Us'
 		else
-			admin_online_status = 'We are currently offline. Send us a message.'
+			admin_online_status = 'Offline: Leave us a message.'
 		end
 	  # content_tag :span, boss_admin.boss_title,
 	              # class: "admin_online_status #{'online' if boss_admin.online?}"
