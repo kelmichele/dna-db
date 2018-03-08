@@ -223,6 +223,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.uk-close.uk-icon::after {display: none;}
 		.uk-modal-dialog > .uk-close:first-child {margin: 20px 50px 0 0 ;}
 		@include bp(ph) {
+			background-clip: white;
 			.uk-modal-dialog{border-right:6px solid #4650ae;border-left:6px solid #4650ae;}
 			.uk-modal-dialog > .uk-close:first-child {margin: 10px 15px 0 0 ;}
 		}
