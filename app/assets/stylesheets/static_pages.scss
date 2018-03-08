@@ -284,9 +284,9 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 		@include bp(sm) {
 			padding:25px 0;
-			.img-l {left:3%;}
+			.img-l {left:1%; height:200px; top:27%;}
 			.options p, .options p:nth-child(2n+2){
-				width:80%; float: right; text-align: left; margin: 5px 0 8px;
+				width:85%; padding-left: 0; float: right; text-align: left; margin: 5px 0 8px;
 				i {float: left; margin-left: 0;}
 			}
 		}
@@ -346,6 +346,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 				.title {width: 99%; @include center-block(); margin-top: 0}
 				.dets {@include sec-default();margin-top: 20px;}
 			}
+		}
+
+		@include bp(sm) {
+			.title{width:100%;}
 		}
 	}
 }
