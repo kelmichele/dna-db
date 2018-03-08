@@ -127,35 +127,61 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 }
 
 .options {
-	.color-hd{@include sec-default();
-		padding: 0px 55px ;
-		background-color: white;text-align: center;
-		h1 {color: $dark; font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase; margin-bottom: 0;}
-		h2{margin-top:0;}
+	h2{margin-top:0; margin-bottom: 5px;}
+	$tc: #dbf1f1;
 
-		.img-l {display: inline-block; width: 80px; margin-left: -3%;
-	    -webkit-transform: rotate(15deg);
-	    -moz-transform: rotate(15deg);
-	    -o-transform: rotate(15deg);
-	    -ms-transform: rotate(15deg);
-	    transform: rotate(15deg);
+	.color-hd{@include sec-default();	background: white; padding: 30px 60px;
+		position: relative;z-index: 0;
+
+		h1 {color: $dark; font-size: 2.2em;letter-spacing: 1px; text-transform: uppercase; font-weight: bold; text-align: center; margin-bottom: 30px;}
+
+		.text{ float: left; width: 44%;margin-left: 10%; }
+
+		.img {display: inline-block; width: 25%; float: none; margin-left: 5%;
+			position: relative;z-index: 0;
+			&::before {@include before();
+				@include sec-bgimage('pattern12.png'); background-size: 45%; background-position: top right; left:20px;
+				background-repeat: repeat-y;
+			}
 		}
-		.text{display: inline-block;width:30%; margin-top:20px;}
-	}
 
 
-	.innerpage-top { @include sec-default(); background-color: white; padding-top:30px;
-		// padding: $sec-pad;
-		.header {width: 60%; @include center-block(); text-align: center;}
-		.left-box{ @include sec-grid(left, 50%); margin-left: 5%;}
-		.right-box{ @include sec-grid(right, 40%); }
-		h1 {font-size: 2.2em;letter-spacing: 1px; font-family: $source; text-transform: uppercase;}
-		p {margin: 10px 0; span{font-style: italic; font-size: .9em; }}
-
-		.left-box{ @include sec-grid(left, 40%);
-		 	padding: $sec-pad;
+		@include bp(dt) {
+			.text{margin-top: 20px;width: 33%;margin-left: 17%;}
 		}
-		.right-box{ width:24%; float: none; margin-left: 5%; }
+
+		@include bp(tb) {
+			.text{ width: 50%; margin-left: 5%; }
+			h2 {font-size: 21px;}
+			p{margin: 10px 0;}
+		}
+
+		@include bp(tn) {
+			padding:20px 50px 20px 30px;
+			h1{font-size: 1.9em; margin-bottom: 15px;}
+			.text{ width: 70%; margin-left: 0; padding-right: 15px;margin-top: 15px;}
+			.img {margin-left:0; width:30%}
+			h2 {font-size: 19px;}
+			p{font-size: 15px; margin: 0 0 10px;}
+		}
+
+		@include bp(pl) {
+			.text{margin-top: 0;}
+		}
+
+		@include bp(mb) {
+			h1{font-size: 1.5em;}
+			h2{font-size: 17px;}
+			p {margin-bottom: 5px;}
+			padding:20px;
+			.img {width: 27%; }
+		}
+
+		@include bp(sm) {
+			h1 {margin-bottom: 5px;}
+			.text{width: 100%; text-align: center;}
+			.img{float: right;}
+		}
 	}
 
 	.uk-modal-full.uk-modal {
@@ -176,74 +202,30 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	}
 
 	.test-options {
-		@include sec-default(); background-color: $f6; padding:$sec-pad;
-		h2 {font-weight:bold; }
-
+		@include sec-default();padding:$sec-pad; background-color: rgba($tc, .2);
+		position: relative;z-index: 0;
 		.inner {width:80%;}
 
-		.uk-accordion li {border-bottom: 1px solid rgba($gray, .4);}
-		.uk-accordion-title{background:none; padding:15px;}
-		.uk-accordion-content{ margin-top: 10px;
-			p{line-height: 1.5em;}
-		}
-
-		.uk-accordion { width: 35%; display: inline-block;float: left; margin-top: 0;
-			li {border: 1px solid rgba($gray, .3); box-shadow: 5px 0 8px rgba(black, .2); background-color: white;
-				margin-bottom: 20px;
-				position: relative; z-index: 1;
-				p.price, .register {@include sec-grid(left, 40%);}
-				p.price{font-weight: bold;}
-				.register {float: right; width: 30%; font-size: 15px; font-weight: bold;
-					text-align: center; padding: 5px 10px; border-radius: 5px;
-					background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
-					background: linear-gradient(-300deg, darken($blue, 15%), $blue);
-				}
-			}
-
-			.uk-accordion-title {box-shadow: 0px 1px 2px rgba(black, .15);}
-			.uk-accordion-title::after {
-				background-color: $purple;
-				border-radius: 50%;
-			}
-
-			// background-color: $plum;
-			// 	&.two {background-color:$purple;}
-			// 	&.three {background-color:#47b7bd;}
-			// 	&.four {background-color:$burg;}
-			// 	&.five {background-color:#3f3e62;}
-			// 	&.six {background-color:#239f86;}
-			// 	&.svn {background-color:#f7be48}
-			// 	&.eight {background-color:$blue;}
-			// }
-		}
-
-		&.alt {background-color: $f9;
-			.uk-accordion {width:40%;
-				li {border: none;  box-shadow: none; background-color: transparent;
-					margin-bottom: 0px;position: relative; z-index: 0;
-					&.uk-open::before { @include before(); background-color: $f2; }
-				}
-			}
-			.uk-accordion-title {box-shadow: none; padding:10px;}
-			.uk-accordion-title::after {float: left; margin-right: 10px;}
-		}
-
 		.options {
-			@include sec-grid(left, 80%);margin-left: 10%;
+			width: 75%; margin-top: 3%; @include center-block();
 
-			p {display: inline-block; width: 47%; margin-left: 2%; padding: 0px 0 5px 15px;
-				text-align: right; margin-bottom: 5px;
+			p {display: inline-block; width: 48%; padding: 0px 0 0px 15px; text-align: right; margin-bottom: 5px;
 
-				.opt-name {font-size: 18px; background-color: transparent; line-height: 2em; }
+				.opt-name {font-size: 18px; background-color: transparent; line-height: 2em;}
 				i {
-
 					float: right;
-					font-style: normal;
 					margin-right: 7px;
 					text-align: center;
-					font-size: 15px;
+					font-size: 14px;
+					line-height: 1.9em;
 					margin-left: 8px;
+					margin-top: 5px;
 					img{height:35px;}
+					background-color: #4DBBBC;
+
+					width: 26px; height: 26px;
+					border-radius: 50%;
+					color: white;
 				}
 
 				&:nth-child(2n+2) {
@@ -251,27 +233,87 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 					i{float:left; margin-left: 0;}
 					i.imgcon{margin: 0 5px 0 0;}
 				}
-
 			}
 		}
 
-		.options{width: 57%; margin-left: 0}
-		p.out {display: inline-block; width: 35%; float: right; margin-right:3%; padding-top: 15px;}
+		.img-l {
+			display: inline-block;
+			height: 280px; z-index: -1;
+			position: absolute; left:17%;
+			margin-top:-3%;
+		}
+
+		@media screen and (min-width:1325px) {.img-l {left:24%;}}
+
+		@include bp(dt) {
+			.img-l {left:22%;}
+			.options{width: 65%;
+				p {display: inline-block; width: 47%; margin-left: 2%;}
+			}
+		}
+
+		@media screen and (max-width:1050px) {.img-l {left:15%;}}
+
+		@include bp(tb) {
+			.img-l {}
+			.options{width: 80%; margin-top: 0;
+				p {
+					.opt-name {font-size: 16px;}
+				}
+			}
+		}
+
+		@include bp(nn) {
+			.img-l {left:12%;}
+			.options{width: 85%; }
+		}
+
+		@include bp(tn) {
+			padding:35px 0;
+			.img-l {height: 240px; left:7%;}
+
+			.options {width:100%;
+				p.opt-name {font-size: 15px;}
+			}
+		}
+
+		@include bp(pl) {
+			.img-l {left:3%;}
+			.inner {width: 90%; float: right;}
+		}
+
+		@include bp(sm) {
+			padding:25px 0;
+			.img-l {left:3%;}
+			.options p, .options p:nth-child(2n+2){
+				width:80%; float: right; text-align: left; margin: 5px 0 8px;
+				i {float: left; margin-left: 0;}
+			}
+		}
 	}
 
-	.opt-block{ text-align: center;
-		@include sec-default(); background-color: $f7; padding:70px 0;
-		.title {@include sec-grid(none, 35%); }
-		.dets {@include sec-grid(right, 50%); margin-right: 5%;}
+	.opt-block{@include sec-default(); background-color: $f7; padding:60px 0;
+		br.cst-br{display: none;}
+
+		.title {@include sec-grid(none, 30%); text-align: center; margin-left: 5%;}
+		.dets {@include sec-grid(right, 60%); }
 
 		&:nth-child(2n+2) {background-color: white;
-			.dets{float: left;}
+			.dets{float: left;margin-left: 5%;}
+			.title{margin-left: 0;}
 		}
 
 		&.long {
-			.dets {width: 64%;}
-			.title{width: 30%;}
+			.dets,.title{margin-left: 0;}
+			.dets {width: 68%;}
+			.title{width: 30%; margin-top: 3%;}
 			span {font-style: italic;}
+		}
+
+		&.short {
+			.inner{width: 75%;}
+			.title{float: left; }
+			.dets{width: 55%; margin-top: 5%}
 		}
 
 		h3 {font-size: 25px; color: $blue; font-family: $cant; font-weight: bold; text-transform: uppercase;}
@@ -283,17 +325,36 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			background: -webkit-linear-gradient(-30deg, darken($blue, 15%), $blue);
 			background: linear-gradient(-30deg, darken($blue, 15%), $blue);
 		}
+
+		@include bp(dt) {
+			br.cst-br{display: block;}
+		}
+
+		@include bp(tb) {
+			padding:45px 0;
+			// .inner {width: 90%;}
+			h3{font-size: 20px;}
+			p {font-size: 15px;}
+		}
+
+		@include bp(nn) {
+			&, &:nth-child(2n+2), &.long, &.short {
+				padding: 30px 0;
+				h3 {font-size: 19px; margin-bottom: 8px;}
+				p.price{margin-top: 0px;}
+				.inner {width: 90%;}
+				.title {width: 99%; @include center-block(); margin-top: 0}
+				.dets {@include sec-default();margin-top: 20px;}
+			}
+		}
 	}
 }
 
 $new: #ccd1d9;
 .our_process {
-	// .header-wrapper{position: relative;z-index: 1;}
 	.hd-layers {@include sec-default();  background-color: $f6;
 		height:500px;
-		// @include sec-bgimage('balloon-babe.jpg');background-position: center center;
 		position: relative;z-index: 0;
-		@include sec-bgimage('little-girl.png');
 		@include sec-bgimage('girl.png');
 		background-size: 70%; background-position: bottom right; overflow: hidden;
 
@@ -302,9 +363,7 @@ $new: #ccd1d9;
 			content: "";
 			left:-10%; margin-top:-20px;
 			width: 45%;
-			// height: 470px;
 			height:94%;
-			// background-color: rgba($blue, .9);
 			background-color: rgba(9,33,45, .94);
 			-webkit-transform: skew(30deg, -18deg);
       -moz-transform: skew(30deg, -18deg);
@@ -319,7 +378,6 @@ $new: #ccd1d9;
 			right:-10px;
 			bottom:-20%;
 			width: 60%;
-			// height: 180px;
 			height:36%;
 			background-color:  darken($plum, 15%);
 			-webkit-transform: skew(-30deg, 10deg);
@@ -367,21 +425,78 @@ $new: #ccd1d9;
 				h3 {padding-left: 7px;}
 			}
 		}
+
+		@include bp(sm) {
+			background-size: 100%;
+			// @include grayscale();
+			height:auto;
+			&::before{display: none;}
+			.l1 {@include sec-default(); background-color: rgba(9,33,45, .8); padding: 20px; }
+		}
 	}
 
-	.tbl-row {@include sec-default(); padding: 75px 0;background-color: white;
-		.inner{width: 75%; }
+	.tbl-row {@include sec-default(); padding: 55px 0;background-color: white;
+		.inner{width: 80%; }
 		h4 {margin-bottom: 0px; font-weight: bold; font-size:17px; font-family: $open;}
 		p{margin-top: 10px;}
 
-		.f2,.f3 {display: inline-block;width: 33%; float: left; margin-left: 5%;}
-		.f3 { width: 55%; margin-top:15px; }
-		// .sep {display: inline-block;width: 1px; height: 340px; background-color: rgba($new, .3); float: none; margin-left: 15px;}
+		.f2,.f3 {display: inline-block;width: 33%; float: left; margin-left: 3%;}
+		.f3 { width: 60%; margin-top:15px; }
 		.f1 {@include sec-default(); padding-top:25px; margin-top:15px; border-top: 1px solid rgba($new, .3);}
 
 		&.rev {	background-color: $f6;
-			// .f2 { width:30%;}
 			.f2 { width:25%;}
+		}
+
+		@include bp(dt) {
+			padding: 75px 0;
+			.inner{width: 75%; }
+			.f2,.f3{ margin-left: 5%;}
+			.f3 { width: 55%; }
+		}
+
+		@include bp(tb) {
+			.inner {width: 90%;}
+			.f2 {margin-top:2%; margin-left: 0;}
+			.f3 { width: 64%; margin-left: 2%}
+
+			&.reg {
+				.f3 {float:right;margin-left: 0; padding: 0 10px;}
+				.f2 {margin-left:0;}
+			}
+		}
+
+		@include bp(tn) {
+			padding:20px 0;
+			.inner {width: 97%;}
+			p{font-size: 15px;}
+			h4 {font-size: 16px;}
+			.f1 {padding-top:15px; margin-top: 7px;}
+			.f3 { width:70%; padding: 0 15px;}
+
+
+			&.reg {
+				.f2 {width:30%; padding: 0 5px ; margin-top: 5%;}
+				.f3{padding: 0 20px;}
+			}
+
+			&.rev {
+				.f2 {margin-top: 3%}
+			}
+		}
+
+		@include bp(mb) {
+			&.reg, &.rev {
+				.f2{width: 23%; margin-top:7%;}
+				.f3 {width: 76%; margin-left: 0; padding: 0 15px;}
+			}
+		}
+
+		@include bp(sm) {
+			&.reg, &.rev {
+				.f2{width: 30%; @include center-block(); margin-top:0; padding: 0;}
+				.f3 {width: 95%; @include center-block(); }
+			}
 		}
 	}
 
@@ -392,6 +507,15 @@ $new: #ccd1d9;
 		.inner {width: 45%; @include center-block();}
 		p {color: white; font-size: 21px; font-weight: bold;  letter-spacing: 1px;}
 		h4 {font-size: 25px; color: $f6; font-weight: bold; font-family: $open;}
+
+		@include bp(tb) {.inner {width: 65%; }}
+		@include bp(tn) {
+			padding: 20px 20px 10px;
+			.inner {width: 75%;}
+			p {font-size: 18px;}
+			h4 {font-size: 20px;}
+		}
+		@include bp(tb) {.inner {width: 99%; }}
 	}
 }
 

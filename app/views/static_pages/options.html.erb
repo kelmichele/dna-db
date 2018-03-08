@@ -1,60 +1,65 @@
 <% @page_title = "DNA Testing Options" %>
 <% @page_description = "New Description" %>
 
-		<div class="color-hd">
+<div class="color-hd lde">
+		<h1 class="text-center">DNA Testing Options</h1>
+	<div class="text">
+  	<p> Get DNA Tested Today offers different testing options to fit various needs. Select an option from the list to learn more about each test, and find the one that is right for you.</p>
 
-			<div class="text">
-				<h1>DNA Testing Options</h1>
-				<h2>Easy as swab, two, three...</h2>
-			</div>
-			<%= image_tag('dnacon.png', class: 'img-l') %>
-		</div>
+  	<h2>Easy as swab, two, three...</h2>
+  	<p><b>All samples are taken by rubbing a soft swab on the inside of the cheek, so testing is quick, painless and non-invasive.</b></p>
+	</div>
+
+	<div class="img">
+		<%= image_tag('preview14.png', class: 'img-responsive') %>
+	</div>
+</div>
 
 <!-- Register Now -->
 <div class="test-options alt">
 	<div class="inner">
+	<%= image_tag('dnacon.png', class: 'img-l') %>
 
-	  <p class="out"><b>All samples are taken by gently rubbing a soft swab on the inside of the cheek, so testing is quick, painless and non-invasive.</b><br><br> Get DNA Tested Today offers several DNA testing options to fit different needs. Read the descriptions provided to learn more about each test, and choose the one that is right for you.</p>
 
 		<div class="options">
 		  <p><a class="opt-name" href="#legal-block">
-		  	<i class="imgcon" ><%= image_tag('23iconb.png', class: 'img-responsive') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	Legal Paternity Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#nonlegal-block">
-		  	<i class="imgcon" ><%= image_tag('23icon2.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	Non-Legal Paternity Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#avunc-block">
-		  	<i class="imgcon" ><%= image_tag('23iconb.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	Avuncular DNA Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#sibling-block">
-		  	<i class="imgcon" ><%= image_tag('23icon2.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	DNA Siblingship Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#grand-block">
-		  	<i class="imgcon" ><%= image_tag('23iconb.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	Grand Paternity Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#twin-block">
-		  	<i class="imgcon" ><%= image_tag('23icon2.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	Twin Zygosity DNA Testing
 		  </a></p>
 
 		  <p><a class="opt-name" href="#profile-block">
-		  	<i class="imgcon" ><%= image_tag('23iconb.png') %></i>
+		  	<i class="fa fa-plus"></i>
 		  	DNA Profiling Test
 		  </a></p>
 
 		  <p><a class="opt-name" href="/charges/new">
-		  	<i class="imgcon" ><%= image_tag('23icon2.png') %></i>
-		  	At-Home Paternity DNA Test Kit
+		  	<i class="fa fa-plus"></i>
+		  	Home Paternity DNA Test Kit
 		  </a></p>
 		</div>
 	</div>
@@ -64,7 +69,7 @@
 <div id="legal-block" class="opt-block">
 	<div class="inner">
 		<div class="title">
-			<h3>Legal <br>Paternity Testing</h3>
+			<h3>Legal <br class="cst-br">Paternity Testing</h3>
 	    <p class="price">$325.00</p>
 			<a uk-toggle="target: #legal" type="button" class="register">Register Now</a>
 		</div>
@@ -82,7 +87,7 @@
 <div id="nonlegal-block" class="opt-block">
 	<div class="inner">
 		<div class="title">
-			<h3>Non-Legal<br> Paternity Testing</h3>
+			<h3>Non-Legal<br class="cst-br"> Paternity Testing</h3>
 	    <p class="price">$269.00</p>
 			<a uk-toggle="target: #nonlegal" type="button" class="register">Register Now</a>
 		</div>
@@ -98,7 +103,7 @@
 <div id="avunc-block" class="opt-block">
 	<div class="inner">
 		<div class="title">
-			<h3>Avuncular<br> DNA Testing</h3>
+			<h3>Avuncular<br class="cst-br"> DNA Testing</h3>
 	    <p class="price">$425.00</p>
 			<a uk-toggle="target: #avunc" type="button" class="register">Register Now</a>
 		</div>
@@ -112,7 +117,7 @@
 <div id="sibling-block" class="opt-block long">
 	<div class="inner">
 		<div class="title">
-			<h3>DNA Siblingship<br> Testing</h3>
+			<h3>DNA Siblingship<br class="cst-br"> Testing</h3>
 	    <p class="price">$425.00</p>
 			<a uk-toggle="target: #sibling" type="button" class="register">Register Now</a>
 		</div>
@@ -137,10 +142,10 @@
 	</div>
 </div>
 
-<div id="twin-block" class="opt-block">
+<div id="twin-block" class="opt-block short">
 	<div class="inner">
 		<div class="title">
-			<h3>Twin Zygosity<br> DNA Testing</h3>
+			<h3>Twin Zygosity<br class="cst-br"> DNA Testing</h3>
 	    <p class="price">$425.00</p>
 			<a uk-toggle="target: #twin" type="button" class="register">Register Now</a>
 		</div>
@@ -155,7 +160,7 @@
 <div id="grand-block" class="opt-block long">
 	<div class="inner">
 		<div class="title">
-			<h3>Grand Paternity<br> Testing</h3>
+			<h3>Grand Paternity<br class="cst-br"> Testing</h3>
 	    <p class="price">$425.00</p>
 			<a uk-toggle="target: #grand" type="button" class="register">Register Now</a>
 		</div>
@@ -176,10 +181,10 @@
 </div>
 
 
-<div id="profile-block" class="opt-block">
+<div id="profile-block" class="opt-block short">
 	<div class="inner">
 		<div class="title">
-			<h3>DNA Profiling<br> Test</h3>
+			<h3>DNA Profiling<br class="cst-br"> Test</h3>
 	    <p class="price">$165.00</p>
 			<a uk-toggle="target: #profile" type="button" class="register">Register Now</a>
 		</div>
@@ -189,9 +194,6 @@
 	  </div>
 	</div>
 </div>
-
-
-
 
 <%= render 'form-modals' %>
 

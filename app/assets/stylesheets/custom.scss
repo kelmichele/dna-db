@@ -43,8 +43,8 @@ a:hover {text-decoration: none; opacity: .7;}
 .center-block {@include center-block();}
 
 .scroll-up {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   position: fixed;
   bottom: 15px;
   right: 100px;
@@ -56,9 +56,10 @@ a:hover {text-decoration: none; opacity: .7;}
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   visibility:hidden;
+  background-color: $blue;
 
-  @include bp(tb) { right: 30px;visibility:visible; }
-  @include bp(sm) { right: 15px; }
+  @include bp(tb) { left: 30px;visibility:visible; }
+  @include bp(sm) { left: 15px; }
 }
 .ft-block.menu li {margin-bottom: 10px;}
 
