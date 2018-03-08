@@ -186,19 +186,46 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 	.uk-modal-full.uk-modal {
 		.uk-modal-dialog {
-			height:100%;
-			@include sec-bgimage('new-bg.jpg');
-			// @include sec-bgimage('molecule-bg.png');background-size: 20%;
+			height:100%; @include sec-bgimage('balloon-babe.jpg'); background-size: 35%;
+			border-right: 12px solid #4650ae;
 
-			&.frm {padding: 0; background-color: $f7;
-				p{width:18%; float: left; padding: 20px 30px; line-height: 1.6em; font-weight: bold; margin-top: 15%;}
-				.inside {padding: 30px 45px; background-color: white; height:100%;
-					width:80%; float: right; margin-right: 2%;
+			&.frm {padding: 0; background-color: $f7; background-color: #4650ae;
+				p{width:21%; display: inline-block; float: left; padding: 0px 15px; line-height: 1.6em; font-weight: bold; margin-top: 24%;
+					color: white; font-size: 16px;
+				}
+
+				.inside {display: inline-block; padding: 30px 45px; background-color: white; height:100%;width:77%;overflow-y:scroll;}
+
+				@include bp(dt) {
+					p{ width:20%; padding: 20px 20px; margin-top: 22%; font-size: 18px; }
+					.inside {width:80%; }
+				}
+
+				@include bp(nn) {
+					background-size: 30%;
+					p {width:25%; margin-top: 20%; font-size: 15px;}
+					.inside {width:75%; padding: 30px; }
+				}
+
+				@include bp(mb) {
+					background-image: none ;
+					p {width:25%; margin-top: 10%; }
+					.inside {width:75%; padding: 30px 15px; }
+				}
+
+				@include bp(ph) {
+					margin-right:0;
+					p {@include sec-default(); }
+					.inside {@include sec-default(); }
 				}
 			}
 		}
 		.uk-close.uk-icon::after {display: none;}
 		.uk-modal-dialog > .uk-close:first-child {margin: 20px 50px 0 0 ;}
+		@include bp(ph) {
+			.uk-modal-dialog{border-right:6px solid #4650ae;border-left:6px solid #4650ae;}
+			.uk-modal-dialog > .uk-close:first-child {margin: 10px 15px 0 0 ;}
+		}
 	}
 
 	.test-options {
@@ -284,7 +311,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 		@include bp(sm) {
 			padding:25px 0;
-			.img-l {left:1%; height:200px; top:27%;}
+			.img-l {left:1%; height:180px; top:27%;}
 			.options p, .options p:nth-child(2n+2){
 				width:85%; padding-left: 0; float: right; text-align: left; margin: 5px 0 8px;
 				i {float: left; margin-left: 0;}
