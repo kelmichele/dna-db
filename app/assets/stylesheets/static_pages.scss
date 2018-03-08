@@ -216,7 +216,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 				@include bp(ph) {
 					margin-right:0;
 					p {@include sec-default(); }
-					.inside {@include sec-default(); }
+					.inside {@include sec-default(); overflow: visible; }
 				}
 			}
 		}
