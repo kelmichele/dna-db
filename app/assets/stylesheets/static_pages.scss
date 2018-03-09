@@ -5,8 +5,9 @@
 @import "variables";
 
 // h2 { @include text-gradient(300deg, $plum, $blue); }
-// background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
-// background: linear-gradient(-300deg, darken($blue, 15%), $blue);
+// background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+// background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+
 
 .inner {width: 85%; @include center-block();}
 hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
@@ -83,47 +84,199 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 }
 
 .home-test {
-	.top {
-		@include sec-default(); padding:40px 0 0 ; background-color: white;
-		h1 {font-size: 27px;}
-		.left, .right {@include sec-grid(left, 45%);}
-		.right {width: 25%;}
-		.left{margin-left: 5%; margin-top:3%;}
+	.top-sec {
+		@include sec-default(); padding:45px 0 30px; background-color: white;
+		@include sec-bgimage('ribbon-bg.png'); background-size: 55%; background-position: top right;
+		.inner {width: 80%; float: left;}
 
-		.pricing {width: 95%; float: right;
-			h4 {font-weight: bold; margin-bottom: 5px; font-family: $cant;}
-			p{margin: 0 0 5px;
-				b{color: $blue;}
-				span {font-style: italic;}
+		h1 {font-size: 26px; font-weight: bold; letter-spacing: 1px; margin-bottom: 0;}
+		.left, .right {@include sec-grid(left, 45%);}
+		.right {width: 33%; margin-left: 3%; }
+		.left{padding:30px 0; float:none; margin-left: 5%; margin-top: 20px;}
+
+		.pricing {padding-left:15px;
+			h4 {font-weight: bold; margin-bottom: 5px; }
+			p{margin: 0 0 5px; font-size: 18px;
+				b{font-size: 21px;font-family: $source;}
+				span {font-style: italic; font-weight: normal; font-size: 16px;}
+			}
+			label {font-weight: normal;}
+		}
+		.stripe-button-el { width: 35%;
+			background: -webkit-linear-gradient(-102deg, darken($btn1, 14%) 19%, darken($btn2, 10%) 81%);
+			background: linear-gradient(12deg, darken($btn1, 14%) 19%, darken($btn2, 10%) 81%);
+
+			border-radius: 20px;
+			&:hover {opacity: .7;}
+
+			span {font-size: 18px; font-family: $quick; font-weight: bold; background:transparent;
+				line-height: 1.6em; box-shadow:none; height:auto;padding: 5px 0;
+			}
+		}
+
+		@include bp(dt) {
+			background-size: 50%;
+			.inner{@include center-block();}
+			.left, .right {width: 45%;}
+			.right {width: 28%; margin-left: 10%; }
+			.left{margin-top:2%; margin-left: 8%}
+		}
+
+		@include bp(tb) {
+			background-size: 45%;
+			padding:30px 0 10px;
+			h1 {font-size: 22px;}
+			h3{font-size: 16px;}
+			.right {width: 30%; margin-left: 0; }
+			.left{padding:15px 0; margin-top: 0px; width:50%;}
+			.stripe-button-el { width: 45%;}
+		}
+
+		@include bp(nn) {
+			background-image: none; padding-bottom: 0;
+			.inner{@include center-block(); width: 90%;}
+			.left{width: 55%; margin-left:7%; float: left;}
+		}
+
+		@include bp(tn) {
+			padding-top:20px;
+			.inner {width: 95%;}
+			.left {padding:0;
+				width:65%; margin-left: 3%;
+				h3,p{font-size: 15px; margin-bottom:10px; }
+				.pricing p b{font-size: 19px;}
+				.stripe-button-el span{font-size: 16px;}
+			}
+		}
+
+		@include bp(pl) {
+			padding-bottom: 20px;
+			.left{ width: 70%;}
+			.right {width: 25%; margin-top:4%; margin-right: 2%;}
+		}
+		@include bp(ph) {
+			@include sec-bgimage('test-kit-slide.png'); background-position: bottom right; background-size: 28%;
+			padding-bottom: 75px;
+			.left {width: 85%; @include center-block();}
+			.right {display: none;}
+			// .right{float: right; margin-top: 0; width: 30%;}
+		}
+
+		@include bp(sm) {
+			background-size: 30%; padding-bottom: 120px;
+			.left{width: 95%;}
+		}
+	}
+
+	.banner{@include sec-default(); text-align: center; padding: 30px 20px; height:160px;
+		background: -webkit-linear-gradient(102deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+		background: linear-gradient(-12deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+
+		h3 {color: white; font-size: 22px; margin-bottom: 5px; font-weight: bold;}
+		p {color: white; font-size: 18px; margin-top: 0;}
+
+		@include bp(tn) {
+			height:140px;
+			h3 {font-size: 19px;margin-bottom: 3px;}
+			p{font-size: 16px;}
+		}
+		@include bp(mb) {
+			padding:20px 10px;
+			height:100px;
+			h3 {font-size: 18px;}
+			p{font-size: 15px;}
+		}
+
+		@include bp(sm) {height:auto; padding: 20px 10px 5px;}
+	}
+
+	.inst{@include sec-default();
+	 	padding:0 0 45px; background-color: $f7;
+		@include sec-bgimage('ribbon-bg-rev.png'); background-size: 60%; background-position:bottom left;
+
+	 	.inner {float: right; width: 65%;}
+		.step{display: inline-block; float: left;
+		 	margin-bottom: 30px;
+		 	background-color: $f8;
+		 	padding: 10px 20px;
+		 	width: 45%; height:225px;
+		 	margin-left: 0;
+		 	border-radius: 2px;
+		 	box-shadow: 0px 1px 20px rgba(black, .1);
+			&.one, &.two {margin-top: -4%}
+			&.four, &.two {margin-left: 7%}
+
+			p {margin-top: 20px; text-align: center;}
+		}
+		h4{font-weight: bold; font-family: $source; font-size: 25px;color: darken($blue, 15%); margin-top:5px; margin-bottom:0px;}
+		h4.lb{font-weight: bold; margin-top:6px; font-family:$quick;color: darken($btn2, 10%); font-size: 18px;
+			position: relative;z-index: 0;
+			&::before {@include before(); background-color: $f2; border-radius: 4px;
+				background-color: lighten($btn1, 20%);
+			 	box-shadow: 0px 1px 10px rgba(black, .1);
+				height:130%; margin-top: -1%;
+				width:120%; left:-15%;
+			}
+		}
+
+		.icon-qt{height:215px; display: inline-block;float: left; margin-right: 5px;}
+
+		@include bp(dt) {
+		 	.inner { width: 60%;}
+			.step{ margin-left: 5%; width: 40%;}
+			h4.lb::before{width:125%; left:-20%;}
+		}
+
+		@include bp(tb) {
+			background-size: 70%;
+			h4 {font-size: 21px;}
+			h4.lb {font-size: 16px;}
+			.inner {width: 75%;}
+		}
+
+		@media screen and (max-width: 900px) {background-image: url(image_path('ribbon-rev-sm.png'));}
+
+		@include bp(tn) {
+			background-image: none;
+			padding-bottom:30px;
+			.inner {@include center-block(); width:95%}
+			.step {height: 210px; width:48%;
+				&.one, &.three {margin-left: 0;}
+				&.four, &.two {margin-left: 0; float: right;}
+			}
+			h4 {font-size: 19px;}
+			h4.lb::before{width: 118%; left:-9%;}
+		}
+
+		@media screen and (max-width: 735px) {
+			padding-bottom:0;
+			.step{
+				width: 90%; height:auto;
+				p{text-align: left;}
+
+				&.two{margin-top: 0;}
+			}
+			h4{margin-bottom:10px;}
+			h4.lb{padding-top: 2px;}
+			h4.lb::before{margin-top:0; height:130%; width:100%; left:-6%; }
+		}
+
+		@include bp(mb) {
+			.step.one{margin-top: -2%}
+		}
+
+		@include bp(sm) {
+			.step{
+				&.one,  &.two, &.three, &.four{
+					width:100%; @include center-block();
+				}
+				&.one{margin-top: 20px;}
 			}
 		}
 	}
 
-	.full-pg{@include sec-default(); padding: $sec-pad; background-color: $f2;
-		p{
-			b {color: $blue; font-family: $cant;}
-			span{font-family: $cant; font-weight: bold;}
-		}
-	}
 
-	.top, .full-pg {
-		.inside {width: 75%; float: left; margin-left: 5%; position: relative;}
-	}
 
-	.checkout {width: 22%; position: fixed; margin-top:5%; margin-bottom: 50%; right: 5%;
-		padding: 25px 15px;
-		background: -webkit-linear-gradient(-300deg, darken($blue, 15%), $blue);
-		background: linear-gradient(-300deg, darken($blue, 15%), $blue);
-		border-radius:4%;
-		box-shadow: 5px 0px 20px rgba(black, .25);
-		p{color: white; margin: 0 0 10px; padding-left:5px;
-			span {font-style: italic;}
-			b { text-shadow: 0px 1px 1px rgba(black, .3)}
-		}
-		h4,h5 {color: white;font-weight: bold; font-family: $cant; text-align: center;}
-		h5 {text-align: left; font-size:16px; margin-bottom:5px; }
-		button {@include center-block();}
-	}
 }
 
 .options {
@@ -132,6 +285,11 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 	.color-hd{@include sec-default();	background: white; padding: 30px 60px;
 		position: relative;z-index: 0;
+		// &::before {@include before(); width: 80%;
+		// 	@include sec-bgimage('pattern12.png'); background-size: 20%; background-position: top right;
+		// 	left:50px;
+		// 	background-repeat: repeat-y;
+		// }
 
 		h1 {color: $dark; font-size: 2.2em;letter-spacing: 1px; text-transform: uppercase; font-weight: bold; text-align: center; margin-bottom: 30px;}
 
@@ -139,8 +297,8 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 		.img {display: inline-block; width: 25%; float: none; margin-left: 5%;
 			position: relative;z-index: 0;
-			&::before {@include before();
-				@include sec-bgimage('pattern12.png'); background-size: 45%; background-position: top right; left:20px;
+			&::before {@include before(); height:110%;
+				@include sec-bgimage('pattern12.png'); background-size: 50%; background-position: top right; left:20px; top: -8.7%;
 				background-repeat: repeat-y;
 			}
 		}
