@@ -16,6 +16,7 @@
   <% end %>
 
   <% else %>
+  <li class="nav-li ft-only"><%= link_to 'Home Testing Kit', new_charge_path, class: 'nav-link' %></li>
   <li class="nav-li ft-only"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
   <li class="nav-li ft-only"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li>
   <li class="nav-li ft-only"><%= link_to "Continue as Guest", guest_users_path, method: :post, class: 'nav-link' %></li>

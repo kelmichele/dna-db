@@ -258,11 +258,11 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			}
 			h4{margin-bottom:10px;}
 			h4.lb{padding-top: 2px;}
-			h4.lb::before{margin-top:0; height:130%; width:100%; left:-6%; }
+			h4.lb::before{margin-top:0; height:130%; width:104%; left:-6%; }
 		}
 
 		@include bp(mb) {
-			.step.one{margin-top: -2%}
+			.step.one{margin-top: 20px;}
 		}
 
 		@include bp(sm) {
@@ -270,7 +270,6 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 				&.one,  &.two, &.three, &.four{
 					width:100%; @include center-block();
 				}
-				&.one{margin-top: 20px;}
 			}
 		}
 	}
