@@ -728,7 +728,9 @@ $new: #ccd1d9;
 		.wrap {width: 95%; }
 		.listing {width:20%; float: left; display: inline-block; padding-left: 20px; margin: 0 2.5%;
 			position: relative; z-index: 0;
-			&::before {@include before(); width: 20%; background-color: $btn1; height: 100%; top:-1%; background-color: $burg;}
+			&::before {@include before(); width: 20%; height: 100%; top:-1%;
+				// background-color: $burg;
+			}
 		}
 
 		.tfw {background-color: white; padding: 20px 15px 20px 40px; border-radius:15px; margin-bottom: 20px;
@@ -755,6 +757,16 @@ $new: #ccd1d9;
 		}
 
 		@include bp(tb) {
+			.top {
+				&::before {display: none;}
+				.inner {width: 90%;}
+				h1 {font-size: 1.8em; margin-bottom: 0;}
+				.title-line {margin:8px 0 10px;}
+				.one{ width: 60%; padding: 15px 0;}
+				.two {width: 39%; margin-top:60px; padding-top:0;}
+				p {margin:5px 0 10px;}
+			}
+
 			.listing {width:21%; margin: 0 0 0 4%;padding-left:15px;
 				&.uno{margin-left:1.5%;}
 				&.quatro{margin:0; float:right;}
@@ -771,10 +783,29 @@ $new: #ccd1d9;
 			.state-name{font-size:15px;}
 
 			.listing { width: 40%; @include center-block();
-				&.uno {margin:auto;}
-				// &.uno, &.dos {float: left;}
-				// &.tres, &.quatro {float: right;}
+				&.uno, &.quatro {float:none; margin:auto;}
 			}
+		}
+
+		@include bp(tn) {
+			.top {
+				.inner {width: 85%;}
+				@include sec-bgimage('colorful-map.png'); background-size: 22%; background-position: bottom right;
+				h1 {font-size: 1.8em; margin-bottom: 0;}
+				.one{ width: 85%; padding: 15px 0;}
+				.two {width: 25%; margin-top:60px; padding-top:0; display: none;}
+				p {margin:5px 0 10px;}
+			}
+		}
+
+		@include bp(mb) {
+			.listing {width: 50%;}
+			.tfw .state-icons {margin-top: -7%;}
+		}
+
+		@include bp(sm) {
+			.listing {width: 65%;}
+			.tfw .state-icons {margin-top: -10%;}
 		}
 	}
 }
