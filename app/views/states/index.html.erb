@@ -2,54 +2,55 @@
 <% @page_description = "New Description" %>
 
 <div class="all-states">
-	<div class="wrap">
-		<div class="top">
-			<h1><%= @page_title %></h1>
-			<hr class="title-line">
-			<div class="clearfix"></div>
-			<div class="shared-text">
-				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing at over 2500 locations nationwide. All of our testing locations are certified and accredited by the AABB and ISO 17025.</p>
-				<p><%= link_to "Click Here", testing_path %> to schedule your testing appointment today!<br>
-				If you have any questions, or want to speak to a certified collector, please call us at <span><%= phone %></span>.</p>
+	<div class="top">
+		<div class="inner">
+			<div class="one">
+				<h1><%= @page_title %></h1>
+				<hr class="title-line">
+				<div class="clearfix"></div>
+				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing at over 2500 locations nationwide.
+				All of our testing locations are certified and accredited by the AABB and ISO 17025.</p>
+				<p><b><%= link_to "Click Here", testing_path, class: 'tests' %></b> to learn more about our testing options, and schedule your testing appointment today!<br> If you have any questions, or want to speak to a certified collector, give us a call:<br> <span><%= phone %></span>.</p>
+			</div>
+
+			<div class="two">
+				<%= image_tag('colorful-map.png', alt: '') %>
+				<!-- <%= image_tag('map.png', alt: '') %>  -->
+			</div>
+
+			<div class="add-btns-blk">
+				<%= render 'shared/add_btns' %>
 			</div>
 		</div>
+	</div>
 
-		<div class="add-btns-blk">
-			<%= render 'shared/add_btns' %>
-		</div>
-		<div class="clearfix"></div>
-		<br><hr><br>
-
+	<div class="wrap">
 		<div class="full">
-			<table class="listing state-list">
+			<table class="listing state-list uno">
 				<% for state in @cols_o %>
 					<tr class="tfw">
-					  <td>
-							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
-					  	<h4 class="state-name">
-					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
-					  		<%= link_to state.name, state_path(state) %>
-					  	</h4>
-					  </td>
-
-						<% if user_signed_in? && current_user.admin? %>
-					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
-					  	<!-- <td> <%= link_to state.name, edit_state_path(state) %></td> -->
-					  <% end %>
+					  <td class="ss"><%= link_to state_path(state) do %><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %><% end %></td>
+					 	<td class="sn">
+					 		<%= link_to state_path(state) do %>
+						 		<h4 class="state-name"><%= state.name %></h4>
+							 	<i class="fa fa-chevron-right"></i>
+						 	<% end %>
+						 </td>
 					</tr>
 			  <% end %>
 			</table>
 
-			<table class="listing state-list">
+			<table class="listing state-list dos">
 				<% for state in @cols_t %>
 					<tr class="tfw">
-					  <td>
-							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
-					  	<h4 class="state-name">
-					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
-					  		<%= link_to state.name, state_path(state) %>
-					  	</h4>
-					  </td>
+					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %></td>
+				  	<!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
+			  	 	<td class="sn">
+			  	 		<%= link_to state_path(state) do %>
+			  		 		<h4 class="state-name"><%= state.name %></h4>
+			  			 	<i class="fa fa-chevron-right"></i>
+			  		 	<% end %>
+			  		 </td>
 
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
@@ -58,16 +59,17 @@
 			  <% end %>
 			</table>
 
-			<table class="listing state-list">
+			<table class="listing state-list tres">
 				<% for state in @cols_th %>
 					<tr class="tfw">
-					  <td>
-							<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
-					  	<h4 class="state-name">
-					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
-					  		<%= link_to state.name, state_path(state) %>
-					  	</h4>
-					  </td>
+					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %></td>
+					  <!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
+					  <td class="sn">
+					 		<%= link_to state_path(state) do %>
+						 		<h4 class="state-name"><%= state.name %></h4>
+							 	<i class="fa fa-chevron-right"></i>
+						 	<% end %>
+						 </td>
 
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>
@@ -76,16 +78,17 @@
 			  <% end %>
 			</table>
 
-			<table class="listing state-list">
+			<table class="listing state-list quatro">
 				<% for state in @cols_fo %>
 					<tr class="tfw">
-					  <td>
-							<% unless state.name == "Washington DC" %><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %> <% end %>
-					  	<h4 class="state-name">
-					  		<!-- <span><%= state.id %>.</span> &nbsp; -->
-					  		<%= link_to state.name, state_path(state) %>
-					  	</h4>
-					  </td>
+					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %> </td>
+					  <!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
+						<td class="sn">
+					 		<%= link_to state_path(state) do %>
+						 		<h4 class="state-name"><%= state.name %></h4>
+							 	<i class="fa fa-chevron-right"></i>
+						 	<% end %>
+						 </td>
 
 						<% if user_signed_in? && current_user.admin? %>
 					  	<td class="print"><p class="info"><%= state.abv %> &nbsp;&nbsp; (<%= state.towns.count %>)</p></td>

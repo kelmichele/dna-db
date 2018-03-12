@@ -16,41 +16,37 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	.breadcrumb {display: none;}
 	.hero-home { text-align:center;
 		@include sec-default(); background-color: white; padding-top: 45px; height:600px;
-		@include sec-bgimage('running.jpg');
-		background-position: bottom right;
+		@include sec-bgimage('running.jpg');background-position: bottom right;
+		// @include sec-bgimage('binoc.jpg');
 		h1 {margin: 0px; font-weight: bold; font-family: $cant; text-transform: uppercase;}
 		h3 {font-size: 21px; margin-bottom: 0;}
 	}
 
-	.dna {@include sec-default();
-		// padding: 90px 0 70px;
-		// background-color: $f7;
-		// background-color: #eaebec;
-		// @include sec-bgimage('preview11.png'); background-size: 33%;
-		.right {@include sec-grid(right, 40%); margin-right:5%; text-align: center; @include center-block(); margin-top: 20px}
-		h3{font-size: 20px; line-height: 1.5em;}
+	.dna {@include sec-default(); background-color: white;
+		// padding: 140px 0;
+		h3{font-size: 21px; line-height: 1.5em;}
 		h2 { color: darken($blue, 10%); font-family: $source; font-weight: 600; font-size:30px; line-height: 1em;}
 		p{margin-bottom: 0;}
 		hr.hlf {margin-bottom: 30px;}
-		.link-a{@include link(45%, $blue); border-radius: 15px; border-width:0px; background-color: $f2; box-shadow: 5px 5px 8px rgba(black, .1);}
+		.link-a{@include purple-btn(50%); padding:10px 25px;}
 
-		.left {@include sec-grid(left, 45%);}
-		.right{float:right; margin-right: 10%; padding: 60px 0;}
+		.left {@include sec-grid(left, 45%); display: none;}
+		.right {@include sec-grid(right, 35%); margin-right:14%; text-align: center; padding: 140px 0;}
+
+		@include sec-bgimage('map.png'); background-size: 45%; background-position: left center;
 	}
 
-	.legal-lt {@include sec-default(); background-color: $f2;
-		.left {@include sec-grid(left, 40%); margin-left: 10%; padding:$sec-pad; }
+	.legal-lt {@include sec-default(); background-color: $f6; padding:80px 0;
+		.left {@include sec-grid(left, 40%); margin-left: 10%;}
 		.right {@include sec-grid(left, 40%); margin-left: 10%;}
 
 		.abs {position: absolute; width:35%; margin-top:-3.5%; right:0;}
 
-		p {font-size: 17px;}
-		h2 {font-weight: bold;}
-		.link-a{@include link(35%, $blue); border-radius: 15px;
-			box-shadow: 5px 5px 8px rgba(black, .3);
-			background: darken(white, 5%); border:none;
-			float: left; margin-left: 15%;
+		p {font-size: 18px; margin-bottom:20px;}
+		h2 {font-weight: bold; line-height: 1.5em;
+			span{font-size:28px;}
 		}
+		.link-a{@include purple-btn(35%);float: left; margin-left: 5%;}
 	}
 
 	.call-block{
@@ -70,11 +66,15 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.img-small {width:30%; float: right;}
 	}
 
-	.homekit { @include sec-default(); padding:$sec-pad;
-		// @include sec-bgimage('test-kit-slide.png'); background-size: 20%; background-position: left center;
-		.left {@include sec-grid(left, 20%); margin-left: 15%; }
-		.right {@include sec-grid(none, 38%); margin-left: 3%; margin-top: 3.5%;}
-		.link-a{@include link(40%, $blue); border-radius: 15px; border-width:0px; background-color: $f2; box-shadow: 5px 5px 8px rgba(black, .1); float:left;}
+	.homekit { @include sec-default(); padding:60px 0;
+		.left {@include sec-grid(left, 22%); margin-left: 15%; }
+		.right {@include sec-grid(none, 40%); margin-left: 6%; margin-top: 3.5%;}
+		.link-a{@include purple-btn(40%); float:left;
+			background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, lighten($blue, 8%) 81%);
+			background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 8%) 81%);
+		}
+		h2{font-size:27px; font-weight: bold;}
+		p{font-size: 18px; }
 	}
 
 	.us { @include sec-default(); padding: $sec-pad; background-color: $f2;
@@ -182,8 +182,8 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		}
 		@include bp(mb) {
 			padding:20px 10px;
-			height:100px;
-			h3 {font-size: 18px;}
+			height:auto;
+			h3 {font-size: 17px;}
 			p{font-size: 15px;}
 		}
 
@@ -273,9 +273,6 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			}
 		}
 	}
-
-
-
 }
 
 .options {
@@ -709,19 +706,76 @@ $new: #ccd1d9;
 }
 
 .states {
-  .state-list {width:20%; float: left; display: inline-block; }
+  // .state-list {width:20%; float: left; display: inline-block; }
+  .header-wrapper {position: relative;z-index: 1;}
   .tfw {@include sec-default(); padding-bottom:12px;}
   td.print {padding-left: 30px;}
-  h4.state-name {margin-bottom: 5px;}
+  h4.state-name {margin-bottom: 5px; }
   p.info{font-size: 13px; margin: 0;}
 
-	.tfw{
-		.state-icons {display: inline-block; float: left; width: 40px;}
-		h4 {display: inline-block;}
-	}
+	.all-states { padding:0;
+		.tbls{@include sec-default(); }
+		.top{@include sec-default(); background-color:white;
+			position: relative; z-index: 0;
+			&::before {@include before(); background-color: $f6; height: 45%; top: 55%; z-index: -2;}
 
-	.all-states .full{
-		@include sec-bgimage('preview11.png'); background-size: 40%; background-position: right center;
+			.one {@include sec-grid(left, 53%);  padding:30px 0;}
+			.two {@include sec-grid(right, 47%); padding-top:30px;}
+			span{ font-size: 20px; font-weight: bold; line-height: 1.6em; color: $blue; font-family: $open;}
+			.tests{color: darken($burg, 15%); }
+		}
+
+		.wrap {width: 95%; }
+		.listing {width:20%; float: left; display: inline-block; padding-left: 20px; margin: 0 2.5%;
+			position: relative; z-index: 0;
+			&::before {@include before(); width: 20%; background-color: $btn1; height: 100%; top:-1%; background-color: $burg;}
+		}
+
+		.tfw {background-color: white; padding: 20px 15px 20px 40px; border-radius:15px; margin-bottom: 20px;
+			position: relative;z-index: 0; box-shadow: 0px 5px 10px rgba(black, .1);
+			i { position: absolute; content: ">"; background-color: $f7;border-radius: 10px; color: darken($blue, 20%); bottom:15px;
+				width:35px; height:35px; right:-14px; font-size: 17px; line-height: 2em; font-weight: bold; text-align: center;
+				box-shadow: 0px 5px 10px rgba(black, .1); padding-left: 2px;
+			}
+
+			.state-icons {display: inline-block; float: left; width: 40px; background-color: $f2;
+				position: absolute; left:0; padding: 5px; border-radius:15px; box-shadow: 0px 5px 10px rgba(black, .1);
+				left: -5%; margin-top: -10%;
+			}
+		}
+
+		@include bp(dt) {
+			.top::before { height: 42%; top: 58%; }
+
+			.wrap {width: 90%; }
+
+			.tfw {padding: 20px 15px 20px 50px;
+				.state-icons {margin-top: -8%;}
+			}
+		}
+
+		@include bp(tb) {
+			.listing {width:21%; margin: 0 0 0 4%;padding-left:15px;
+				&.uno{margin-left:1.5%;}
+				&.quatro{margin:0; float:right;}
+				&::before { width: 18%; height: 100%; top:-1%; background-color: rgba($blue, .5);}
+			}
+
+			.tfw {
+				i {width:30px; height:30px; font-size:16px;}
+				.state-icons {margin-top: -12%; }
+			}
+		}
+
+		@include bp(nn) {
+			.state-name{font-size:15px;}
+
+			.listing { width: 40%; @include center-block();
+				&.uno {margin:auto;}
+				// &.uno, &.dos {float: left;}
+				// &.tres, &.quatro {float: right;}
+			}
+		}
 	}
 }
 
