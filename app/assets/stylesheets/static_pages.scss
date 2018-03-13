@@ -15,11 +15,20 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 .home .pg-body{
 	.breadcrumb {display: none;}
 	.hero-home { text-align:center;
-		@include sec-default(); background-color: white; padding-top: 45px; height:600px;
+		@include sec-default(); background-color: white; padding-top: 45px; height:700px;
 		@include sec-bgimage('running.jpg');background-position: bottom right;
-		// @include sec-bgimage('binoc.jpg');
+		@include sec-bgimage('ph-hero.jpg');background-position: center center;
+		@include sec-bgimage('preview19.jpg');background-position: center center;
+
 		h1 {margin: 0px; font-weight: bold; font-family: $cant; text-transform: uppercase;}
 		h3 {font-size: 21px; margin-bottom: 0;}
+
+		// position: relative; z-index: 0;
+		// &::before {@include before(); height: 25%;
+		// 	top:75%;
+		// 	background: -webkit-linear-gradient(-182deg, rgba($blue, .9) 25%, rgba($f6, .9) 81%);
+		// 	background: linear-gradient(12deg, rgba($blue, .9) 25%, rgba($f6, .9) 81%);
+		// }
 	}
 
 	.dna {@include sec-default(); background-color: white;
@@ -33,18 +42,18 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.left {@include sec-grid(left, 45%); display: none;}
 		.right {@include sec-grid(right, 35%); margin-right:14%; text-align: center; padding: 140px 0;}
 
-		@include sec-bgimage('map.png'); background-size: 45%; background-position: left center;
+		@include sec-bgimage('map-crop.png'); background-size: 48%; background-position: left center;
 	}
 
-	.legal-lt {@include sec-default(); background-color: $f6; padding:80px 0;
+	.legal-lt {@include sec-default(); background-color: $f9; padding:80px 0;
 		.left {@include sec-grid(left, 40%); margin-left: 10%;}
 		.right {@include sec-grid(left, 40%); margin-left: 10%;}
 
 		.abs {position: absolute; width:35%; margin-top:-3.5%; right:0;}
 
 		p {font-size: 18px; margin-bottom:20px;}
-		h2 {font-weight: bold; line-height: 1.5em;
-			span{font-size:28px;}
+		h2 { line-height: 1.5em;
+			span{font-size:28px;font-weight: bold; letter-spacing: 1px;}
 		}
 		.link-a{@include purple-btn(35%);float: left; margin-left: 5%;}
 	}
@@ -56,6 +65,8 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		h3{color: white; font-weight: bold; letter-spacing: 1px; font-size: 21px;}
 
 		.img-icon {width:120px; @include center-block();}
+
+		padding-bottom: 90px;
 	}
 
 	.profile { @include sec-default();background-color: $f2; display: none;
@@ -66,15 +77,20 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.img-small {width:30%; float: right;}
 	}
 
-	.homekit { @include sec-default(); padding:60px 0;
+	.homekit { @include sec-default(); padding-bottom: 35px; background-color: white;
+		border-bottom: 15px solid $f6;
+		// padding:60px 0;
 		.left {@include sec-grid(left, 22%); margin-left: 15%; }
-		.right {@include sec-grid(none, 40%); margin-left: 6%; margin-top: 3.5%;}
+		.right {@include sec-grid(none, 40%); margin-left: 6%; margin-top: 3.5%; padding-top:30px;}
 		.link-a{@include purple-btn(40%); float:left;
 			background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, lighten($blue, 8%) 81%);
 			background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 8%) 81%);
 		}
 		h2{font-size:27px; font-weight: bold;}
 		p{font-size: 18px; }
+
+		.left {width: 30%; margin-top: -10%; margin-left:10%;}
+		.right {margin-left: 10%;}
 	}
 
 	.us { @include sec-default(); padding: $sec-pad; background-color: $f2;
@@ -715,40 +731,64 @@ $new: #ccd1d9;
 
 	.all-states { padding:0;
 		.tbls{@include sec-default(); }
-		.top{@include sec-default(); background-color:white;
-			position: relative; z-index: 0;
-			&::before {@include before(); background-color: $f6; height: 45%; top: 55%; z-index: -2;}
-
-			.one {@include sec-grid(left, 53%);  padding:30px 0;}
-			.two {@include sec-grid(right, 47%); padding-top:30px;}
+		.top{@include sec-default(); background-color:white;padding:$sec-pad;
+			.one {@include sec-grid(left, 53%); }
+			.two {@include sec-grid(right, 47%);}
 			span{ font-size: 20px; font-weight: bold; line-height: 1.6em; color: $blue; font-family: $open;}
-			.tests{color: darken($burg, 15%); }
+			.tests{color: darken($burg, 5%); }
+
+
+			.inner {width: 75%;}
+			.one {width:45%; margin-top:3%;}
+			.two {width: 40%;}
+
+
+			@include sec-bgimage('world-map.png');
+			position: relative; z-index: 0;
+			&::before {@include before(); background-color: rgba(white, .25);}
+
+			p{font-size: 18px; line-height: 1.6em;}
 		}
 
-		.wrap {width: 95%; }
-		.listing {width:20%; float: left; display: inline-block; padding-left: 20px; margin: 0 2.5%;
-			position: relative; z-index: 0;
-			&::before {@include before(); width: 20%; height: 100%; top:-1%;
-				// background-color: $burg;
+		.call-block{@include sec-default(); padding: 35px 25px 60px; text-align: center;
+			background: -webkit-linear-gradient(102deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+			background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+
+			h3 {color: white; font-size: 21px; font-weight: bold; text-shadow: 0px 1px 1px rgba(black, .3); letter-spacing: 1px;
+				span {font-family: $open;}
 			}
 		}
 
+		.full {padding-top: 0 }
+		.wrap {width: 90%; }
+		.listing {width:20%; float: left; display: inline-block; padding-left: 20px; margin: -3% 2.5% 0;}
+
 		.tfw {background-color: white; padding: 20px 15px 20px 40px; border-radius:15px; margin-bottom: 20px;
-			position: relative;z-index: 0; box-shadow: 0px 5px 10px rgba(black, .1);
+			position: relative;z-index: 0;
+			box-shadow: 0px 5px 15px rgba($blue, .2);
 			i { position: absolute; content: ">"; background-color: $f7;border-radius: 10px; color: darken($blue, 20%); bottom:15px;
 				width:35px; height:35px; right:-14px; font-size: 17px; line-height: 2em; font-weight: bold; text-align: center;
 				box-shadow: 0px 5px 10px rgba(black, .1); padding-left: 2px;
 			}
-
 			.state-icons {display: inline-block; float: left; width: 40px; background-color: $f2;
-				position: absolute; left:0; padding: 5px; border-radius:15px; box-shadow: 0px 5px 10px rgba(black, .1);
+				position: absolute; left:0; padding: 5px; border-radius:15px;
+				// box-shadow: 0px 5px 10px rgba(black, .1);
 				left: -5%; margin-top: -10%;
+				// @include grayscale();
 			}
+
+			.state-name {margin-top:5px;}
+
+			padding: 10px 15px; text-align: center;
+			&::before {@include before(); width:43px; height:43px; top:7px; left:11px; border-radius: 50%;
+				background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, lighten($blue, 12%) 81%);
+				background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 12%) 81%);
+				opacity: .5;
+			}
+			.state-icons {position: relative; float: none; left: 0; margin-top: 0; background-color: transparent; width:35px; padding:0; margin-right:10px;@include grayscale();}
 		}
 
 		@include bp(dt) {
-			.top::before { height: 42%; top: 58%; }
-
 			.wrap {width: 90%; }
 
 			.tfw {padding: 20px 15px 20px 50px;
