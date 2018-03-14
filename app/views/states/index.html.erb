@@ -6,8 +6,6 @@
 		<div class="inner">
 			<div class="one">
 				<h1><%= @page_title %></h1>
-				<!-- <hr class="title-line"> -->
-				<!-- <div class="clearfix"></div> -->
 				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing at over 2500 locations nationwide.
 				All of our testing locations are certified and accredited by the AABB and ISO 17025.</p>
 				<p><b><%= link_to "Click Here", testing_path, class: 'tests' %></b> to learn more about our testing options, and schedule your testing appointment today! </p>
@@ -26,12 +24,10 @@
 	</div>
 
 	<div class="call-block">
-		<!-- <div class="inner"> -->
-			<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
-		<!-- </div> -->
+		<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
 	</div>
 
-	<div class="full">
+	<div class="full sl">
 		<div class="wrap">
 
 			<table class="listing state-list uno">
@@ -41,7 +37,6 @@
 					 	<td class="sn">
 					 		<%= link_to state_path(state) do %>
 						 		<h4 class="state-name"><%= state.name %></h4>
-							 	<!-- <i class="fa fa-chevron-right"></i> -->
 						 	<% end %>
 						 </td>
 					</tr>
@@ -52,11 +47,9 @@
 				<% for state in @cols_t %>
 					<tr class="tfw">
 					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %></td>
-				  	<!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
 			  	 	<td class="sn">
 			  	 		<%= link_to state_path(state) do %>
 			  		 		<h4 class="state-name"><%= state.name %></h4>
-			  			 	<!-- <i class="fa fa-chevron-right"></i> -->
 			  		 	<% end %>
 			  		 </td>
 
@@ -71,11 +64,9 @@
 				<% for state in @cols_th %>
 					<tr class="tfw">
 					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %></td>
-					  <!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
 					  <td class="sn">
 					 		<%= link_to state_path(state) do %>
 						 		<h4 class="state-name"><%= state.name %></h4>
-							 	<!-- <i class="fa fa-chevron-right"></i> -->
 						 	<% end %>
 						 </td>
 
@@ -90,11 +81,9 @@
 				<% for state in @cols_fo %>
 					<tr class="tfw">
 					  <td class="ss"><%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %> </td>
-					  <!-- <td class="sn"><h4 class="state-name"><%= link_to state.name, state_path(state) %></h4></td> -->
 						<td class="sn">
 					 		<%= link_to state_path(state) do %>
 						 		<h4 class="state-name"><%= state.name %></h4>
-							 	<!-- <i class="fa fa-chevron-right"></i> -->
 						 	<% end %>
 						 </td>
 
