@@ -1,20 +1,23 @@
-<% @page_title = "Paternity Testing Locations" %>
+<% @page_title = "DNA & Paternity Testing Locations" %>
 <% @page_description = "New Description" %>
 
 <div class="all-states">
+	<!-- <div class="tbanner"><h1><%= @page_title %></h1></div> -->
+
 	<div class="top">
 		<div class="inner">
 			<div class="one">
 				<h1><%= @page_title %></h1>
-				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing at over 2500 locations nationwide.
-				All of our testing locations are certified and accredited by the AABB and ISO 17025.</p>
-				<p><b><%= link_to "Click Here", testing_path, class: 'tests' %></b> to learn more about our testing options, and schedule your testing appointment today! </p>
-				<!-- <p>If you have any questions, or want to speak to a certified collector, give us a call:<br> <span><%= phone %></span>.</p> -->
+				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing in over 2500 locations nationwide.
+				Each of our locations are certified and accredited by the AABB and ISO 17025.</p>
+
+				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
+				<div class="clearfix"></div>
+				<div class="test-row"><%= link_to "Learn More", testing_path, class: 'tests' %></div>
 			</div>
 
 			<div class="two">
-				<!-- <%= image_tag('colorful-map.png', alt: '') %>  -->
-				<%= image_tag('gps2.png', alt: '') %>
+				<%= image_tag('icon-loc.png', alt: '') %>
 			</div>
 
 			<div class="add-btns-blk">
@@ -23,8 +26,44 @@
 		</div>
 	</div>
 
+
+
+	<div class="newlist">
+		<h2>Choose a state from the list below to find a location near you.</h2>
+		<div class="states-dd">
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select a State <i class="fa fa-angle-down"></i>
+			  </button>
+
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<% for state in @states %>
+					 	<%= link_to state_path(state), class: 'dropdown-item' do %>
+					 		<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
+							<%= state.name %>
+					 	<% end %>
+				  <% end %>
+
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
 	<div class="call-block">
-		<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
+		<div class="inner">
+			<div class="one">
+				<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
+			</div>
+
+			 <div class="two">
+				<%= image_tag('test-icon.png', alt: '') %>
+
+				<!--<p>Are you interested in performing a paternity test in the comfort and privacy of your home? Our Home Testing Kit delivers results with 99.9% accuracy,
+					and includes everything you'll need for testing, shipping, and results. </p>
+					<%= link_to "More Details", new_charge_path, class: 'link-a' %>-->
+			</div>
+		</div>
 	</div>
 
 	<div class="full sl">
