@@ -791,8 +791,7 @@ $new: #ccd1d9;
 			.state-icons {position: relative; float: none; left: 0; margin-top: 0; background-color: transparent; width:35px; padding:0; margin-right:10px;@include grayscale();}
 		}
 
-		// @include bp(dt) {
-		// }
+
 
 		// @include bp(tb) {
 		// 	.top {
@@ -910,39 +909,102 @@ $new: #ccd1d9;
 
 		.form-control, .btn-outline-secondary.search {height: 45px; border-radius: 0;}
 		.form-control {width:88%; float: right;}
-		.btn.btn-outline-secondary.search {background-color: $blue; color: white; width: 12%; letter-spacing: 1px;
+		.btn.btn-outline-secondary.search {background-color: lighten($fun, 10%); color: white; width: 12%; letter-spacing: 1px;
 			@include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
 		}
 
-		.pop {@include sec-default(); background-color: $blue; border-bottom: 15px solid $f6; padding:0;
-			// max-height: 550px;
+		.pop {@include sec-default(); background-color: $blue; padding:0;
+			// max-height: 550px; border-bottom: 15px solid $f6;
 			h4 {margin-bottom: 8px; font-size: 17px;}
 
-			.one {@include sec-grid(left, 60%); @include center-block(); text-align: center;
-				h1, p {color: white; text-shadow: 0px 1px 1px rgba(black, .2)}
+			.one {@include sec-grid(left, 70%); @include center-block(); text-align: center;
+				h1, p {color: white; text-shadow: 0px 1px 1px rgba(black, .3);font-family: $open;}
 				p{font-size: 18px;}
 			}
-			background: -webkit-linear-gradient(-182deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
-			background: linear-gradient(102deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+			// background: -webkit-linear-gradient(-182deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+			// background: linear-gradient(102deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+
+			background: -webkit-linear-gradient(-270deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+			background: linear-gradient(65deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
 			padding: 55px 80px 80px;
 		}
 
-		.location-map{@include sec-default();background-color: white; box-shadow: 0 0px 50px rgba(black, .1); margin-top: 35px;
+		.location-map{@include sec-default();background-color: white; box-shadow: 0 0px 30px rgba(black, .2); margin-top: 35px;
 			max-height: 550px;
 		}
 
 		#map {height: 550px}
-		.town-hlf, .map-hlf {@include sec-grid(left, 70%); }
-		.town-hlf {width: 30%; height:550px;}
+		.town-hlf, .map-hlf {@include sec-grid(right, 70%); }
+		.town-hlf {width: 30%; height:550px; float: left;}
 		.loclist {@include sec-default();padding: 50px 20px 20px 50px;max-height: 500px; overflow-y: scroll;}
-		#redo-search { font-weight: bold; font-size: 16px; color: white; float: right;}
+		#redo-search { font-weight: bold; font-size: 16px; color: white; float: right; margin-top: 10px;}
 	}
 
 	.states .all-towns {
 		.town-hlf {padding-bottom: 40px;}
 		.loclist {padding-top: 15px; }
 	}
-// }
+
+	.towns .all-towns, .states .all-towns {
+		@include bp(dt) {
+			.pop .one {width: 60%;}
+		}
+
+		@include bp(tb) {
+			.pop {padding: 40px 65px 80px;
+				.one {width: 80%;}
+			}
+			.btn.btn-outline-secondary.search {background-size: 50%;}
+		}
+
+		@include bp(tn) {
+			.pop {padding: 25px 35px 60px;
+				.one {width: 95%;
+					h1 {font-size: 1.8em;}
+					p{font-size: 16px;}
+				}
+			}
+			.form-control {width: 85%;}
+			.btn.btn-outline-secondary.search {width: 15%; background-size: 50%;}
+
+			.location-map{margin-top: 10px;max-height: 450px;}
+			.loclist {padding: 20px 15px 20px 20px}
+
+			#map, .town-hlf { height:450px; }
+			.loclist {max-height: 400px; }
+		}
+
+		@include bp(pl) {
+			.pop {padding: 25px 25px 60px;
+				.one {width: 100%;
+					h1 {font-size: 1.5em; }
+				  p{font-size: 15px;}
+				}
+			}
+
+			.town-hlf { width: 40%;}
+			.map-hlf {width: 60%}
+		}
+
+		@include bp(sm) {
+			.pop {padding: 20px 15px 60px;
+				.one h1 {font-size: 1.25em; margin-bottom: 0px;}
+			}
+			.location-map {max-height:100%;}
+			.town-hlf, .map-hlf {@include sec-default(); padding-bottom: 0;}
+			#map { height:250px; }
+			.town-hlf { height:300px; }
+			.loclist {max-height: 100%; }
+			#redo-search { font-size: 15px; color: $dark; margin: 10px; }
+		}
+	}
+
+	.states .all-towns {
+		@include bp(sm) {
+			.town-hlf {height: 330px}
+			.loclist {max-height: 280px; }
+		}
+	}
 
 
 

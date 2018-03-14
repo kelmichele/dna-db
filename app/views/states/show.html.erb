@@ -42,7 +42,11 @@
 
 		<div class="location-map">
   		<% if @state_towns.count != 0 %>
-	  		<!-- <div class="col-md-4 col-md-offset-1"> -->
+
+  			<div class="map-hlf">
+					<%= render 'shared/map' %>
+	  		</div>
+
 	  		<div class="town-hlf">
 	  			<div class="search-sec">
 						<div class="searcher">
@@ -69,11 +73,6 @@
 						</table>
 					</div>
 				</div>
-
-	  		<!-- <div class="col-md-5"> -->
-  			<div class="map-hlf">
-					<%= render 'shared/map' %>
-	  		</div>
 
   		<% else %>
 			 	<p>Unfortunately, we have no testing locations in <%= @state.name %>, but you can still follow the link below, and order an At Home DNA Test Kit Today!</p>
