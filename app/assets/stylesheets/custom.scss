@@ -13,7 +13,7 @@
 .uk-accordion-title {margin-bottom:0;}
 .uk-accordion>:nth-child(n+2) {margin-top: 0;}
 
-#map {height:350px;}
+#map {height:450px;}
 
 .tmargin0 { margin-top: 0; }
 .bmargin0 { margin-bottom: 0; }
@@ -111,7 +111,7 @@ a:hover {text-decoration: none; opacity: .7;}
   }
   .add-btns-blk {width:75%; @include center-block();}
 }
-.all-states, .all-towns, .all-clinics {@include sec-default(); padding: $sec-pad;
+.all-states, .all-clinics {@include sec-default(); padding: $sec-pad;
   .state-name {font-weight: bold; }
   .state-name a {text-transform: capitalize;}
   td.actions{float: right; margin-left: 20px; margin-top: 3px;}

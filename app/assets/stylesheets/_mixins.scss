@@ -79,9 +79,9 @@
   border-radius: 20px; border-width:0px;
 }
 
-@mixin gradient($color1, $color2){
-  background: -webkit-linear-gradient($color1, $color2);
-  background: linear-gradient($color1, $color2);
+@mixin gradient($color1, $color2) {
+ background: -webkit-linear-gradient(-102deg, $color1 19%, $color2 81%);
+ background: linear-gradient(12deg, $color1 19%, $color2 81%);
 }
 
 @mixin text-gradient($dir, $from, $to) {

@@ -745,14 +745,15 @@ $new: #ccd1d9;
 
 			@include sec-bgimage('world-map.png');
 			position: relative; z-index: 0;
-			&::before {@include before(); background-color: rgba(white, .25);}
+			&::before {@include before(); background-color: rgba(white, .3);}
+			// &::before {@include before();background-color:$fun width: 85%;  top:4%; border-radius: 150px; left: -15%;}
 
 			p{font-size: 18px; line-height: 1.6em;}
 		}
 
 		.call-block{@include sec-default(); padding: 35px 25px 60px; text-align: center;
-			background: -webkit-linear-gradient(102deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
-			background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($blue, 10%) 81%);
+			background: -webkit-linear-gradient(102deg, darken($fun, 15%) 19%, lighten($fun, 10%) 81%);
+			background: linear-gradient(12deg, darken($fun, 15%) 19%, lighten($fun, 10%) 81%);
 
 			h3 {color: white; font-size: 21px; font-weight: bold; text-shadow: 0px 1px 1px rgba(black, .3); letter-spacing: 1px;
 				span {font-family: $open;}
@@ -788,65 +789,148 @@ $new: #ccd1d9;
 			.state-icons {position: relative; float: none; left: 0; margin-top: 0; background-color: transparent; width:35px; padding:0; margin-right:10px;@include grayscale();}
 		}
 
-		@include bp(dt) {
-			.wrap {width: 90%; }
+		// @include bp(dt) {
+		// }
 
-			.tfw {padding: 20px 15px 20px 50px;
-				.state-icons {margin-top: -8%;}
+		// @include bp(tb) {
+		// 	.top {
+		// 		&::before {display: none;}
+		// 		.inner {width: 90%;}
+		// 		h1 {font-size: 1.8em; margin-bottom: 0;}
+		// 		.title-line {margin:8px 0 10px;}
+		// 		.one{ width: 60%; padding: 15px 0;}
+		// 		.two {width: 39%; margin-top:60px; padding-top:0;}
+		// 		p {margin:5px 0 10px;}
+		// 	}
+
+		// 	.listing {width:21%; margin: 0 0 0 4%;padding-left:15px;
+		// 		&.uno{margin-left:1.5%;}
+		// 		&.quatro{margin:0; float:right;}
+		// 		&::before { width: 18%; height: 100%; top:-1%; background-color: rgba($blue, .5);}
+		// 	}
+
+		// 	.tfw {
+		// 		i {width:30px; height:30px; font-size:16px;}
+		// 		.state-icons {margin-top: -12%; }
+		// 	}
+		// }
+
+		// @include bp(nn) {
+		// 	.state-name{font-size:15px;}
+
+		// 	.listing { width: 40%; @include center-block();
+		// 		&.uno, &.quatro {float:none; margin:auto;}
+		// 	}
+		// }
+
+		// @include bp(tn) {
+		// 	.top {
+		// 		.inner {width: 85%;}
+		// 		@include sec-bgimage('colorful-map.png'); background-size: 22%; background-position: bottom right;
+		// 		h1 {font-size: 1.8em; margin-bottom: 0;}
+		// 		.one{ width: 85%; padding: 15px 0;}
+		// 		.two {width: 25%; margin-top:60px; padding-top:0; display: none;}
+		// 		p {margin:5px 0 10px;}
+		// 	}
+		// }
+
+		// @include bp(mb) {
+		// 	.listing {width: 50%;}
+		// 	.tfw .state-icons {margin-top: -7%;}
+		// }
+
+		// @include bp(sm) {
+		// 	.listing {width: 65%;}
+		// 	.tfw .state-icons {margin-top: -10%;}
+		// }
+	}
+
+	.all-towns {
+		@include sec-default(); background-color: white;
+		.top {@include sec-default(); background-color: $fun;
+			p{font-size: 18px; line-height: 1.6em;}
+			h1, p {color: white;}
+
+			position: relative; z-index: 0; overflow: hidden;
+			&::before {@include before(); background-color:lighten($fun, 15%); border-radius: 150px; left: 55%; width: 60%; border-left: 30px solid rgba(white, .3)}
+
+			.one {@include sec-grid(left, 45%); }
+			.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
+				p {font-size: 16px;}
+			}
+
+			.test-row {@include sec-default(); margin-top: 10px;}
+			a.tests{@include purple-btn(95%); padding: 10px 40px; font-size: 15px;}
+		}
+
+		.box-sec {@include sec-default(); padding: 35px 0;
+			.searcher, .tester, .caller {@include sec-grid(left, 45%); margin-left: 5% }
+		}
+
+		.pop {@include sec-default(); background-color: $f6;
+			border-bottom: 15px solid $f6; padding-top:30px;
+			h4 {margin-bottom: 8px; font-size: 17px;}
+
+			.search-sec {@include sec-default(); position: relative; z-index: 0; padding:20px 80px; margin-bottom: 60px;
+				&::before {@include before(); background-color:darken($blue, 0); height:80px;  width: 73%; border-radius: 150px; left: -10%;  }
+
+				form {width:40%; background-color: lighten($blue, 10%); padding: 5px; text-align: center; margin-left: 10%; border-radius: 20px}
+				.form-control {width:55%; margin-right: 5px;}
+				.btn-outline-secondary.search {background-color: $f7; border-radius: 15px; color: darken($blue, 10%); font-weight: bold; letter-spacing: 1px;}
 			}
 		}
 
-		@include bp(tb) {
-			.top {
-				&::before {display: none;}
-				.inner {width: 90%;}
-				h1 {font-size: 1.8em; margin-bottom: 0;}
-				.title-line {margin:8px 0 10px;}
-				.one{ width: 60%; padding: 15px 0;}
-				.two {width: 39%; margin-top:60px; padding-top:0;}
-				p {margin:5px 0 10px;}
+		.town-hlf, .map-hlf {@include sec-grid(left, 55%); }
+		.town-hlf{width: 25%; margin-left: 10%;}
+		#redo-search { font-weight: bold; font-size: 16px; color: $blue;
+			// border-radius: 20px; background-color: $fun;
+		}
+	}
+}
+
+.towns {
+	.all-towns {
+		@include sec-default(); background-color: white;
+		.top {@include sec-default(); background-color: $fun;
+			p{font-size: 18px; line-height: 1.6em;}
+			h1, p {color: white;}
+
+			position: relative; z-index: 0; overflow: hidden;
+			&::before {@include before(); background-color:lighten($fun, 15%); border-radius: 150px; left: 55%; width: 60%; border-left: 30px solid rgba(white, .3)}
+
+			.one {@include sec-grid(left, 45%); }
+			.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
+				p {font-size: 16px;}
 			}
 
-			.listing {width:21%; margin: 0 0 0 4%;padding-left:15px;
-				&.uno{margin-left:1.5%;}
-				&.quatro{margin:0; float:right;}
-				&::before { width: 18%; height: 100%; top:-1%; background-color: rgba($blue, .5);}
-			}
+			.test-row {@include sec-default(); margin-top: 10px;}
+			a.tests{@include purple-btn(95%); padding: 10px 40px; font-size: 15px;}
+		}
 
-			.tfw {
-				i {width:30px; height:30px; font-size:16px;}
-				.state-icons {margin-top: -12%; }
+		.box-sec {@include sec-default(); padding: 35px 0;
+			.searcher, .tester, .caller {@include sec-grid(left, 45%); margin-left: 5% }
+		}
+
+		.pop {@include sec-default(); background-color: $f6;
+			border-bottom: 15px solid $f6; padding-top:30px;
+			h4 {margin-bottom: 8px; font-size: 17px;}
+
+			.search-sec {@include sec-default(); position: relative; z-index: 0; padding:20px 80px; margin-bottom: 60px;
+				&::before {@include before(); background-color:darken($blue, 0); height:80px;  width: 73%; border-radius: 150px; left: -10%;  }
+
+				form {width:40%; background-color: lighten($blue, 10%); padding: 5px; text-align: center; margin-left: 10%; border-radius: 20px}
+				.form-control {width:55%; margin-right: 5px;}
+				.btn-outline-secondary.search {background-color: $f7; border-radius: 15px; color: darken($blue, 10%); font-weight: bold; letter-spacing: 1px;}
 			}
 		}
 
-		@include bp(nn) {
-			.state-name{font-size:15px;}
-
-			.listing { width: 40%; @include center-block();
-				&.uno, &.quatro {float:none; margin:auto;}
-			}
+		.town-hlf, .map-hlf {@include sec-grid(left, 55%); }
+		.town-hlf{width: 25%; margin-left: 10%;}
+		#redo-search { font-weight: bold; font-size: 16px; color: $blue;
+			// border-radius: 20px; background-color: $fun;
 		}
 
-		@include bp(tn) {
-			.top {
-				.inner {width: 85%;}
-				@include sec-bgimage('colorful-map.png'); background-size: 22%; background-position: bottom right;
-				h1 {font-size: 1.8em; margin-bottom: 0;}
-				.one{ width: 85%; padding: 15px 0;}
-				.two {width: 25%; margin-top:60px; padding-top:0; display: none;}
-				p {margin:5px 0 10px;}
-			}
-		}
-
-		@include bp(mb) {
-			.listing {width: 50%;}
-			.tfw .state-icons {margin-top: -7%;}
-		}
-
-		@include bp(sm) {
-			.listing {width: 65%;}
-			.tfw .state-icons {margin-top: -10%;}
-		}
+		#map {height: 300px;}
 	}
 }
 

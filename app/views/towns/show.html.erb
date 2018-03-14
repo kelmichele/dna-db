@@ -1,46 +1,53 @@
 <% @page_title = @town.townname %>
 
-<div class="full">
-	<div class="wrap">
-	  <h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
-	  <hr class="title-line">
-		<div class="clearfix"></div>
-		<%= render 'shared/dna-text' %>
-		<br><hr><br>
+<div class="all-towns">
+	<div class="full top">
+		<div class="inner">
+		  <h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
+		  <!-- <hr class="title-line">
+			<div class="clearfix"></div> -->
+			 <!-- render 'shared/dna-text'  -->
+			<div class="one">
+				<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.</p>
+			</div>
 
-		<%= tag.div class: 'col-md-5' do %>
-			<%= render 'shared/search_btn' %>
-		<% end %>
-
-		<%= tag.div class: 'col-md-6' do %>
-			<%= render 'shared/add_btns' %>
-		<% end %>
-
-		<div class="clearfix"></div>
-		<br><hr><br>
+			<div class="two">
+				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
+				<div class="clearfix"></div>
+				<div class="test-row"><%= link_to "Learn More", testing_path, class: 'tests' %></div>
+			</div>
+		</div>
 	</div>
 
-	<div class="wrap location-map">
-		<%= tag.div class: 'col-md-4 col-md-offset-1' do %>
-			<% if @town_locations.count != 0 %>
-				<table class="locations">
-					<% @town_locations.each do |location| %>
-						<div class="townlisting-bx">
-							<h4><%= simple_format(location.full_address)%></h4>
-							<% if user_signed_in? && current_user.admin? %>
-			  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
-								<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
-							<% end %>
-						</div>
-		  		<% end %>
-				</table>
-				<% else %>
-				<p>This is where each location's address will be listed...</p>
-			<% end %>
-		<% end %>
+	<div class="full pop">
+		<div class="wrap location-map">
+			<div class="search-sec">
+				<div class="searcher">
+					<%= render 'shared/search_btn' %>
+				</div>
+			</div>
 
-		<%= tag.div class: 'col-md-5' do %>
-			<%= render 'shared/map' %>
-		<% end %>
+  		<div class="town-hlf">
+				<% if @town_locations.count != 0 %>
+					<table class="locations">
+						<% @town_locations.each do |location| %>
+							<div class="townlisting-bx">
+								<h4><%= simple_format(location.full_address)%></h4>
+								<% if user_signed_in? && current_user.admin? %>
+				  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+									<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+								<% end %>
+							</div>
+			  		<% end %>
+					</table>
+					<% else %>
+					<p>This is where each location's address will be listed...</p>
+				<% end %>
+			</div>
+
+  		<div class="map-hlf">
+				<%= render 'shared/map' %>
+			</div>
+		</div>
 	</div>
 </div>
