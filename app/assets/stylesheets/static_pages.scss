@@ -742,16 +742,11 @@ $new: #ccd1d9;
 			span{ font-size: 20px; font-weight: bold; line-height: 1.6em; color: $blue; font-family: $open;}
 			.tests{color: darken($burg, 5%); }
 			p{font-size: 18px; line-height: 1.6em;}
-
-
-			// @include sec-bgimage('m39.png');
-			//  background-position: top right; background-size: 57%;
 		}
 
 		.call-block{@include sec-default(); padding: 35px 25px 60px; text-align: center;
 			background: -webkit-linear-gradient(102deg, darken($blue, 5%) 19%, lighten($blue, 10%) 81%);
 			background: linear-gradient(12deg, darken($blue, 5%) 19%, lighten($blue, 10%) 81%);
-			// @include sec-bgimage('m39.png'); background-size: 45%; background-repeat: repeat;
 
 			h3 {color: white; font-size: 21px; font-weight: bold; text-shadow: 0px 1px 1px rgba(black, .3); letter-spacing: 1px;
 				span {font-family: $open;}
@@ -793,7 +788,6 @@ $new: #ccd1d9;
 
 
 		.full.sl {display: none;}
-		.tbanner {@include sec-default(); background-color: $blue; padding: 10px 10px 1px; text-align: center; h1 {color: white;}}
 		.newlist {@include sec-default(); background-color: $f9; padding: 60px;
 			position: relative;z-index: 0;&::before {@include before(); background-color: rgba($f9, .92);}
 			@include sec-bgimage('m392.jpg');
@@ -814,8 +808,8 @@ $new: #ccd1d9;
 		.top {
 			padding:60px 0;
 			h1{font-size: 2em;}
-			.inner {width: 75%;}
-			.one {@include sec-grid(left, 49%); padding:25px 0; }
+			// .inner {width: 75%;}
+			.one {@include sec-grid(left, 54%); padding:25px 0; }
 			.two {@include sec-grid(right, 40%);}
 			.test-row{@include sec-default(); margin-top: 15px;}
 			.tests {@include purple-btn(35%); background: darken($btn1, 25%);  padding: 10px 30px; margin-left: 25%; }
@@ -823,7 +817,7 @@ $new: #ccd1d9;
 
 		.call-block { padding: 60px 0; background: white;
 			border-bottom: 15px solid $f6;
-			.inner {width: 70%;}
+			.inner {width: 80%;}
 			.one {@include sec-grid(right, 50%); margin-top: 8%}
 			.two {@include sec-grid(left, 30%); margin-left: 8%;}
 			h3 {color: $dark;text-shadow: none;
@@ -832,45 +826,68 @@ $new: #ccd1d9;
 		}
 
 		@include bp(dt) {
-			// .top {
-			// 	.inner {width: 75%;}
-			// 	.two {margin-right: 0;}
-			// 	.one{margin-top:2%; margin-left: 0;}
-			// }
-			.listing {width:20%; margin: -3% 2.5% 0;}
+			.top {
+				.inner {width: 75%;}
+				.one {@include sec-grid(left, 49%); }
+			}
+
+			.call-block .inner {width: 70%;}
 		}
 
 		@include bp(tb) {
-			.top {
+			.top {padding:45px 0;
 				h1 {font-size: 1.8em; margin-bottom: 5px;}
 				p {font-size: 16px;margin:10px 0;}
-				.one{ width: 60%;margin-left:0; }
-				.two {width: 37%; margin-right: 0;}
+				.one{ width: 60%;}
+				.two {width: 37%;}
+				.tests{font-size: 16px;}
 			}
 
-			.wrap {width: 95%;}
-			.tfw { padding-left: 10px;
-				&::before { width:37px; height:37px; top:8px; left:7px; }
-				.state-icons {width: 30px;}
+			.newlist {padding: 50px;
+				.states-dd {width: 45%;}
+				.btn-secondary.dropdown-toggle {background-color: white;}
+
+			}
+
+			.call-block {
+				.inner{width: 85%;}
+				h3 {font-size: 19px}
 			}
 		}
 
-		@include bp(nn) {
-			.tfw .state-name{font-size:15px;}
-			.listing { width: 40%; @include center-block(); margin-bottom: 20px;}
-		}
-
-		@include bp(pl) {
-			.top {padding:25px 0 15px;
+		@include bp(tn) {
+			.top {
+				padding:30px 0;
 				h1 {font-size: 1.5em;}
-				p {font-size: 15px; margin-top:15px; margin-bottom: 0}
-				.one{width: 90%; margin-top: 0;}
+				p {font-size: 15px; }
+				.inner {width: 90%;}
+			}
+
+			.newlist {
+				padding:30px 0;
+				h2 {font-size: 18px;}
+				.btn-secondary.dropdown-toggle {font-size: 17px; background-color: white;}
+			}
+
+			.call-block {
+				.inner{width: 85%;}
+				h3 {font-size: 17px;}
+
+				.one {width:60%;}
 				.two {width: 25%;}
 			}
 
-			.call-block{padding: 25px 25px 40px;
-				h3 {font-size: 18px; text-shadow: 0px 1px 1px rgba(black, .3); }
+		}
+
+		@include bp(md) {
+			.top { padding:40px 0;
+				.one{width: 90%; margin-top: 0; @include center-block(); padding:0;}
+				.two {display: none;}
 			}
+
+			// .call-block{padding: 25px 25px 40px;
+			// 	h3 {font-size: 18px; text-shadow: 0px 1px 1px rgba(black, .3); }
+			// }
 		}
 
 		@include bp(sm) {
