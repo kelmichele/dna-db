@@ -1,6 +1,7 @@
 <% @page_title = @state.name.capitalize %>
 
 <div class="all-towns">
+
 	<div class="full top">
 		<div class="inner">
 			<div class="one">
@@ -33,29 +34,40 @@
 	</div> -->
 
 	<div class="full pop">
-		<div class="search-sec">
-			<div class="searcher">
-				<%= render 'shared/search_btn' %>
-			</div>
+		<div class="one">
+		  <h1>Get DNA Tested Today in <span><%= @state.name %></span></h1>
+			<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.</p>
+			<!-- <%= render 'shared/add_btns' %>  -->
 		</div>
 
-		<div class="inner">
+		<div class="location-map">
   		<% if @state_towns.count != 0 %>
 	  		<!-- <div class="col-md-4 col-md-offset-1"> -->
 	  		<div class="town-hlf">
-					<table class="listing">
-						<% @state_towns.each do |town| %>
-							<tr>
-								<% if user_signed_in? && current_user.admin? %>
-								  <td><h4 class="state-name"><%= link_to town.townname.capitalize %></h4></td>
-								  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %> - (<%= town.id %>)&nbsp;</h4></td>
-							    <td><p><small>(<%= town.locations.count %>)</small></p></td>
-						   <% else %>
-							   <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
-						   <% end %>
-						  </tr>
-			  		<% end %>
-					</table>
+	  			<div class="search-sec">
+						<div class="searcher">
+							<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+							  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+							  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+							<% end %>
+						</div>
+					</div>
+
+					<div class="loclist">
+						<table class="listing">
+							<% @state_towns.each do |town| %>
+								<tr>
+									<% if user_signed_in? && current_user.admin? %>
+									  <td><h4 class="state-name"><%= link_to town.townname.capitalize %></h4></td>
+									  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %> - (<%= town.id %>)&nbsp;</h4></td>
+								    <td><p><small>(<%= town.locations.count %>)</small></p></td>
+							   <% else %>
+								   <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
+							   <% end %>
+							  </tr>
+				  		<% end %>
+						</table>
+					</div>
 				</div>
 
 	  		<!-- <div class="col-md-5"> -->

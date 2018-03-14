@@ -723,6 +723,8 @@ $new: #ccd1d9;
 
 .states {
   // .state-list {width:20%; float: left; display: inline-block; }
+	#map {height:450px;}
+
   .header-wrapper {position: relative;z-index: 1;}
   .tfw {@include sec-default(); padding-bottom:12px;}
   td.print {padding-left: 30px;}
@@ -845,94 +847,102 @@ $new: #ccd1d9;
 		// }
 	}
 
-	.all-towns {
-		@include sec-default(); background-color: white;
-		.top {@include sec-default(); background-color: $fun;
+	// .all-towns {
+	// 	@include sec-default(); background-color: white;
+	// 	.top {@include sec-default(); background-color: $fun;
+	// 		p{font-size: 18px; line-height: 1.6em;}
+	// 		h1, p {color: white;}
+
+	// 		position: relative; z-index: 0; overflow: hidden;
+	// 		&::before {@include before(); background-color:lighten($fun, 15%); border-radius: 150px; left: 55%; width: 60%; border-left: 30px solid rgba(white, .3)}
+
+	// 		.one {@include sec-grid(left, 45%); }
+	// 		.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
+	// 			p {font-size: 16px;}
+	// 		}
+
+	// 		.test-row {@include sec-default(); margin-top: 10px;}
+	// 		a.tests{@include purple-btn(95%); padding: 10px 40px; font-size: 15px;}
+	// 	}
+
+	// 	.box-sec {@include sec-default(); padding: 35px 0;
+	// 		.searcher, .tester, .caller {@include sec-grid(left, 45%); margin-left: 5% }
+	// 	}
+
+	// 	.pop {@include sec-default(); background-color: $f6;
+	// 		border-bottom: 15px solid $f6; padding-top:30px;
+	// 		h4 {margin-bottom: 8px; font-size: 17px;}
+
+	// 		.search-sec {@include sec-default(); position: relative; z-index: 0; padding:20px 80px; margin-bottom: 60px;
+	// 			&::before {@include before(); background-color:darken($blue, 0); height:80px;  width: 73%; border-radius: 150px; left: -10%;  }
+
+	// 			form {width:40%; background-color: lighten($blue, 10%); padding: 5px; text-align: center; margin-left: 10%; border-radius: 20px}
+	// 			.form-control {width:55%; margin-right: 5px;}
+	// 			.btn-outline-secondary.search {background-color: $f7; border-radius: 15px; color: darken($blue, 10%); font-weight: bold; letter-spacing: 1px;}
+	// 		}
+	// 	}
+
+	// 	.town-hlf, .map-hlf {@include sec-grid(left, 55%); }
+	// 	.town-hlf{width: 25%; margin-left: 10%;}
+	// 	#redo-search { font-weight: bold; font-size: 16px; color: $blue;}
+	// }
+}
+
+// .towns {
+	.towns .all-towns, .states .all-towns {
+		@include sec-default();
+		.top {@include sec-default(); background-color: $blue; padding:20px 0;
+			// border-bottom: 15px solid black;
 			p{font-size: 18px; line-height: 1.6em;}
 			h1, p {color: white;}
 
-			position: relative; z-index: 0; overflow: hidden;
-			&::before {@include before(); background-color:lighten($fun, 15%); border-radius: 150px; left: 55%; width: 60%; border-left: 30px solid rgba(white, .3)}
+			display: none;
 
-			.one {@include sec-grid(left, 45%); }
+			// @include sec-bgimage('running.jpg');background-position: center center;
+			// position: relative; z-index: 0;
+			// &::before {@include before(); background-color: rgba(black, .45);}
+
+			.one {@include sec-grid(left, 60%); @include center-block(); text-align: center;}
 			.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
-				p {font-size: 16px;}
+				p {font-size: 16px; color:white;}
 			}
-
-			.test-row {@include sec-default(); margin-top: 10px;}
-			a.tests{@include purple-btn(95%); padding: 10px 40px; font-size: 15px;}
 		}
 
-		.box-sec {@include sec-default(); padding: 35px 0;
-			.searcher, .tester, .caller {@include sec-grid(left, 45%); margin-left: 5% }
+		.form-control, .btn-outline-secondary.search {height: 45px; border-radius: 0;}
+		.form-control {width:88%; float: right;}
+		.btn.btn-outline-secondary.search {background-color: $blue; color: white; width: 12%; letter-spacing: 1px;
+			@include sec-bgimage('search.png'); background-position: center center; background-size: 45%;
 		}
 
-		.pop {@include sec-default(); background-color: $f6;
-			border-bottom: 15px solid $f6; padding-top:30px;
+		.pop {@include sec-default(); background-color: $blue; border-bottom: 15px solid $f6; padding:0;
+			// max-height: 550px;
 			h4 {margin-bottom: 8px; font-size: 17px;}
 
-			.search-sec {@include sec-default(); position: relative; z-index: 0; padding:20px 80px; margin-bottom: 60px;
-				&::before {@include before(); background-color:darken($blue, 0); height:80px;  width: 73%; border-radius: 150px; left: -10%;  }
-
-				form {width:40%; background-color: lighten($blue, 10%); padding: 5px; text-align: center; margin-left: 10%; border-radius: 20px}
-				.form-control {width:55%; margin-right: 5px;}
-				.btn-outline-secondary.search {background-color: $f7; border-radius: 15px; color: darken($blue, 10%); font-weight: bold; letter-spacing: 1px;}
+			.one {@include sec-grid(left, 60%); @include center-block(); text-align: center;
+				h1, p {color: white; text-shadow: 0px 1px 1px rgba(black, .2)}
+				p{font-size: 18px;}
 			}
+			background: -webkit-linear-gradient(-182deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+			background: linear-gradient(102deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+			padding: 55px 80px 80px;
 		}
 
-		.town-hlf, .map-hlf {@include sec-grid(left, 55%); }
-		.town-hlf{width: 25%; margin-left: 10%;}
-		#redo-search { font-weight: bold; font-size: 16px; color: $blue;
-			// border-radius: 20px; background-color: $fun;
+		.location-map{@include sec-default();background-color: white; box-shadow: 0 0px 50px rgba(black, .1); margin-top: 35px;
+			max-height: 550px;
 		}
+
+		#map {height: 550px}
+		.town-hlf, .map-hlf {@include sec-grid(left, 70%); }
+		.town-hlf {width: 30%; height:550px;}
+		.loclist {@include sec-default();padding: 50px 20px 20px 50px;max-height: 500px; overflow-y: scroll;}
+		#redo-search { font-weight: bold; font-size: 16px; color: white; float: right;}
 	}
-}
 
-.towns {
-	.all-towns {
-		@include sec-default(); background-color: white;
-		.top {@include sec-default(); background-color: $fun;
-			p{font-size: 18px; line-height: 1.6em;}
-			h1, p {color: white;}
-
-			position: relative; z-index: 0; overflow: hidden;
-			&::before {@include before(); background-color:lighten($fun, 15%); border-radius: 150px; left: 55%; width: 60%; border-left: 30px solid rgba(white, .3)}
-
-			.one {@include sec-grid(left, 45%); }
-			.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
-				p {font-size: 16px;}
-			}
-
-			.test-row {@include sec-default(); margin-top: 10px;}
-			a.tests{@include purple-btn(95%); padding: 10px 40px; font-size: 15px;}
-		}
-
-		.box-sec {@include sec-default(); padding: 35px 0;
-			.searcher, .tester, .caller {@include sec-grid(left, 45%); margin-left: 5% }
-		}
-
-		.pop {@include sec-default(); background-color: $f6;
-			border-bottom: 15px solid $f6; padding-top:30px;
-			h4 {margin-bottom: 8px; font-size: 17px;}
-
-			.search-sec {@include sec-default(); position: relative; z-index: 0; padding:20px 80px; margin-bottom: 60px;
-				&::before {@include before(); background-color:darken($blue, 0); height:80px;  width: 73%; border-radius: 150px; left: -10%;  }
-
-				form {width:40%; background-color: lighten($blue, 10%); padding: 5px; text-align: center; margin-left: 10%; border-radius: 20px}
-				.form-control {width:55%; margin-right: 5px;}
-				.btn-outline-secondary.search {background-color: $f7; border-radius: 15px; color: darken($blue, 10%); font-weight: bold; letter-spacing: 1px;}
-			}
-		}
-
-		.town-hlf, .map-hlf {@include sec-grid(left, 55%); }
-		.town-hlf{width: 25%; margin-left: 10%;}
-		#redo-search { font-weight: bold; font-size: 16px; color: $blue;
-			// border-radius: 20px; background-color: $fun;
-		}
-
-		#map {height: 300px;}
+	.states .all-towns {
+		.town-hlf {padding-bottom: 40px;}
+		.loclist {padding-top: 15px; }
 	}
-}
+// }
 
 
 

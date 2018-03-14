@@ -3,46 +3,56 @@
 <div class="all-towns">
 	<div class="full top">
 		<div class="inner">
-		  <h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
 		  <!-- <hr class="title-line">
 			<div class="clearfix"></div> -->
 			 <!-- render 'shared/dna-text'  -->
 			<div class="one">
+		  	<h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
 				<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.</p>
 			</div>
 
-			<div class="two">
+<!-- 			<div class="two">
 				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
 				<div class="clearfix"></div>
 				<div class="test-row"><%= link_to "Learn More", testing_path, class: 'tests' %></div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
 	<div class="full pop">
-		<div class="wrap location-map">
-			<div class="search-sec">
-				<div class="searcher">
-					<%= render 'shared/search_btn' %>
-				</div>
-			</div>
+		<div class="one">
+	  	<h1>Get DNA Tested Today in <span><%= @town.townname %>, <%= @state.abv %></span></h1>
+			<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.</p>
+		</div>
 
+		<div class=" location-map">
   		<div class="town-hlf">
-				<% if @town_locations.count != 0 %>
-					<table class="locations">
-						<% @town_locations.each do |location| %>
-							<div class="townlisting-bx">
-								<h4><%= simple_format(location.full_address)%></h4>
-								<% if user_signed_in? && current_user.admin? %>
-				  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
-									<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
-								<% end %>
-							</div>
-			  		<% end %>
-					</table>
-					<% else %>
-					<p>This is where each location's address will be listed...</p>
-				<% end %>
+  			<div class="search-sec">
+  				<div class="searcher">
+  					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+  					  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+  					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+  					<% end %>
+  				</div>
+  			</div>
+
+				<div class="loclist">
+					<% if @town_locations.count != 0 %>
+						<table class="locations">
+							<% @town_locations.each do |location| %>
+								<div class="townlisting-bx">
+									<h4><%= simple_format(location.full_address)%></h4>
+									<% if user_signed_in? && current_user.admin? %>
+					  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+										<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+									<% end %>
+								</div>
+				  		<% end %>
+						</table>
+						<% else %>
+						<p>This is where each location's address will be listed...</p>
+					<% end %>
+				</div>
 			</div>
 
   		<div class="map-hlf">
