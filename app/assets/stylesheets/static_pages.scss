@@ -211,6 +211,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	.inst{@include sec-default();
 	 	padding:0 0 45px; background-color: $f7;
 		@include sec-bgimage('ribbon-bg-rev.png'); background-size: 60%; background-position:bottom left;
+		// @include sec-bgimage('m392.jpg');background-size: 45%;
 
 	 	.inner {float: right; width: 65%;}
 		.step{display: inline-block; float: left;
@@ -826,7 +827,9 @@ $new: #ccd1d9;
 			.inner {width: 70%;}
 			.one {@include sec-grid(right, 50%); margin-top: 8%}
 			.two {@include sec-grid(left, 30%); margin-left: 8%;}
-			h3 {color: $dark;text-shadow: none; }
+			h3 {color: $dark;text-shadow: none;
+				span {color: $blue; line-height: 2em;}
+			}
 		}
 
 		@include bp(dt) {
