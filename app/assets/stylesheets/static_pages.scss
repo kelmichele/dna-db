@@ -44,7 +44,8 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.left {@include sec-grid(left, 45%); display: none;}
 		.right {@include sec-grid(right, 35%); margin-right:14%; text-align: center; padding: 140px 0;}
 
-		@include sec-bgimage('map-crop.png'); background-size: 48%; background-position: left center;
+		@include sec-bgimage('us-map.png'); background-size: 48%; background-position: left center;
+		// @include sec-bgimage('map-crop.png'); background-size: 48%; background-position: left center;
 	}
 
 	.legal-lt {@include sec-default(); background-color: $f9; padding:80px 0;
@@ -569,7 +570,7 @@ $new: #ccd1d9;
 			left:-10%; margin-top:-20px;
 			width: 45%;
 			height:94%;
-			background-color: rgba(9,33,45, .94);
+			background-color: rgba(9,33,45, .99);
 			-webkit-transform: skew(30deg, -18deg);
       -moz-transform: skew(30deg, -18deg);
       -o-transform: skew(30deg, -18deg);
@@ -735,23 +736,6 @@ $new: #ccd1d9;
 
 	.all-states { padding:0;
 		.tbls{@include sec-default(); }
-		.top{@include sec-default(); background-color:white;
-			// padding:$sec-pad;
-			// .one {@include sec-grid(left, 45%); margin-top: 1%; margin-left:4%;}
-			// .two {@include sec-grid(right, 43%); margin-right:2%; }
-			span{ font-size: 20px; font-weight: bold; line-height: 1.6em; color: $blue; font-family: $open;}
-			.tests{color: darken($burg, 5%); }
-			p{font-size: 18px; line-height: 1.6em;}
-		}
-
-		.call-block{@include sec-default(); padding: 35px 25px 60px; text-align: center;
-			background: -webkit-linear-gradient(102deg, darken($blue, 5%) 19%, lighten($blue, 10%) 81%);
-			background: linear-gradient(12deg, darken($blue, 5%) 19%, lighten($blue, 10%) 81%);
-
-			h3 {color: white; font-size: 21px; font-weight: bold; text-shadow: 0px 1px 1px rgba(black, .3); letter-spacing: 1px;
-				span {font-family: $open;}
-			}
-		}
 
 		.full.sl {padding-top: 0; @include sec-default();}
 
@@ -759,13 +743,7 @@ $new: #ccd1d9;
 		.listing {width:23%; float: left; display: inline-block; padding-left: 20px; margin: -3% 1% 0;}
 
 		.tfw {
-			// background-color: white;
-			margin-bottom: 20px;
-			// border-radius:15px;
-			position: relative;z-index: 0;
-			// box-shadow: 0px 5px 15px rgba($blue, .1);
-			// padding: 10px 15px;
-			// text-align: center;
+			margin-bottom: 20px;position: relative;z-index: 0;
 
 			.state-icons {display: inline-block; float: left; width: 40px; background-color: $f2;
 				position: absolute; left:0; padding: 5px; border-radius:15px;
@@ -773,13 +751,7 @@ $new: #ccd1d9;
 			}
 			.state-name {margin-top:5px;}
 
-			&::before {@include before(); width:43px; height:43px; top:7px; left:11px; border-radius: 50%;
-				// @include gradient(darken($btn2, 15%), lighten($btn2, 6%)); opacity: .7;
-			}
-
-			// &:nth-child(2n+2)::before {@include gradient(darken($btn1, 15%), lighten($btn1, 10%));}
-			// &:nth-child(3n+3)::before {@include gradient($orange, lighten($orange, 5%));}
-			// &:nth-child(4n+4)::before {@include gradient(darken($fun, 15%), lighten($fun, 12%));}
+			&::before {@include before(); width:43px; height:43px; top:7px; left:11px; border-radius: 50%;}
 
 			.state-icons {position: relative; float: none; left: 0; margin-top: 0; background-color: transparent; width:35px; padding:0; margin-right:10px;
 				@include grayscale();
@@ -788,13 +760,13 @@ $new: #ccd1d9;
 
 
 		.full.sl {display: none;}
-		.newlist {@include sec-default(); background-color: $f9; padding: 60px;
-			position: relative;z-index: 0;&::before {@include before(); background-color: rgba($f9, .92);}
-			@include sec-bgimage('m392.jpg');
+		.newlist {@include sec-default(); padding: 60px;
+			background: -webkit-linear-gradient(102deg, lighten($dk-blue, 20%) 19%, lighten($nblue, 10%) 81%);
+			background: linear-gradient(12deg, lighten($dk-blue, 20%) 19%, lighten($nblue, 10%) 81%);
 
-			h2 {text-align: center; font-size: 20px;}
-			.states-dd {width: 35%; @include center-block();}
-			.dropdown {@include sec-default(); border: 1px solid darken($f2, 5%);}
+			h2 {text-align: center; font-size: 20px; font-weight: bold;color:white; text-shadow: 0px 1px 1px rgba(black, .55);}
+			.states-dd {width: 30%; @include center-block();}
+			.dropdown {@include sec-default(); border: 1px solid darken($f2, 5%);border-radius: 5px;}
 			.btn-secondary.dropdown-toggle {@include sec-default(); font-size: 20px; padding: 10px 0;
 				i {margin-left: 10px; margin-top: 7px;}
 			}
@@ -805,33 +777,48 @@ $new: #ccd1d9;
 			}
 		}
 
-		.top {
+		.top {@include sec-default(); background-color:white;
 			padding:60px 0;
-			h1{font-size: 2em;}
-			// .inner {width: 75%;}
+			h1{font-size: 2em; font-weight: bold;}
+
+			span{ font-size: 20px; font-weight: bold; line-height: 1.6em; color: $blue; font-family: $open;}
+			.tests{color: darken($burg, 5%); }
+			p{font-size: 18px; line-height: 1.6em;}
+
 			.one {@include sec-grid(left, 54%); padding:25px 0; }
 			.two {@include sec-grid(right, 40%);}
 			.test-row{@include sec-default(); margin-top: 15px;}
 			.tests {@include purple-btn(35%); background: darken($btn1, 25%);  padding: 10px 30px; margin-left: 25%; }
 		}
 
-		.call-block { padding: 60px 0; background: white;
-			border-bottom: 15px solid $f6;
-			.inner {width: 80%;}
-			.one {@include sec-grid(right, 50%); margin-top: 8%}
-			.two {@include sec-grid(left, 30%); margin-left: 8%;}
-			h3 {color: $dark;text-shadow: none;
-				span {color: $blue; line-height: 2em;}
+		.opt-block {@include sec-default(); padding: 60px 0; background: white;text-align: center;
+			.inner {width: 75%;}
+			.one {@include sec-grid(left, 45%); margin-top: 8%; margin-left:8%;}
+			.two {@include sec-grid(left, 30%); margin-left: 8%; }
+			p{font-size: 18px; line-height: 1.6em;}
+
+			.tests {@include purple-btn(35%); background: darken($btn1, 25%); padding: 10px 30px; }
+		}
+
+		.call-block { @include sec-default();padding: 60px 0; text-align: center;
+			@include sec-bgimage('m39.png'); background-size: 30%; background-repeat: repeat;
+
+			position: relative;z-index: 0;
+			&::before {@include before(); background-color: rgba($f9, .9);}
+
+			h3 {color: $dark;font-size: 21px; font-weight: bold; letter-spacing: 1px;
+				span {color: $blue; line-height: 2em;font-family: $open;}
 			}
 		}
 
 		@include bp(dt) {
 			.top {
-				.inner {width: 75%;}
-				.one {@include sec-grid(left, 49%); }
+				.inner {width: 70%;}
+				.one {@include sec-grid(left, 45%); margin-left: 5%; }
+				.two {width: 35%;}
 			}
 
-			.call-block .inner {width: 70%;}
+			.call-block .inner {width: 50%;}
 		}
 
 		@include bp(tb) {

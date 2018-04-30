@@ -81,7 +81,8 @@
 	.top, .full { @include sec-default();}
 
 	.top{padding:10px 0; background-color: white;}
-	.logo-block {@include sec-grid(left, 30%); padding:10px 0 5px; }
+	// .logo-block {@include sec-grid(left, 30%); padding:10px 0 5px; }
+	.logo-block {@include sec-grid(left, 25%); padding:10px 0 5px; }
 	.call-block {@include sec-grid(right, 25%); margin-top: 20px;
 		i {display: inline-block; float: left; width:34px; height: 34px; color: $gray; font-size: 15px; border:1px solid $gray; border-radius: 50%; text-align: center; line-height: 2.2em; margin-top: 5px; margin-right: 10px;}
 		p, h4{line-height: 1em; margin: 0;}

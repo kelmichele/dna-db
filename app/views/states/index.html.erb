@@ -10,15 +10,10 @@
 				<h1><%= @page_title %></h1>
 				<p>Get DNA Tested Today provides affordable DNA/Paternity Testing in over 2500 locations nationwide.
 				Each of our locations are certified and accredited by the AABB and ISO 17025.</p>
-
-				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
-				<div class="clearfix"></div>
-				<div class="test-row"><%= link_to "Learn More", testing_path, class: 'tests' %></div>
 			</div>
 
 			<div class="two">
 				<%= image_tag('flat-map.png', alt: '') %>
-				<!-- <%= image_tag('icon-loc.png', alt: '') %>  -->
 			</div>
 
 			<div class="add-btns-blk">
@@ -51,17 +46,24 @@
 	</div>
 
 
-	<div class="call-block">
+	<div class="opt-block">
 		<div class="inner">
+			<div class="two"><%= image_tag('test-icon.png', alt: '') %></div>
 			<div class="one">
-				<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
-			</div>
-
-			 <div class="two">
-				<%= image_tag('test-icon.png', alt: '') %>
+				<!-- <h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3> -->
+				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
+				<div class="clearfix"></div>
+				<div class="test-row"><%= link_to "Learn More", options_path, class: 'tests' %></div>
 			</div>
 		</div>
 	</div>
+
+	<div class="call-block">
+		<div class="inner">
+			<h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3>
+		</div>
+	</div>
+
 
 	<div class="full sl">
 		<div class="wrap">
