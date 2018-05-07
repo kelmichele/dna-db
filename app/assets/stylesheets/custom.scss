@@ -68,15 +68,28 @@ a:hover {text-decoration: none; opacity: .7;}
 
 .breadcrumb {text-transform: capitalize; margin-top:0; color: $gray; background-color: transparent;}
 
-.site-footer { @include sec-default(); background-color: white; padding: 20px;
+.site-footer { @include sec-default(); background-color: white; padding-top: 20px;
+  h4 {font-weight: bold; color: $dk-blue; font-size: 18px; letter-spacing: 1px;}
+  p.ft-phone{font-weight: bold;}
   .inner-ft {width:85%; @include center-block();}
   .ft-final {@include sec-default();}
   .ft-block {@include grid3(); padding: 10px 15px;
-    &.menu {margin-left:2%; }
-    &.cancel{float: right;}
+    &.menu {margin-left:5%; }
+    &.menu, &.contact{width: 25%; }
+    &.cancel{float: right; width: 45%; padding:10px 0; }
 
     li.ft-only {display: none;}
-    li.ft-only.mfl {display: block;}
+    li.ft-only.mfl {display: block; }
+  }
+
+  .copy {@include sec-default(); text-align: center; padding: 5px 0; background-color: $dk-blue; margin-bottom: 0; color: white;}
+
+  @include bp(tb) {
+    text-align: center;
+    .ft-block {
+      // &.menu, &.contact{width: 30%; }
+      // &.cancel{width: 30%; }
+    }
   }
 }
 

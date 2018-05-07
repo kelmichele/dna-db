@@ -116,7 +116,7 @@
   }
 
   @else if $point == tn {
-    @media (max-width: 812px) { @content ; }
+    @media (max-width: 823px) { @content ; }
   }
 
   @else if $point == md {

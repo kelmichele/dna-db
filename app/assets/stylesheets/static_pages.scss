@@ -570,7 +570,8 @@ $new: #ccd1d9;
 			left:-10%; margin-top:-20px;
 			width: 45%;
 			height:94%;
-			background-color: rgba(9,33,45, .99);
+			background-color: rgba($dk-blue, .99);
+			// background-color: rgba(9,33,45, .99);
 			-webkit-transform: skew(30deg, -18deg);
       -moz-transform: skew(30deg, -18deg);
       -o-transform: skew(30deg, -18deg);
@@ -920,8 +921,8 @@ $new: #ccd1d9;
 		// background: -webkit-linear-gradient(-182deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
 		// background: linear-gradient(102deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
 
-		background: -webkit-linear-gradient(-270deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
-		background: linear-gradient(65deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
+		background: -webkit-linear-gradient(-270deg, lighten($dk-blue, 20%) 50%, darken($nblue, 5%) 50%);
+		background: linear-gradient(65deg, lighten($dk-blue, 20%) 50%, darken($nblue, 5%) 50%);
 		padding: 55px 80px 80px;
 	}
 
