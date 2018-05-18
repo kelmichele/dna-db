@@ -2,8 +2,6 @@
 <% @page_description = "New Description" %>
 
 <div class="all-states">
-	<!-- <div class="tbanner"><h1><%= @page_title %></h1></div> -->
-
 	<div class="top">
 		<div class="inner">
 			<div class="one">
@@ -13,7 +11,7 @@
 			</div>
 
 			<div class="two">
-				<%= image_tag('flat-map.png', alt: '') %>
+				<%= image_tag('flat-map.png', alt: 'Get DNA Tested Today, locations by state, map photo') %>
 			</div>
 
 			<div class="add-btns-blk">
@@ -35,7 +33,7 @@
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<% for state in @states %>
 					 	<%= link_to state_path(state), class: 'dropdown-item' do %>
-					 		<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons') %>
+					 		<%= image_tag("seals/#{state.name.upcase}.png", class: 'state-icons', alt: 'Get DNA Tested Today - state icons') %>
 							<%= state.name %>
 					 	<% end %>
 				  <% end %>
@@ -48,9 +46,8 @@
 
 	<div class="opt-block">
 		<div class="inner">
-			<div class="two"><%= image_tag('test-icon.png', alt: '') %></div>
+			<div class="two"><%= image_tag('test-icon.png', alt: 'Get DNA Tested Today, painless swab DNA testing') %></div>
 			<div class="one">
-				<!-- <h3>If you have any questions, or would like to speak to a certified collector, give us a call:<br> <span><%= phone %></span></h3> -->
 				<p>Follow the link below to learn more about each of our DNA/Paternity testing options, and schedule your testing appointment online. </p>
 				<div class="clearfix"></div>
 				<div class="test-row"><%= link_to "Learn More", options_path, class: 'tests' %></div>

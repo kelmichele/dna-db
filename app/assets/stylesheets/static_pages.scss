@@ -434,12 +434,6 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 
 	.color-hd{@include sec-default();	background: white; padding: 30px 60px;
 		position: relative;z-index: 0;
-		// &::before {@include before(); width: 80%;
-		// 	@include sec-bgimage('pattern12.png'); background-size: 20%; background-position: top right;
-		// 	left:50px;
-		// 	background-repeat: repeat-y;
-		// }
-
 		h1 {color: $dark; font-size: 2.2em;letter-spacing: 1px; text-transform: uppercase; font-weight: bold; text-align: center; margin-bottom: 30px;}
 
 		.text{ float: left; width: 44%;margin-left: 10%; }
@@ -948,7 +942,7 @@ $new: #ccd1d9;
 		@include bp(dt) {
 			.top {
 				.inner {width: 70%;}
-				.one {@include sec-grid(left, 45%); margin-left: 5%; }
+				.one {@include sec-grid(left, 48%); margin-left: 5%; }
 				.two {width: 35%;}
 			}
 
@@ -956,32 +950,37 @@ $new: #ccd1d9;
 		}
 
 		@include bp(tb) {
-			.top {padding:45px 0;
-				h1 {font-size: 1.8em; margin-bottom: 5px;}
-				p {font-size: 16px;margin:10px 0;}
-				.one{ width: 60%;}
-				.two {width: 37%;}
+			.top {padding:35px 0 20px; text-align: center;
+				// @include sec-bgimage('flat-map.png'); background-position: bottom right; background-size: 20%;
+				h1 {font-size: 1.6em; margin-bottom: 5px;}
+				p {font-size: 15px;margin:10px 0;}
+				.one{ width: 55%;padding:0; margin-top: 35px;}
+				.two {width: 30%;}
 				.tests{font-size: 16px;}
 			}
 
 			.newlist {padding: 50px;
 				.states-dd {width: 45%;}
 				.btn-secondary.dropdown-toggle {background-color: white;}
-
 			}
 
-			.call-block {
+			.opt-block {padding:40px 0;
+				.inner {width: 85%;}
+				.one{margin-top: 5%;}
+			}
+
+			.call-block {padding:40px 0 25px;
 				.inner{width: 85%;}
-				h3 {font-size: 19px}
+				h3 {font-size: 18px}
 			}
 		}
 
 		@include bp(tn) {
 			.top {
-				padding:30px 0;
-				h1 {font-size: 1.5em;}
-				p {font-size: 15px; }
+				padding:30px 0 15px;
+				h1 {font-size: 1.35em;}
 				.inner {width: 90%;}
+				.one {width: 64%;}
 			}
 
 			.newlist {
@@ -990,30 +989,61 @@ $new: #ccd1d9;
 				.btn-secondary.dropdown-toggle {font-size: 17px; background-color: white;}
 			}
 
-			.call-block {
-				.inner{width: 85%;}
-				h3 {font-size: 17px;}
+			.opt-block {padding:20px 0;
+				.inner {width: 90%;}
+				.one{width:70%; margin-left: 3%;}
+				.two {width: 25%; margin-left: 0;}
+				p{font-size: 15px;}
 
-				.one {width:60%;}
-				.two {width: 25%;}
+				.tests {@include purple-btn(35%); background: darken($btn1, 25%); padding: 5px 15px; font-size: 15px;}
 			}
 
+			.call-block {padding:25px 0 5px;
+				.inner {width: 80%;}
+				h3 {font-size: 17px;}
+			}
 		}
 
 		@include bp(md) {
-			.top { padding:40px 0;
+			.top { padding:30px 0 25px;
 				.one{width: 90%; margin-top: 0; @include center-block(); padding:0;}
 				.two {display: none;}
 			}
+			.call-block h3 {font-size: 16px;}
+		}
 
-			// .call-block{padding: 25px 25px 40px;
-			// 	h3 {font-size: 18px; text-shadow: 0px 1px 1px rgba(black, .3); }
-			// }
+		@include bp(ph) {
+			.top { padding:25px 0 15px;
+				.one{width: 97%;}
+			}
+
+			.newlist {
+				padding:20px 0;
+				h2 {font-size: 16px;}
+				.btn-secondary.dropdown-toggle {font-size: 16px; }
+				.states-dd {width: 80%;}
+			}
+
+			.opt-block {
+				@include sec-bgimage('test-icon.png'); background-position: bottom right; background-size: 20%;
+				padding-bottom: 60px;
+				.one{width:90%;@include center-block(); margin-top:0;}
+				.two {display:none;}
+				.tests { padding: 5px 20px; font-size: 14px;}
+			}
+			.listing {width: 70%;}
 		}
 
 		@include bp(sm) {
-			.listing {width: 70%;}
-			// .tfw .state-icons {margin-top: -10%;}
+			.top {
+				.inner {width:94%;}
+				h1 {font-size: 1.2em;}
+				p{font-size: 14px;}
+			}
+
+			.newlist h2 {padding: 0 8px;}
+
+			.call-block .inner{width: 85%;}
 		}
 	}
 }
