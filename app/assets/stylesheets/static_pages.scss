@@ -36,7 +36,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		h2 { color: darken($blue, 10%); font-family: $source; font-weight: 600; font-size:30px; line-height: 1em;}
 		p{margin-bottom: 0;}
 		hr.hlf {margin-bottom: 30px;}
-		.link-a{@include purple-btn(50%); padding:10px 25px;}
+		.link-a{@include purple-btn(50%); padding:10px 25px;
+			background: -webkit-linear-gradient(-102deg, darken($blue, 15%) 19%, lighten($sea, 8%) 81%);
+			background: linear-gradient(12deg, darken($blue, 15%) 19%, lighten($sea, 8%) 81%);
+		}
 
 		.left {@include sec-grid(left, 45%); display: none;}
 		.right {@include sec-grid(right, 35%); margin-right:14%; text-align: center; padding: 140px 0;}
@@ -118,7 +121,12 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	}
 
 	@include bp(tn) {
-		.hero-home {height: 350px;}
+		.hero-home {height: 350px; background-position: left center; padding-top: 30px;
+			.wrap{width: 70%; float: right;}
+			h1 {font-size: 32px; line-height: 1em;}
+			h2 {font-size: 30px; line-height: 1em;}
+			h3 {font-size: 21px;}
+		}
 
 		.dna{background-size: 40%;
 			.right {@include sec-grid(right, 55%); margin-right:5%; padding: 50px 0 65px;}
@@ -150,10 +158,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 	}
 
 	@include bp(md) {
-		.hero-home {height: 300px;}
+		.hero-home {height: 300px; }
 
-		.dna{background-size: 35%; background-position: left top;
-			.right {@include sec-grid(right, 60%); padding: 30px 0 ;}
+		.dna{background-size: 30%; background-position: left top;
+			.right {@include sec-grid(right, 60%); padding: 20px 0 40px; text-align: left;}
 			h3 {font-size: 16px}
 			.link-a {font-size: 15px; padding:10px 15px;}
 		}
@@ -169,6 +177,59 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			h2 {font-size: 21px}
 			p {font-size: 15px; margin-top: 3px;}
 			.link-a {font-size: 15px; padding:7px 10px;}
+		}
+	}
+
+	@include bp(mb) {
+		.hero-home {
+			&::after{@include before(); background-color: rgba($dark, .3); z-index: -2}
+		}
+
+		.dna{background-size: 25%; background-position: bottom right;
+			.right {@include sec-grid(left, 75%); padding: 20px 0 40px;}
+			h3 {font-size: 15px}
+			.link-a {font-size: 14px; padding:6px 15px;}
+		}
+
+		.call-block {padding:15px 0 6px;
+			.inner{width: 90%;}
+			h3 {font-size: 16px;}
+		}
+
+		.legal-lt .left {width: 98%;}
+
+		.homekit {padding: 10px 0;
+			.inner {width: 90%;}
+			.left {width: 25%; margin-top: 15px;}
+			.right {margin-left: 0; float: right; width: 70%;}
+			h2 {font-size: 19px}
+			.link-a {font-size: 14px; padding:5px 10px;}
+		}
+	}
+
+	@include bp(ph) {
+		.hero-home {height:200px;
+			// background-position: top left;
+			&::after{background-color: rgba($dark, .45);}
+			.wrap{@include sec-default(); }
+			h1,h2,h3{text-shadow:0px 0px 1px rgba(black, .9);}
+			h1{font-size: 28px; color: lighten($blue, 10%)}
+			h2 {font-size: 22px;}
+			h3{font-size: 19px; margin-top: 10px; color: white;}
+		}
+
+		.dna{background-size: 20%;
+			.inner {width: 90%;}
+			.right {@include sec-grid(left, 95%); padding: 20px 0;}
+		}
+		.call-block br.uno{display: none;}
+		.legal-lt .inner{width: 90%;}
+
+		.homekit {padding: 10px 0;
+			@include sec-bgimage('test-kit-mob.png'); background-size: 33%; background-position: bottom right; padding-bottom:80px;
+			.left {display: none;}
+			.right {float: left; width: 95%;}
+			h2 {font-size: 17px}
 		}
 	}
 

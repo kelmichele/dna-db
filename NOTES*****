@@ -1,0 +1,33 @@
+5/18/18 ------------------------
+--------------------------------
+
+** Started removing everything associated with live chat, so Zopim could be added. **
+	- application.html.erb
+		  25:
+		  <!-- <%= render chat_or_account_path %>  -->
+
+	- header.html.erb
+			1-3:
+			<% if user_signed_in? && current_user.admin? %>
+				<%= render 'layouts/admin_bar' %>
+			<% end %>
+
+
+	- _nav.html.erb
+			7-23:
+			<!--<% if user_signed_in? %>
+		   <li class="nav-li"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+		  <div id="current-user"></div>
+		  <% if current_user.admin? %>
+		    <li class="nav-li"><%= link_to "#{current_user.name}*", edit_user_registration_path, class: 'nav-link' %></li>
+		    <li class="nav-li"><%= link_to 'Chat', chats_path, class: 'nav-link' %></li>
+		  <% else %>
+		    <li class="nav-li"><% if current_user.is_guest? %>* <% end %><%= link_to current_user.name, edit_user_registration_path, class: 'nav-link' %></li>
+		  <% end %> -->
+
+		  <!-- <% else %> -->
+		  <li class="nav-li ft-only mfl"><%= link_to 'Home Testing Kit', new_charge_path, class: 'nav-link' %></li>
+		  <!--   <li class="nav-li ft-only"><%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %></li>
+		  <li class="nav-li ft-only"><%= link_to 'Log In', new_user_session_path, class: 'nav-link' %></li>
+		  <li class="nav-li ft-only"><%= link_to "Continue as Guest", guest_users_path, method: :post, class: 'nav-link' %></li> -->
+			<!-- <% end %> -->

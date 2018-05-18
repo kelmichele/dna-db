@@ -30,7 +30,7 @@
 						<h4><%= simple_format(location.full_address)%></h4>
 		  			<% if user_signed_in? && current_user.admin? %>
 		  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
-		  				<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>
+		  				<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
 		  			<% end %>
 				  <% end %>
 			  <% end %>
