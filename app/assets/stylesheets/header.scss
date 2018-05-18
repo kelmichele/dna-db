@@ -77,17 +77,15 @@
 
 .site-header { @include sec-default();}
 .header-wrapper {@include sec-default();
-	// height:130px; position:relative; z-index:9999;
 	.top, .full { @include sec-default();}
 
 	.top{padding:10px 0; background-color: white;}
-	// .logo-block {@include sec-grid(left, 30%); padding:10px 0 5px; }
 	.logo-block {@include sec-grid(left, 25%); padding:10px 0 5px; }
 	.call-block {@include sec-grid(right, 25%); margin-top: 20px;
 		i {display: inline-block; float: left; width:34px; height: 34px; color: $gray; font-size: 15px; border:1px solid $gray; border-radius: 50%; text-align: center; line-height: 2.2em; margin-top: 5px; margin-right: 10px;}
 		p, h4{line-height: 1em; margin: 0;}
 		p{color: $gray;font-size: 15px;}
-		h4 {color: $blue; font-weight: 600; font-size: 26px;line-height: 1.2em;}
+		h4 {color: $blue; font-weight: 600; font-size: 23px;line-height: 1.2em;}
 	}
 
 	.full {background-color: $f6; padding: 15px 0 5px;}
@@ -101,19 +99,29 @@
 		&.ft-only {display: none;}
 	}
 
-
 	.add-link{font-size: 15px;border: 1px solid rgba($blue, .5); padding:10px; border-radius: 4px;
 		&:hover {opacity: .7;}
 	}
 
 	@include bp(nn) {
-		.mainu, .add-menu{display: none;}
+		.full{display: none;}
 		.logo-block {@include sec-grid(left, 40%); margin-left: 5%; }
-		.call-block {@include sec-grid(right, 40%);}
+		.call-block {@include sec-grid(right, 30%);text-align: center;
+			i {display: none;}
+		}
 	}
 
 	@include bp(md) {
-		.logo-block, .call-block {width: 60%; text-align: center; @include center-block();}
+		.logo-block{margin-left: 0; width: 35%;}
+	}
+
+	@include bp(md) {
+		.top{padding:0;}
+		.logo-block, .call-block, .wrap {@include sec-default(); text-align: center;}
+		.logo-block{width: 60%;@include center-block();}
+		.call-block{background-color: rgba($blue, .2); padding: 10px; margin-top:5px;
+			p{color:$dark;}
+		}
 	}
 }
 
@@ -129,10 +137,10 @@
 }
 
 #offcanvas-toggler {
-	width: 40px; float:right; background-color:white; padding: 10px 0 5px; text-align: center; border-radius: 4px; border: 1px solid $blue; display:none;
-  span {content: '';@include center-block (); display: block; margin-bottom: 4px; width: 25px; height: 3px; border-radius: 4px; background-color: $blue;}
+	width: 40px; float:right; background-color:white; padding: 7px 0 5px; text-align: center; border-radius: 2px; border: 1px solid $blue; display:none;
+  span {content: '';@include center-block (); display: block; margin-bottom: 4px; width: 25px; height: 3px; border-radius: 2px; background-color: $blue;}
 
-  @include bp(nn) {display: block; margin: 15px;}
+  @include bp(nn) {display: block; margin: 6px 15px;}
 }
 .offcanvas-menu .offcanvas-inner .module ul > li > a:hover{color:white; background:$blue}
 .offcanvas-menu .offcanvas-inner .module .menu .nav-child a{padding:4px 25px}
