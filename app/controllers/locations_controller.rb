@@ -19,6 +19,11 @@ class LocationsController < ApplicationController
 		@all_states = State.all
 		@towns = Town.all
 		@state_towns = Town.includes(params[:state_id])
+
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @locations.to_csv }
+		end
 	end
 
 	def import
