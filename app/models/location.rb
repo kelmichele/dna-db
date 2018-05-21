@@ -4,8 +4,6 @@ class Location < ApplicationRecord
 
   validates :street, presence: true
   validates :zip, presence: true
-  # validates_uniqueness_of :full_address
-
   belongs_to :town
   validates :town_id, presence: true
   has_one :state, through: :town
@@ -41,7 +39,7 @@ class Location < ApplicationRecord
   end
 
   def self.to_csv(options = {})
-    desired_columns = ["street", "town_id", "zip", "latitude", "longitude"]
+    desired_columns = ["street", "addr2", "town_id", "zip", "latitude", "longitude"]
     CSV.generate(options) do |csv|
       csv << desired_columns
       all.each do |location|

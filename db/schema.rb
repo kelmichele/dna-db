@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117210650) do
+ActiveRecord::Schema.define(version: 20180520164248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20180117210650) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "alerts", force: :cascade do |t|
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.integer "recipient_id"
     t.integer "sender_id"
@@ -43,13 +49,13 @@ ActiveRecord::Schema.define(version: 20180117210650) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "author_id"
-    t.integer "receiver_id"
+    t.integer "sender_id"
+    t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
-    t.index ["author_id"], name: "index_conversations_on_author_id"
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id", "recipient_id"], name: "index_conversations_on_sender_id_and_recipient_id", unique: true
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -72,7 +78,19 @@ ActiveRecord::Schema.define(version: 20180117210650) do
     t.float "latitude"
     t.float "longitude"
     t.integer "town_id"
+    t.string "addr2"
     t.index ["zip"], name: "index_locations_on_zip"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "seen", default: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -81,18 +99,15 @@ ActiveRecord::Schema.define(version: 20180117210650) do
     t.bigint "chatroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "seen", default: false
     t.index ["chatroom_id"], name: "index_notes_on_chatroom_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
-  create_table "personal_messages", force: :cascade do |t|
-    t.text "body"
-    t.bigint "conversation_id"
-    t.bigint "user_id"
+  create_table "notifications", force: :cascade do |t|
+    t.string "event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_personal_messages_on_user_id"
   end
 
   create_table "states", force: :cascade do |t|
@@ -133,8 +148,8 @@ ActiveRecord::Schema.define(version: 20180117210650) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "notes", "chatrooms"
   add_foreign_key "notes", "users"
-  add_foreign_key "personal_messages", "conversations"
-  add_foreign_key "personal_messages", "users"
 end
