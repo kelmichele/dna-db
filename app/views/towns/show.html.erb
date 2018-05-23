@@ -28,7 +28,14 @@
 						<table class="locations">
 							<% @town_locations.each do |location| %>
 								<div class="townlisting-bx">
-									<h4><%= simple_format(location.full_address)%></h4>
+									<h4>
+										<!-- <%= simple_format(location.full_address)%>-->
+										<%= location.street.titleize %><br>
+										<% if location.addr2 %><%= location.addr2.titleize %><br><% end %>
+										<%= location.town.townname %>, <%= location.state.abv %> <%= location.zip %>
+									</h4>
+
+
 									<% if user_signed_in? && current_user.admin? %>
 					  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
 										<div class="actions"><small><%= link_to("Edit Location", edit_location_path(location)) %></small></div>

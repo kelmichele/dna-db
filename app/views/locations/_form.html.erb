@@ -8,6 +8,11 @@
       </div>
 
       <div class="forminfo">
+        <%= f.label :addr2 %><br>
+        <%= f.text_field :addr2, class: "form-control", placeholder: "Addr2", autofocus: true %>
+      </div>
+
+      <div class="forminfo">
         <%= f.label "City" %>
         <br>
         <%= f.collection_select(:town_id, Town.all, :id, :townname) %>
@@ -16,6 +21,16 @@
       <div class="forminfo">
         <%= f.label :zip %><br>
         <%= f.text_field :zip, class: "form-control", placeholder: "Zipcode", autofocus: true %>
+      </div>
+
+      <div class="forminfo">
+        <%= f.label :latitude %><br>
+        <%= f.text_field :latitude, class: "form-control", placeholder: "Latitude", autofocus: true %>
+      </div>
+
+      <div class="forminfo">
+        <%= f.label :longitude %><br>
+        <%= f.text_field :longitude, class: "form-control", placeholder: "Longitude", autofocus: true %>
       </div>
     </div>
 

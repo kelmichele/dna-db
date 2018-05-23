@@ -24,7 +24,7 @@ class Location < ApplicationRecord
   end
 
   def address_changed?
-    street_changed? || town_id_changed? || zip_changed?
+    street_changed? || addr2_changed? || town_id_changed? || zip_changed?
   end
 
  	def self.import(file)
