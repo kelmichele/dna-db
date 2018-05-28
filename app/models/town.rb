@@ -9,7 +9,8 @@ class Town < ApplicationRecord
 
   has_many :locations
 
-  default_scope -> { order(townname: :asc)}
+  # default_scope -> { order(townname: :asc)}
+  default_scope -> { order(state_id: :asc)}
 
  	def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)
@@ -19,6 +20,16 @@ class Town < ApplicationRecord
       town = find_by(townname: row["townname"]) || new
       town.attributes = row.to_hash
       town.save!
+    end
+  end
+
+  def self.to_csv(options = {})
+    desired_columns = ["townname", "id", "state_id"]
+    CSV.generate(options) do |csv|
+      csv << desired_columns
+      all.each do |location|
+        csv << location.attributes.values_at(*desired_columns)
+      end
     end
   end
 

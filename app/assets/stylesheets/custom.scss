@@ -156,6 +156,7 @@ a:hover {text-decoration: none; opacity: .7;}
 }
 
 .all-towns h4.state-name{text-transform: capitalize;}
+.towns.show h4 {line-height: .8em;}
 
 
 .towns .wrap.clinics{@include sec-default(); padding:50px 0; text-align: center;}

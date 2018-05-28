@@ -8,6 +8,10 @@
 		  <br>
 		  <%= submit_tag "Import" %>
 		<% end %>
+
+
+			<div class="clearfix"></div><br>
+			<%= link_to "Download CSV (#{@towns.count})", towns_path(format: "csv"), class: 'action btn btn-add inline' %>
 	</div>
 </div>
 

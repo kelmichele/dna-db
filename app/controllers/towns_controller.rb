@@ -5,6 +5,11 @@ class TownsController < ApplicationController
 
 	def index
 		@towns = Town.all
+
+		respond_to do |format|
+		  format.html
+		  format.csv { send_data @towns.to_csv }
+		end
 	end
 
 	def import
