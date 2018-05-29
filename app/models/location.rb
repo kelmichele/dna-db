@@ -23,6 +23,7 @@ class Location < ApplicationRecord
     # + "(#{latitude}, #{longitude})"
   end
 
+
   def address_changed?
     street_changed? || addr2_changed? || town_id_changed? || zip_changed?
   end

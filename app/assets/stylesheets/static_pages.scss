@@ -1075,7 +1075,7 @@ $new: #ccd1d9;
 
 	.pop {@include sec-default(); background-color: $blue; padding:0;
 		// max-height: 550px; border-bottom: 15px solid $f6;
-		h4 {margin-bottom: 8px; font-size: 17px;}
+		h4 {margin-bottom: 8px; font-size: 17px; line-height: 1.4em;}
 
 		.one {@include sec-grid(left, 70%); @include center-block(); text-align: center;
 			h1, p {color: white; text-shadow: 0px 1px 1px rgba(black, .3);font-family: $open;}
@@ -1165,6 +1165,5 @@ $new: #ccd1d9;
 		.loclist {max-height: 280px; }
 	}
 }
-
 
 .locations #map {width:100%; height:450px;}
