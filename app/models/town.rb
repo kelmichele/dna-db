@@ -17,7 +17,7 @@ class Town < ApplicationRecord
   end
 
   def slug
-    "dna-testing-in-#{townname.downcase}-#{state.abv.downcase}"
+    "dna-testing-in-#{townname.downcase}-#{state.abv.downcase}".parameterize
   end
 
  	def self.import(file)
