@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 	resources :charges, only: [:new, :create]
 	resources :states
-	resources :towns do
+	resources :towns, param: :slug do
 		collection do
 			post :import
 		end
