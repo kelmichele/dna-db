@@ -20,7 +20,6 @@ class TownsController < ApplicationController
 	def show
 		# @town = Town.friendly.find(params[:id])
 		@state = @town.state
-		# @town = @town.all
 		@town_locations = @town.locations.all
 		town_locations = @town.locations.all
 
@@ -78,8 +77,9 @@ class TownsController < ApplicationController
 
 	private
 		def set_town
-			@town = Town.find_by slug: params[:id]
-			# @town = Town.friendly.find params[:id]
+			# @town = Town.find(params[:id])
+			# @town = Town.find_by slug: params[:id]
+			@town = Town.friendly.find(params[:id])
 		end
 
 		def town_params

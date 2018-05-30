@@ -1,10 +1,11 @@
 class Town < ApplicationRecord
-  # extend FriendlyId
-  # friendly_id :townname
+  extend FriendlyId
+  friendly_id :townname, use: :slugged
 
 	validates :townname, presence: true, uniqueness: { scope: :state_id, case_sensitive: false }
 	belongs_to :state
 	validates :state_id, presence: true
+  validates :slug, presence: true
   has_many :clinics
 
   has_many :locations
@@ -12,13 +13,11 @@ class Town < ApplicationRecord
   # default_scope -> { order(townname: :asc)}
   default_scope -> { order(state_id: :asc)}
 
-  def to_param
-    slug
-  end
 
-  def slug
-    "dna-testing-in-#{townname.downcase}-#{state.abv.downcase}".parameterize
-  end
+  # def to_param
+  #   # slug
+  #     "#{townname}-#{state.abv}".parameterize
+  # end
 
  	def self.import(file)
     spreadsheet = Roo::Spreadsheet.open(file.path)

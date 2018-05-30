@@ -23,13 +23,16 @@ Rails.application.routes.draw do
 	resources :charges, only: [:new, :create]
 	resources :states
 	get 'testing-locations', to: 'states#index', as: 'testing_locations'
-	# get '/states/:id', to: 'states#show', as: 'state'
 
-	resources :towns, :path => '', param: :slug do
+	# resources :towns, :path => '', param: :slug do
+	resources :towns do
+	# resources :towns, :path => 'dna-testing-in-' do
 		collection do
 			post :import
 		end
 	end
+
+
 
 	resources :locations, except: [:show] do
 		collection do
