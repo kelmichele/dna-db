@@ -3,11 +3,6 @@
 	<% if controller_name == 'states' %><%= link_to("Add New City", new_town_path, :class => 'action new btn-add inline') %><% end %>
 	<% if controller_name == 'towns' %><%= link_to("Back to #{@state.name}", state_path(@state), :class => 'back-link' ) %><% end %>
 
-	<% if controller_name == 'locations' %>
-		<div class="clearfix"></div><br>
-		<%= link_to "Download CSV (#{@locations.count})", locations_path(format: "csv"), class: 'action btn btn-add inline' %>
-	<% end %>
-
 	<%= tag.h4 "Import Locations", class: 'tmargin0 bmargin5' %>
 	<%= form_tag import_locations_path, multipart: true do %>
 	  <%= file_field_tag :file, class: 'bmargin5' %>

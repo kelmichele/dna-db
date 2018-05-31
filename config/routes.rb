@@ -24,7 +24,8 @@ Rails.application.routes.draw do
 	resources :states
 	get 'testing-locations', to: 'states#index', as: 'testing_locations'
 
-	resources :towns, except: :index, :path => '' do
+	# resources :towns, except: :index, :path => '' do
+	resources :towns do
 		collection do
 			post :import
 		end
