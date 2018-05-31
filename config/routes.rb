@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 	resources :charges, only: [:new, :create]
 	resources :states
-	get 'testing-locations', to: 'states#index', as: 'testing_locations'
+	# get 'testing-locations', to: 'states#index', as: 'testing_locations'
 
 	# resources :towns, except: :index, :path => '' do
 	resources :towns do
