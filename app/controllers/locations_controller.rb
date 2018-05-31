@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
 	    box      = Geocoder::Calculations.bounding_box(center, distance)
 	    Location.within_bounding_box(box)
 	  elsif params[:near]
-	    Location.near(params[:near])
+	    Location.near(params[:near], 100)
 	  else
 	    Location.all
 		end
