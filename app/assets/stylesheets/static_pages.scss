@@ -1160,6 +1160,7 @@ $new: #ccd1d9;
 }
 
 .states .all-towns {
+	p.zero{padding: 15px; text-align: center;}
 	@include bp(sm) {
 		.town-hlf {height: 330px}
 		.loclist {max-height: 280px; }

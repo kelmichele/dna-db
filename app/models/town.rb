@@ -1,6 +1,6 @@
 class Town < ApplicationRecord
   extend FriendlyId
-  friendly_id :townname, use: :slugged
+  friendly_id :pug, use: :slugged
 
 	validates :townname, presence: true, uniqueness: { scope: :state_id, case_sensitive: false }
 	belongs_to :state
@@ -10,9 +10,20 @@ class Town < ApplicationRecord
 
   has_many :locations
 
-  # default_scope -> { order(townname: :asc)}
-  default_scope -> { order(state_id: :asc)}
+  default_scope -> { order(townname: :asc)}
+  # default_scope -> { order(state_id: :asc)}
 
+  def reslug
+    x.each do |x|
+      x.slug = x.townname.parameterize + "-" + x.state.abv.parameterize
+      x.save
+    end
+    # x.slug = x.state.name + "/" + "dna-testing-in-" + x.townname.parameterize + "-" + x.state.abv.parameterize
+  end
+
+  def pug
+    "#{townname}-#{state.abv}".parameterize
+  end
 
   # def to_param
   #   # slug

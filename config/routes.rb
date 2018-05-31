@@ -24,15 +24,11 @@ Rails.application.routes.draw do
 	resources :states
 	get 'testing-locations', to: 'states#index', as: 'testing_locations'
 
-	# resources :towns, :path => '', param: :slug do
-	resources :towns do
-	# resources :towns, :path => 'dna-testing-in-' do
+	resources :towns, except: :index, :path => '' do
 		collection do
 			post :import
 		end
 	end
-
-
 
 	resources :locations, except: [:show] do
 		collection do

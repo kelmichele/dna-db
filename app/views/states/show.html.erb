@@ -49,7 +49,6 @@
 									<% if user_signed_in? && current_user.admin? %>
 									  <!-- <td><h4 class="state-name"><%= link_to town.townname.capitalize %></h4></td> -->
 									  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
-									   <!-- - (<%= town.id %>)&nbsp; -->
 								    <td><p><small>&nbsp;(<%= town.locations.count %>)</small></p></td>
 							   	<% else %>
 								   	<td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
@@ -61,7 +60,7 @@
 				</div>
 
   		<% else %>
-			 	<p>Unfortunately, we have no testing locations in <%= @state.name %>, but you can still follow the link below, and order an At Home DNA Test Kit Today!</p>
+			 	<p class="zero">Unfortunately, we have no testing locations in <%= @state.name %>. <b><%= link_to "Click here", new_charge_path %></b> to order an At Home DNA Test Kit!</p>
 			<% end %>
 		</div>
 
