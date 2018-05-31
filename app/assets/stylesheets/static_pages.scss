@@ -1048,19 +1048,12 @@ $new: #ccd1d9;
 	}
 }
 
-.towns .all-towns, .states .all-towns {
+.towns .all-towns, .states .all-towns, .locations {
 	@include sec-default();
 	.top {@include sec-default(); background-color: $blue; padding:20px 0;
-		// border-bottom: 15px solid black;
 		p{font-size: 18px; line-height: 1.6em;}
 		h1, p {color: white;}
-
 		display: none;
-
-		// @include sec-bgimage('running.jpg');background-position: center center;
-		// position: relative; z-index: 0;
-		// &::before {@include before(); background-color: rgba(black, .45);}
-
 		.one {@include sec-grid(left, 60%); @include center-block(); text-align: center;}
 		.two {@include sec-grid(right, 35%); text-align: center; margin-top:20px;
 			p {font-size: 16px; color:white;}
@@ -1074,15 +1067,12 @@ $new: #ccd1d9;
 	}
 
 	.pop {@include sec-default(); background-color: $blue; padding:0;
-		// max-height: 550px; border-bottom: 15px solid $f6;
 		h4 {margin-bottom: 8px; font-size: 17px; line-height: 1.4em;}
 
 		.one {@include sec-grid(left, 70%); @include center-block(); text-align: center;
 			h1, p {color: white; text-shadow: 0px 1px 1px rgba(black, .3);font-family: $open;}
 			p{font-size: 18px;}
 		}
-		// background: -webkit-linear-gradient(-182deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
-		// background: linear-gradient(102deg, lighten($blue, 20%) 50%, darken($blue, 5%) 50%);
 
 		background: -webkit-linear-gradient(-270deg, lighten($dk-blue, 20%) 50%, darken($nblue, 5%) 50%);
 		background: linear-gradient(65deg, lighten($dk-blue, 20%) 50%, darken($nblue, 5%) 50%);
@@ -1105,7 +1095,7 @@ $new: #ccd1d9;
 	.loclist {padding-top: 15px; }
 }
 
-.towns .all-towns, .states .all-towns {
+.towns .all-towns, .states .all-towns, .locations {
 	@include bp(dt) {
 		.pop .one {width: 60%;}
 	}
@@ -1167,4 +1157,8 @@ $new: #ccd1d9;
 	}
 }
 
-.locations #map {width:100%; height:450px;}
+.locations {
+	.loclist {padding-top: 20px;}
+}
+
+// .locations #map {width:100%; height:450px;}

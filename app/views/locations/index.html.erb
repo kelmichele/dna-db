@@ -1,7 +1,7 @@
 <% @page_title = "Our Locations" %>
 
-<%= tag.div class: 'full' do %>
-	<%= tag.div class: 'wrap' do %>
+<!-- <div class="full">
+	<div class="wrap location-map">
 		<%= tag.h1 @page_title %>
 		<hr class="title-line">
 		<div class="clearfix"></div>
@@ -18,28 +18,50 @@
 
 		<div class="clearfix"></div>
 		<br><hr><br>
-	<% end %>
-<% end %>
+	</div>
+</div> -->
 
-<%= tag.div class: 'full' do %>
-	<%= tag.div class: 'wrap location-map' do %>
-		<%= tag.div class: 'col-md-4 col-md-offset-1' do %>
-			<%= tag.table class:'loclist' do %>
-				<% @locations.each do |location| %>
-				  <%= tag.div class:'townlisting-bx' do %>
-						<h4><%= simple_format(location.full_address)%></h4>
-		  			<% if user_signed_in? && current_user.admin? %>
-		  				<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
-		  				<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
-		  			<% end %>
-				  <% end %>
-			  <% end %>
-			<% end %>
-		<% end %>
+<div class="full pop">
+	<div class="one">
+		<h1>Location Search Results</h1>
+		<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.<br>
+		For more information, call us toll free at: 1(866) 750 4773.
+			Click Here to schedule your testing appointment today!</p>
+	</div>
 
-		<%= tag.div class: 'col-md-6 no-padding' do %>
+
+	<div class="location-map">
+		<div class="map-hlf">
 			<%= render 'shared/map' %>
-		<% end %>
+		</div>
 
-	<% end %>
-<% end %>
+		<div class="town-hlf">
+			<div class="search-sec">
+				<div class="searcher">
+					<%= form_with(url: locations_path, class: "form-inline", local: true, method: :get) do |f| %>
+					  <%= f.text_field :near, class: "form-control", placeholder: "Search" %>
+					  <%= f.submit "", class: "btn btn-outline-secondary search" %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="loclist">
+				<table>
+				<% @locations.each do |location| %>
+					<div class="townlisting-bx">
+						<h4>
+							<!-- <%= simple_format(location.full_address)%>-->
+							<%= location.street.titleize %><br>
+							<% if location.addr2 %><%= location.addr2.titleize %><br><% end %>
+							<%= location.town.townname %>, <%= location.state.abv %> <%= location.zip %>
+						</h4>
+						<% if user_signed_in? && current_user.admin? %>
+							<% if location.longitude == nil %>**<small>Coordinates Missing**</small><% end %>
+							<div class="actions"><small><%= link_to("Edit Location (#{location.id})", edit_location_path(location)) %></small></div>
+						<% end %>
+					</div>
+				<% end %>
+				</table>
+			</div>
+	</div>
+</div>
