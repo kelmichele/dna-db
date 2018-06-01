@@ -688,7 +688,7 @@ $new: #ccd1d9;
 	.hd-layers {@include sec-default();  background-color: $f6;
 		height:500px;
 		position: relative;z-index: 0;
-		@include sec-bgimage('girl.png');
+		@include sec-bgimage('baby-pink.png');
 		background-size: 70%; background-position: bottom right; overflow: hidden;
 
 		&::before {
