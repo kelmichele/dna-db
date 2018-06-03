@@ -16,21 +16,13 @@
     position:relative;
     z-index:0;
   }
-  .rails-default-error-page::before {
-    content: "";
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height:100%;
-    z-index: -1;
-    background-color: rgba(255,255,255, .7);
-  }
+
 
   .rails-default-error-page div.dialog {
     width: 95%;
     max-width: 33em;
     margin: 4em auto 0;
+    background-color: rgba(255,255,255, .7);
   }
 
   .rails-default-error-page div.dialog > div {
@@ -44,13 +36,14 @@
     line-height: 1.4em;
   }
 
-  .rails-default-error-page div.dialog > a {
+  .rails-default-error-page a {
     background-color: #21c3fc;
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0, .45);
     font-weight: bold;
     font-size:20px;
     padding:10px;
+    border-radius: 15px;
   }
   </style>
 </head>
@@ -61,11 +54,8 @@
     <div>
       <h3>The results are in!<br>
       This page doesn't exist.</h3>
-      <p><a href="https://dna-db.herokuapp.com/">Click here to get back to the labs.</a></p>
-      <!-- <h1>The page you were looking for doesn't exist.</h1> -->
-      <!-- <p>You may have mistyped the address or the page may have moved.</p> -->
+      <a href="https://dna-db.herokuapp.com/">Click here to get back to the labs.</a>
     </div>
-    <!-- <p>If you are the application owner check the logs for more information.</p> -->
   </div>
 </body>
 </html>
