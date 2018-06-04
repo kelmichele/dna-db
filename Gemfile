@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'rack-rewrite', '~> 1.5', '>= 1.5.1'
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'uikit-rails'
