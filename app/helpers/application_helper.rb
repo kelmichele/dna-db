@@ -1,8 +1,7 @@
 module ApplicationHelper
 
 	def phone
-	  number_to_phone(18667504773, delimiter: ' ', area_code: true,  class: "phone-link")
-	  # number_to_phone(8667504773, delimiter: ' ', country_code: 1, area_code: true, pattern: /(\d{1})(\d{3})(\d{4})$/,  class: "phone-link")
+	  number_to_phone(18667504773, delimiter: ' ', area_code: true,  class: "phone-link", id: "number_link", onclick: "ga('send', 'event', 'Phone Number', 'Clicked to Call', 'Number on Website', '1')")
 	end
 
 	def online_status(user)
