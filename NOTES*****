@@ -1,5 +1,16 @@
 5/18/18 ------------------------
 --------------------------------
+		fort lauderdale - 19547450112
+		hialeah - 19547441468
+		jacksonville - 19046466647
+		miami - 17867473767
+		orlando - 14075410831
+		pembroke pines - 19547441468
+		port st lucie - 17722407752
+		st petersburg - 17278034422
+		tallahassee - 18506889273
+		tampa - 18134728769
+
 
 ** Started removing everything associated with live chat, so Zopim could be added. **
 	- application.html.erb
