@@ -69,6 +69,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.img-icon {width:120px; @include center-block();}
 
 		padding-bottom: 90px;
+		#number_link{color: white;}
 	}
 
 	.homekit { @include sec-default(); padding-bottom: 35px; background-color: white;
@@ -841,6 +842,7 @@ $new: #ccd1d9;
 		.inner {width: 45%; @include center-block();}
 		p {color: white; font-size: 21px; font-weight: bold;  letter-spacing: 1px;}
 		h4 {font-size: 25px; color: $f6; font-weight: bold; font-family: $open;}
+		#number_link{color: white;}
 
 		@include bp(tb) {.inner {width: 65%; }}
 		@include bp(tn) {
@@ -937,6 +939,7 @@ $new: #ccd1d9;
 			h3 {color: $dark;font-size: 21px; font-weight: bold; letter-spacing: 1px;
 				span {color: $blue; line-height: 2em;font-family: $open;}
 			}
+			#number_link{color: $blue;}
 		}
 
 		@include bp(dt) {
@@ -1160,5 +1163,7 @@ $new: #ccd1d9;
 .locations {
 	.loclist {padding-top: 20px;}
 }
+
+.loclist .townlisting-bx #number_link{color: $blue;}
 
 // .locations #map {width:100%; height:450px;}
