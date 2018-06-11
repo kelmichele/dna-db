@@ -246,6 +246,9 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.left, .right {@include sec-grid(left, 45%);}
 		.right {width: 33%; margin-left: 3%; }
 		.left{padding:30px 0; float:none; margin-left: 5%; margin-top: 20px;}
+		p.call-add {font-weight: bold; padding-top:15px;
+			a {color: $blue;}
+		}
 
 		.pricing {padding-left:15px;
 			h4 {font-weight: bold; margin-bottom: 5px; }
@@ -272,7 +275,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 			.inner{@include center-block();}
 			.left, .right {width: 45%;}
 			.right {width: 28%; margin-left: 10%; }
-			.left{margin-top:2%; margin-left: 8%}
+			.left{margin-top:0; margin-left: 8%}
 		}
 
 		@include bp(tb) {
@@ -628,6 +631,10 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		.title {@include sec-grid(none, 30%); text-align: center; margin-left: 5%;}
 		.dets {@include sec-grid(right, 60%); }
 
+		.call-bx { text-align: center;
+			p{color: $blue; font-weight: bold; font-size: 17px;}
+		}
+
 		&:nth-child(2n+2) {background-color: white;
 			.dets{float: left;margin-left: 5%;}
 			.title{margin-left: 0;}
@@ -668,6 +675,7 @@ hr.hlf {width:25%; @include center-block(); border-top:1px solid #ddd;}
 		}
 
 		@include bp(nn) {
+			.call-bx p {font-size: 15px;}
 			&, &:nth-child(2n+2), &.long, &.short {
 				padding: 30px 0;
 				h3 {font-size: 19px; margin-bottom: 8px;}
