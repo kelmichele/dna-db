@@ -49,7 +49,7 @@
 									<% if user_signed_in? && current_user.admin? %>
 									  <!-- <td><h4 class="state-name"><%= link_to town.townname.capitalize %></h4></td> -->
 									  <td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
-								    <td><p><small>&nbsp;(<%= town.locations.count %>)</small></p></td>
+								    <td><p><small>&nbsp;<b><%= town.id %></b> - (<%= town.locations.count %>)</small></p></td>
 							   	<% else %>
 								   	<td><h4 class="state-name"><%= link_to town.townname.capitalize, town_path(town) %></h4></td>
 							   	<% end %>
