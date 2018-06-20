@@ -29,7 +29,6 @@
 							<% @town_locations.each do |location| %>
 								<div class="townlisting-bx">
 									<h4>
-										<!-- <%= simple_format(location.full_address)%>-->
 										<%= location.street.titleize %><br>
 										<% if location.addr2 %><%= location.addr2.titleize %><br><% end %>
 										<%= location.town.townname %>, <%= location.state.abv %> <%= location.zip %>
