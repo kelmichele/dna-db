@@ -23,6 +23,7 @@ class LocationsController < ApplicationController
 		respond_to do |format|
 		  format.html
 		  format.csv { send_data @locations.to_csv }
+		  format.xls
 		end
 	end
 

@@ -27,6 +27,13 @@
 		<p>Get DNA Tested Today offers DNA &amp; Paternity testing options that are non-invasive, affordable, and 99.99% accurate. Your privacy is our guarantee.<br>
 		For more information, call us toll free at: <%= phone %>.
 			Click Here to schedule your testing appointment today!</p>
+			<% if user_signed_in? && current_user.admin? %>
+				<p>
+				  Download:
+				  <%= link_to "CSV", locations_path(format: "csv") %> |
+				  <%= link_to "Excel", locations_path(format: "xls") %>
+				</p>
+			<% end %>
 	</div>
 
 
