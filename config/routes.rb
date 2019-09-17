@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 	get 'thanks', to: 'static_pages#thanks'
 	get 'chats', to: 'static_pages#chats'
 
+	get 'court-ordered-dna-testing-locations', to: 'static_pages#court_ordered_dna_testing_locations', as: 'court_ordered_dna_testing_locations'
+
 	resources :charges, only: [:new, :create]
 	resources :states
 	# get 'testing-locations', to: 'states#index', as: 'testing_locations'

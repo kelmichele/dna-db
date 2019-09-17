@@ -2,6 +2,10 @@ class StaticPagesController < ApplicationController
 	# before_action :user_cat
 	# skip_before_action :authenticate_user!, except: [:chats]
 
+	def court_ordered_dna_testing_locations
+		@states = State.all
+	end
+
 	def chats
 		session[:chatrooms] ||= []
 
