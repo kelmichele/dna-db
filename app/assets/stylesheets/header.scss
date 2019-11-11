@@ -138,6 +138,7 @@
 
 #offcanvas-toggler {
 	width: 40px; float:right; background-color:white; padding: 7px 0 5px; text-align: center; border-radius: 2px; border: 1px solid $blue; display:none;
+	z-index: 99999;
   span {content: '';@include center-block (); display: block; margin-bottom: 4px; width: 25px; height: 3px; border-radius: 2px; background-color: $blue;}
 
   @include bp(nn) {display: block; margin: 6px 15px;}
