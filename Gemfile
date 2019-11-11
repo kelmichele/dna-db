@@ -5,20 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.4.0'
 
 gem 'rails', '~> 5.1.4'
-gem 'jquery-rails'
 gem 'pg', '~> 0.18'
+gem 'puma', '~> 3.7'
 
 gem 'sassc'
 gem 'sass-rails'
-
-gem 'puma', '~> 3.7'
 gem 'uglifier', '>= 1.3.0'
-
 gem 'coffee-rails', '~> 4.2'
+
+gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'rack-rewrite', '~> 1.5', '>= 1.5.1'
