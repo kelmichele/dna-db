@@ -10,8 +10,6 @@ gem 'rails', '~> 5.1.4'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 
-# gem 'bootstrap-sass'
-# gem 'sass-rails', '~> 5.0'
 gem 'sassc'
 gem 'sass-rails'
 
