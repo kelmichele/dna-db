@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 	get '/our-process', to: 'static_pages#our_process', as: 'our_process'
 	get 'testing', to: 'static_pages#testing'
 	get 'thanks', to: 'static_pages#thanks'
+	get 'infidelity-testing', to: 'static_pages#infidelity-testing'
 	get 'chats', to: 'static_pages#chats'
 
 	get 'court-ordered-dna-testing-locations', to: 'static_pages#court_ordered_dna_testing_locations', as: 'court_ordered_dna_testing_locations'
